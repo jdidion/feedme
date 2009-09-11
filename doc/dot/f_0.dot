@@ -1,0 +1,105 @@
+digraph TopLevel {
+    compound = true
+    bgcolor = lightcyan1
+    fontname = Arial
+    fontsize = 8
+    label = "TopLevel"
+    node [
+        fontname = Arial,
+        fontsize = 8,
+        color = black
+    ]
+
+    StandardError [
+        URL = "classes/StandardError.html",
+        label = "StandardError"
+    ]
+
+    StandardError -> FeedMe__InfiniteCallLoopError [
+
+    ]
+
+    FeedMe__FeedData -> FeedMe__Parser [
+
+    ]
+
+    StandardError -> FeedMe__FeedMeError [
+
+    ]
+
+    FeedMe__ParserBuilder -> FeedMe__StrictParserBuilder [
+
+    ]
+
+    subgraph cluster_FeedMe {
+        fillcolor = palegreen1
+        URL = "classes/FeedMe.html"
+        fontname = Arial
+        color = blue
+        label = "FeedMe"
+        style = filled
+        FeedMe [
+            shape = plaintext,
+            height = 0.01,
+            width = 0.01,
+            label = ""
+        ]
+
+        FeedMe__InfiniteCallLoopError [
+            fontcolor = black,
+            URL = "classes/FeedMe/InfiniteCallLoopError.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "InfiniteCallLoopError"
+        ]
+
+        FeedMe__FeedData [
+            fontcolor = black,
+            URL = "classes/FeedMe/FeedData.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "FeedData"
+        ]
+
+        FeedMe__Parser [
+            fontcolor = black,
+            URL = "classes/FeedMe/Parser.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "Parser"
+        ]
+
+        FeedMe__ParserBuilder [
+            fontcolor = black,
+            URL = "classes/FeedMe/ParserBuilder.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "ParserBuilder"
+        ]
+
+        FeedMe__FeedMeError [
+            fontcolor = black,
+            URL = "classes/FeedMe/FeedMeError.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "FeedMeError"
+        ]
+
+        FeedMe__StrictParserBuilder [
+            fontcolor = black,
+            URL = "classes/FeedMe/StrictParserBuilder.html",
+            shape = ellipse,
+            color = palegoldenrod,
+            style = filled,
+            label = "StrictParserBuilder"
+        ]
+
+    }
+
+}
+

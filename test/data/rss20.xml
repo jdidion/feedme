@@ -1,0 +1,27 @@
+<rss version="2.0">
+<channel>
+<title>Example Channel</title>
+<link>http://example.com/</link>
+<description>an example feed</description>
+<language>en</language>
+<textInput>
+<title>Search this site:</title>
+<description>Find:</description>
+<name>q</name>
+<link>http://example.com/search</link>
+</textInput>
+<skipHours>
+<hour>24</hour>
+</skipHours>
+<item>
+<title>1 &lt; 2</title>
+<link>http://example.com/1_less_than_2.html</link>
+<description>1 &amp;lt; 2, 3 &amp;lt; 4.
+In HTML, &amp;lt;b&amp;gt; starts a bold phrase
+and you start a link with &amp;lt;a href=
+</description>
+<pubDate>Wed Aug 24 13:33:34 UTC 2005</pubDate>
+</item>
+</channel>
+</rss>
+

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Sep 03 10:00:46 -0400 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+    <div id="diagram">
+      <map id="map" name="map">
+</map>
+<img src="../dot/f_1.png" usemap="#map" border="0" alt="dot/f_1.png">
+    </div>
+
+    <div id="description">
+      <h1>feedme</h1>
+<ul>
+<li><a href="http://feedme.rubyforge.org">feedme.rubyforge.org</a>
+
+</li>
+</ul>
+<h2>DESCRIPTION:</h2>
+<p>
+A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on
+the popular SimpleRSS library, but with many nice extra features.
+</p>
+<h2>FEATURES/PROBLEMS:</h2>
+<ul>
+<li>Parse RSS 0.91, 0.92, 1.0, and 2.0
+
+</li>
+<li>Parse Atom
+
+</li>
+<li>Parse all tags by default, or choose the tags you want to parse
+
+</li>
+<li>Access all attributes and content as if they were methods
+
+</li>
+<li>Access all values of tags that can appear multiple times
+
+</li>
+<li>Delicious syntactic sugar that makes it simple to get the data you want
+
+</li>
+</ul>
+<h3>SYNOPSIS:</h3>
+<p>
+The API is similar to SimpleRSS:
+</p>
+<pre>
+    require 'rubygems'
+    require 'feedme'
+    require 'open-uri'
+
+    rss = FeedMe.parse open('http://slashdot.org/index.rdf')
+    rss.version # =&gt; 1.0
+    rss.channel.title # =&gt; &quot;Slashdot&quot;
+    rss.channel.link # =&gt; &quot;http://slashdot.org/&quot;
+    rss.items.first.link # =&gt; &quot;http://books.slashdot.org/article.pl?sid=05/08/29/1319236&amp;from=rss&quot;
+</pre>
+<p>
+But since the parser can read Atom feeds as easily as RSS feeds, there are
+optional aliases that allow more atom like reading:
+</p>
+<pre>
+    rss.feed.title # =&gt; &quot;Slashdot&quot;
+    rss.feed.link # =&gt; &quot;http://slashdot.org/&quot;
+    rss.entries.first.link # =&gt; &quot;http://books.slashdot.org/article.pl?sid=05/08/29/1319236&amp;from=rss&quot;
+</pre>
+<p>
+Under the covers, all content is stored in arrays. This means that you can
+access all content for a tag that appears multiple times (i.e. category):
+</p>
+<pre>
+    rss.items.first.category_array  # =&gt; [&quot;News for Nerds&quot;, &quot;Technology&quot;]
+    rss.items.first.category # =&gt; &quot;News for Nerds&quot;
+</pre>
+<p>
+You also have access to all the attributes as well as tag values:
+</p>
+<pre>
+    rss.items.first.guid.isPermaLink # =&gt; &quot;true&quot;
+    rss.items.first.guid.content     # =&gt; http://books.slashdot.org/article.pl?sid=05/08/29/1319236
+</pre>
+<p>
+<a href="../classes/FeedMe.html">FeedMe</a> also adds some syntactic sugar
+that makes it easy to get the information you want:
+</p>
+<pre>
+    rss.items.first.category? # =&gt; true
+    rss.items.first.category_count # =&gt; 2
+    rss.items.first.guid_content # =&gt; http://books.slashdot.org/article.pl?sid=05/08/29/1319236
+</pre>
+<p>
+There are two different parsers that you can use, depending on your needs.
+The default parser is &quot;promiscuous,&quot; meaning that it parses all
+tags. There is also a strict parser that only parses tags specified in a
+list. Here is how you create the different types of parsers:
+</p>
+<pre>
+    FeedMe.parse(source) # parse using the default (promiscuous) parser
+    FeedMe::ParserBuilder.new.parse(source) # equivalent to the previous line
+    FeedMe::StrictParserBuilder.new.parse(source) # only parse certain tags
+</pre>
+<p>
+The strict parser can be extended by adding new tags to parse:
+</p>
+<pre>
+    builder = FeedMe::StrictParserBuilder.new
+    builder.rss_tags &lt;&lt; :some_new_tag
+    builder.rss_item_tags &lt;&lt; :'item+myrel' # parse an item that has a custom rel type
+    builder.item_ext_tags &lt;&lt; :'feedburner:origLink' # parse an extension tag - one that has a specific
+                                                    # namespace
+</pre>
+<p>
+Either parser can be extended by adding aliases to existing tags:
+</p>
+<pre>
+    builder.aliases[:updated] =&gt; :pubDate  # now you can always access the updated date using :updated,
+                                           # regardless of whether it's an RSS or Atom feed
+</pre>
+<p>
+Another bit of syntactic sugar is the &quot;bang mod.&quot; These are
+modifications that can be applied to feed content by adding &#8217;!&#8217;
+to the tag name. The default bang mod is to strip HTML tags from the
+content.
+</p>
+<pre>
+    rss.entry.content # =&gt; &lt;div&gt;Some great stuff&lt;/div&gt;
+    rss.entry.content! # =&gt; Some great stuff
+</pre>
+<p>
+You can create your own bang mods. The following is an example of a bang
+mod that takes an argument. The first line is how bang mods are added, and
+the second line tells the builder to actually apply this bang mod when the
+&#8217;!&#8217; suffix is used. Note that bang mod names may only contain
+alphanumeric characters. Argument values are specified at the end separated
+by underscores.
+</p>
+<pre>
+    # wrap content at a specified number of columns
+    builder.bang_mod_fns[:wrap] =&gt; proc {|str, col|
+        str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, &quot;\\1\\3\n&quot;).strip
+    }
+    builder.bang_mods &lt;&lt; :wrap_80
+</pre>
+<p>
+In order to prevent clashes between tag/attribute names and the parser
+class&#8217; instance variables, all instance variables are prefixed with
+&#8216;fm_&#8217;. They are:
+</p>
+<pre>
+    fm_source   # the original, unparsed source
+    fm_options  # the options passed to the parser constructor
+    fm_type     # the feed type
+    fm_tags     # the tags the parser looks for in the source
+    fm_parsed   # the list of tags the parser actually found
+    fm_unparsed # the list of tags that appeared in the feed but were not parsed (useful for debugging)
+</pre>
+<p>
+Additionally, there are several variables that are available at every level
+of the parse tree:
+</p>
+<pre>
+    fm_builder  # the ParserBuilder that created the parser
+    fm_parent   # the container of the current level of the parse tree
+    fm_tag_name # the name of the rss/atom tag whose content is contained in this level of the tree
+</pre>
+<h3>A word on RSS/Atom Versions</h3>
+<p>
+RSS has undergone much revision since Netscape 0.90 was released in 1999.
+The current accepted specification is maintained by the RSS Advisory board
+(<a
+href="http://www.rssboard.org/rss-specification">www.rssboard.org/rss-specification</a>).
+The current version (as of this writing) is 2.0.11, although the actual
+schema has not changed since 2.0.1.
+</p>
+<p>
+Atom is an IETF standard (<a
+href="http://www.w3.org/2005/Atom">www.w3.org/2005/Atom</a>) and so far
+there is a single version of the specification (commonly referred to as
+1.0).
+</p>
+<p>
+<a href="../classes/FeedMe.html">FeedMe</a> does its best to support RSS
+and Atom versions currently in use. It specifically does <b>NOT</b> support
+any Netscape version of RSS.
+</p>
+<p>
+Due to various incompatibilities between different RSS versions, it is
+strongly recommended that you examine the version attribute of the feed (as
+shown in the Usage section). Mark Pilgrim has an excellent article on RSS
+version incompatibility: <a
+href="http://diveintomark.org/archives/2004/02/04/incompatible-rss">diveintomark.org/archives/2004/02/04/incompatible-rss</a>.
+</p>
+<h2>INSTALL:</h2>
+<ul>
+<li>gem install feedme
+
+</li>
+<li><a
+href="http://rubyforge.org/projects/feedme">rubyforge.org/projects/feedme</a>
+
+</li>
+</ul>
+<h2>LICENSE:</h2>
+<p>
+This work is licensed under the Creative Commons Attribution 3.0 United
+States License. To view a copy of this license, visit <a
+href="http://creativecommons.org/licenses/by/3.0/us">creativecommons.org/licenses/by/3.0/us</a>/
+or send a letter to Creative Commons, 171 Second Street, Suite 300, San
+Francisco, California, 94105, USA.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

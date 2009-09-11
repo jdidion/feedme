@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: feedme.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>feedme.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/feedme.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Sep 03 08:02:09 -0400 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+    <div id="diagram">
+      <map id="map" name="map">
+  <area shape="rect" coords="299,5,405,53"      href="../../classes/StandardError.html" alt="StandardError" />
+  <area shape="rect" coords="405,101,547,149"      href="../../classes/FeedMe/InfiniteCallLoopError.html" alt="InfiniteCallLoopError" />
+  <area shape="rect" coords="179,101,277,149"      href="../../classes/FeedMe/FeedMeError.html" alt="FeedMeError" />
+  <area shape="rect" coords="301,101,381,149"      href="../../classes/FeedMe/FeedData.html" alt="FeedData" />
+  <area shape="rect" coords="305,197,377,245"      href="../../classes/FeedMe/Parser.html" alt="Parser" />
+  <area shape="rect" coords="51,101,155,149"      href="../../classes/FeedMe/ParserBuilder.html" alt="ParserBuilder" />
+  <area shape="rect" coords="36,197,169,245"      href="../../classes/FeedMe/StrictParserBuilder.html" alt="StrictParserBuilder" />
+  <area shape="rect" coords="16,67,557,256"      href="../../classes/FeedMe.html" alt="FeedMe" />
+</map>
+<img src="../../dot/f_0.png" usemap="#map" border="0" alt="dot/f_0.png">
+    </div>
+
+    <div id="description">
+      <p>
+<a href="../../classes/FeedMe.html">FeedMe</a> v0.1
+</p>
+<p>
+<a href="../../classes/FeedMe.html">FeedMe</a> is an easy to use parser for
+RSS and Atom files. It is based on SimpleRSS, but has some improvements
+that make it worth considering:
+</p>
+<ol>
+<li>Support for attributes
+
+</li>
+<li>Support for nested elements
+
+</li>
+<li>Support for elements that appear multiple times
+
+</li>
+<li>Syntactic sugar that makes it easier to get at the information you want
+
+</li>
+</ol>
+<p>
+One word of caution: <a href="../../classes/FeedMe.html">FeedMe</a> will be
+maintained only so long as SimpleRSS does not provide the above features. I
+will try to keep <a href="../../classes/FeedMe.html">FeedMe</a>&#8216;s API
+compatible with SimpleRSS so that it will be easy for users to switch
+if/when necessary.
+</p>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      cgi&nbsp;&nbsp;
+      time&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
