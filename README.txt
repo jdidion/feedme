@@ -110,8 +110,9 @@ Due to various incompatibilities between different RSS versions, it is strongly 
 
 == INSTALL:
 
-* gem install feedme
-* http://rubyforge.org/projects/feedme
+* gem install jdidion-feedme
+** Add GitHub as a gem source: gem sources -a http://gems.github.com
+* http://github.com/jdidion/feedme/downloads
 
 == LICENSE:
 
