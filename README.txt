@@ -1,6 +1,6 @@
 = feedme
 
-* http://feedme.rubyforge.org
+* http://wiki.github.com/jdidion/feedme
 
 == DESCRIPTION:
 
