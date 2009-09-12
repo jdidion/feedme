@@ -34,7 +34,7 @@ But since the parser can read Atom feeds as easily as RSS feeds, there are optio
     rss.feed.title # => "Slashdot"
     rss.feed.link # => "http://slashdot.org/"
     rss.entries.first.link # => "http://books.slashdot.org/article.pl?sid=05/08/29/1319236&from=rss"
-
+    
 Under the covers, all content is stored in arrays. This means that you can access all content for a tag that appears multiple times (i.e. category):
     
     rss.items.first.category_array  # => ["News for Nerds", "Technology"]
@@ -49,13 +49,19 @@ FeedMe also adds some syntactic sugar that makes it easy to get the information 
 
     rss.items.first.category? # => true
     rss.items.first.category_count # => 2
-    rss.items.first.guid_content # => http://books.slashdot.org/article.pl?sid=05/08/29/1319236
+    rss.items.first.guid_value # => http://books.slashdot.org/article.pl?sid=05/08/29/1319236
 
 There are two different parsers that you can use, depending on your needs. The default parser is "promiscuous," meaning that it parses all tags. There is also a strict parser that only parses tags specified in a list. Here is how you create the different types of parsers:
     
     FeedMe.parse(source) # parse using the default (promiscuous) parser
     FeedMe::ParserBuilder.new.parse(source) # equivalent to the previous line
+    FeedMe.parse_strict(source)
     FeedMe::StrictParserBuilder.new.parse(source) # only parse certain tags
+
+The FeedMe class methods and the parser builder constructors also accept an options hash. Options are also passed on to the Parser constructor. Currently, only two options are available:
+
+1. :empty_string_for_nil => false # return the empty string instead of a nil value
+2. :error_on_missing_key => false # raise an error if a specified key or virtual method does not exist (otherwise nil is returned)
 
 The strict parser can be extended by adding new tags to parse:
 
@@ -70,18 +76,56 @@ Either parser can be extended by adding aliases to existing tags:
     builder.aliases[:updated] => :pubDate  # now you can always access the updated date using :updated, 
                                            # regardless of whether it's an RSS or Atom feed
 
-Another bit of syntactic sugar is the "bang mod." These are modifications that can be applied to feed content by adding '!' to the tag name. The default bang mod is to strip HTML tags from the content.
+If you don't know ahead of time what type of feed you'll be parsing, you can tell FeedMe to always emulate RSS or Atom. These methods just add a bunch of aliases:
 
-    rss.entry.content # => <div>Some great stuff</div>
+    builder.emulate_rss!
+    builder.emulate_atom!
+
+Another bit of syntactic sugar are transformations. These are modifications that can be applied to feed content. There is a default transformation that can be applied by adding '!' to the tag name.
+
+    rss.entry.content  # => <div>Some great stuff</div>
     rss.entry.content! # => Some great stuff
-    
-You can create your own bang mods. The following is an example of a bang mod that takes an argument. The first line is how bang mods are added, and the second line tells the builder to actually apply this bang mod when the '!' suffix is used. Note that bang mod names may only contain alphanumeric characters. Argument values are specified at the end separated by underscores.
 
-    # wrap content at a specified number of columns
-    builder.bang_mod_fns[:wrap] => proc {|str, col| 
+The default transformation can be changed:
+
+    builder.default_transformation = [ :cleanHtml ]
+    
+Custom transformations are defined by mapping one or more transformation functions to a suffix:
+
+    builder.transformations['clean'] = [ :cleanHtml ]
+    
+    rss.entry.content           # => <div>This is a bunch of text</div><p></p></html>
+    rss.entry.content_clean     # => <div>This is a bunch of text</div>
+
+You can create your own transformation function. The following is an example of a bang mod that takes an argument. Note that bang mod names may only contain alphanumeric characters. Argument values are specified at the end separated by underscores.
+    
+    builder.transformation_fns[:wrap] => proc {|str, col| 
         str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
     }
-    builder.bang_mods << :wrap_80
+    builder.transformations['wrap'] = [ :wrap_10 ]
+    
+    rss.entry.content = This is a bunch of text
+    rss.entry.content_wrap = This is a 
+                             bunch of
+                             text
+
+The transformation functions available by default are:
+
+1. :stripHtml (described above)
+2. :cleanHtml: requires FeedNormalizer (which in turn requires hypricot)
+
+    rss.entry_array[0].content  # => 1 > 2
+    rss.entry_array[0].content! # => 1 &gt; 2
+    
+    rss.entry_array[1].content  # => <div>Some great stuff</div><p></p></html>
+    rss.entry_array[1].content! # => <div>Some great stuff</div> 
+
+3. :wrap: takes number of columns as a parameter. Respects word boundaries. Example of :wrap_10:
+
+    rss.entry.content  # => This is a bunch of text
+    rss.entry.content! # => This is a
+                            bunch of 
+                            text
 
 In order to prevent clashes between tag/attribute names and the parser class' instance variables, all instance variables are prefixed with 'fm_'. They are:
     

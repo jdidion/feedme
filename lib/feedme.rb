@@ -8,16 +8,26 @@
 # 3. Support for elements that appear multiple times
 # 4. Syntactic sugar that makes it easier to get at the information you want
 #
-# One word of caution: FeedMe will be maintained only so long as SimpleRSS does not
-# provide the above features. I will try to keep FeedMe's API compatible with 
-# SimpleRSS so that it will be easy for users to switch if/when necessary.
+# The parse methods (as well as the constructors) support a few options:
+# :empty_string_for_nil => false # return the empty string instead of a nil value
+# :error_on_missing_key => false # raise an error if a specified key or virtual
+# method does not exist (otherwise nil is returned)
 ####################################################################################
 
 require 'cgi'
 require 'time'
 
+class String
+  def trunc(wordcount, tail='...')
+    words = self.split
+    truncated = words[0..(wordcount-1)].join(' ')
+    truncated += tail if words.size > wordcount
+    truncated
+  end
+end
+
 module FeedMe
-  VERSION = "0.1"
+  VERSION = "0.2"
 
   # constants for the feed type
   RSS  = :RSS
@@ -27,20 +37,22 @@ module FeedMe
   CONTENT_KEY = :content
 
   def FeedMe.parse(source, options={})
-    ParserBuilder.new.parse(source, options)
+    ParserBuilder.new(options).parse(source)
   end
 
   def FeedMe.parse_strict(source, options={})
-    StrictParserBuilder.new.parse(source, options)
+    StrictParserBuilder.new(options).parse(source)
   end
   
   class ParserBuilder
-    attr_accessor :rss_tags, :rss_item_tags, :atom_tags, :atom_entry_tags,
+    attr_accessor :options, 
+                  :rss_tags, :rss_item_tags, :atom_tags, :atom_entry_tags,
                   :date_tags, :value_tags, :ghost_tags, :aliases, 
-                  :bang_mods, :bang_mod_fns
+                  :default_transformation, :transformations, :transformation_fns
 
-    # the promiscuous parser only has to know about tags that have nested subtags
-    def initialize
+    def initialize(options={})
+      @options = options
+      
       # rss tags
     	@rss_tags = [
     	  {
@@ -73,7 +85,7 @@ module FeedMe
       @date_tags = [ :pubDate, :lastBuildDate, :published, :updated, :'dc:date', :expirationDate ]
   
       # tags that can be used as the default value for a tag with attributes
-      @value_tags = [ CONTENT_KEY, :href ]
+      @value_tags = [ CONTENT_KEY, :href, :url ]
   
       # tags that don't become part of the parsed object tree
       @ghost_tags = [ :'rdf:Seq' ]
@@ -88,35 +100,92 @@ module FeedMe
     	}
 	
     	# bang mods
-    	@bang_mods = [ :stripHtml ]
-    	@bang_mod_fns = {
-    	  :stripHtml => proc {|str| str.gsub(/<\/?[^>]*>/, "").strip },
-    	  :wrap      => proc {|str, col| str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip }
+    	@default_transformation = [ :stripHtml ]
+    	@transformations = {}
+    	@transformation_fns = {
+    	  :stripHtml => proc {|str|     # remove all HTML tags
+    	    str.gsub(/<\/?[^>]*>/, "").strip 
+    	  },
+    	  :cleanHtml => proc {|str|     # clean HTML content using FeedNormalizer's HtmlCleaner class 
+    	    begin
+    	      require 'FeedNormalizer'
+    	      FeedNormalizer::HtmlCleaner.clean(str)
+    	    rescue
+    	      str
+    	    end  
+    	  }, 
+    	  :wrap => proc {|str, col|     # wrap text at a certain number of characters (respecting word boundaries)
+    	    str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
+    	  },
+    	  :trunc => proc {|str, wordcount|  # truncate text, respecting word boundaries
+    	    str.trunc(wordcount)
+        },
+        :truncHtml => proc {|str, wordcount| # truncate text but leave enclosing HTML tags
+          if str =~ /(<.+?>)(.+?)(<.*)/
+            $1 + $2.trunc(wordcount) + $3
+          else
+            str.trunc(wordcount)
+          end
+        }
     	}
     end
     
+    # Prepare tag list for an RSS feed.
     def all_rss_tags
       all_tags = rss_tags.dup
       all_tags[0][:item] = rss_item_tags.dup
       return all_tags
     end
 
+    # Prepare tag list for an Atom feed.
     def all_atom_tags
       all_tags = atom_tags.dup
       all_tags[0][:entry] = atom_entry_tags.dup
       return all_tags
     end
     
-    def parse(source, options={})
+    # Add aliases so that Atom feed elements can be accessed
+    # using the names of their RSS counterparts.
+    def emulate_rss!
+      aliases.merge!({
+        :guid           => :id,
+        :copyright      => :rights,
+        :pubDate        => [ :published, :updated ],
+        :lastBuildDate  => [ :updated, :published ],
+        :description    => [ :content, :summary ],
+        :managingEditor => [ :'author/name', :'contributor/name' ],
+        :webMaster      => [ :'author/name', :'contributor/name' ],
+        :image          => [ :icon, :logo ]
+      })
+    end
+    
+    # Add aliases so that RSS feed elements can be accessed
+    # using the names of their Atom counterparts.
+    def emulate_atom!
+      aliases.merge!({
+        :rights       => :copyright,
+        :content      => :description,
+        :contributor  => :author,
+        :id           => [ :guid_value, :link ],
+        :author       => [ :managingEditor, :webMaster ],
+        :updated      => [ :lastBuildDate, :pubDate ],
+        :published    => [ :pubDate, :lastBuildDate ],
+        :icon         => :'image/url',
+        :logo         => :'image/url',
+        :summary      => :'description_trunc'
+      })
+    end
+    
+    def parse(source)
 		  Parser.new(self, source, options)
 	  end
   end
 
   class StrictParserBuilder < ParserBuilder
-    attr_accessor :feed_ext_tags, :item_ext_tags 
+    attr_accessor :feed_ext_tags, :item_ext_tags, :rels 
     
-    def initialize
-      super()
+    def initialize(options={})
+      super(options)
       
       # rss tags
     	@rss_tags = [
@@ -157,9 +226,7 @@ module FeedMe
         },
         :id, :author, :title, :updated,                     # required
         :category, :contributor, :generator, :icon, :logo,  # optional
-        :'link+self', :'link+alternate', :'link+edit', 
-        :'link+replies', :'link+related', :'link+enclosure',
-        :'link+via', :rights, :subtitle
+        :link, :rights, :subtitle
       ]
       @atom_entry_tags = [
         {
@@ -167,11 +234,13 @@ module FeedMe
           :contributor  => person_tags
         },
         :id, :author, :title, :updated, :summary,           # required
-        :category, :content, :contributor, :'link+self', 
-        :'link+alternate', :'link+edit', :'link+replies', 
-        :'link+related', :'link+enclosure', :published,
-        :rights, :source
+        :category, :content, :contributor, :link, 
+        :published, :rights, :source
       ]
+  
+      @rels = {
+        :link => [ 'self', 'alternate', 'edit', 'replies', 'related', 'enclosure', 'via' ]
+      }
   
       # extensions
       @feed_ext_tags = [ 
@@ -230,7 +299,13 @@ module FeedMe
     end
     
     def method_missing(name, *args)
-      call_virtual_method(name, args)
+      result = begin
+        call_virtual_method(name, args)
+      rescue NameError
+        raise if fm_builder.options[:error_on_missing_key]
+      end
+      result = '' if result.nil? and fm_builder.options[:empty_string_for_nil]
+      result
     end
     
     protected 
@@ -279,54 +354,80 @@ module FeedMe
       name_str = name.to_s
       array_key = clean_tag(arrayize(name.to_s))
       
-      if name_str[-1,1] == '?'
-        !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
-      elsif name_str[-1,1] == '!'
-        value = call_virtual_method(name_str[0..-2], args, history)
-        fm_builder.bang_mods.each do |bm|
-          parts = bm.to_s.split('_')
-          bm_key = parts[0].to_sym
-          next unless fm_builder.bang_mod_fns.key?(bm_key)
-          value = fm_builder.bang_mod_fns[bm_key].call(value, *parts[1..-1])
-        end
-        return value
-      elsif key? name
+      result = if key? name
         self[name]
       elsif key? array_key
         self[array_key].first
+      elsif name_str[-1,1] == '?'
+        !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
+      elsif name_str[-1,1] == '!'
+        transform(fm_builder.default_transformation, name_str[0..-2], args, history)
       elsif name_str =~ /(.+)_value/
         value = call_virtual_method($1, args, history)
         if value.is_a?(FeedData)
           fm_builder.value_tags.each do |tag|
-            return value.call_virtual_method(tag, args, history) rescue nil
+            break value.call_virtual_method(tag, args, history) rescue next
           end
         else 
           value
         end
       elsif name_str =~ /(.+)_count/
         call_virtual_method(clean_tag(arrayize($1)), args, history).size
-      elsif name_str.include?("+")
-  		  tag_data = tag.to_s.split("+")
-  		  rel = tag_data[1]
-  		  call_virtual_method(clean_tag(arrayize(tag_data[0])), args, history).each do |elt|
+      elsif name_str =~ /(.+)_(.+)/ && fm_builder.transformations.key?($2)
+        transform(fm_builder.transformations[$2], $1, args, history)
+      elsif name_str.include?('/')    # this is only intended to be used internally 
+        value = self
+        name_str.split('/').each do |p|
+          parts = p.split('_')
+          name = clean_tag(parts[0])
+          new_args = parts.size > 1 ? parts[1..-1] : args
+          value = (value.method(name).call(*new_args) rescue value.call_virtual_method(name, new_args, history)) rescue nil
+          break if value.nil?
+        end
+        value
+      elsif name_str.include?('+')
+  		  name_data = name_str.split('+')
+  		  rel = name_data[1]
+  		  call_virtual_method(clean_tag(arrayize(name_data[0])), args, history).each do |elt|
   		    next unless elt.is_a?(FeedData) and elt.rel?
-  		    return elt if elt.rel.casecmp(rel) == 0
+  		    break elt if elt.rel.casecmp(rel) == 0
 		    end
 		  elsif fm_builder.aliases.key? name
-        name = fm_builder.aliases[name]
-        method(name).call(*args) rescue call_virtual_method(name, args, history)
+        names = fm_builder.aliases[name]
+        names = [names] unless names.is_a? Array
+        names.each do |name|
+          break (method(name).call(*args) rescue call_virtual_method(name, args, history)) rescue next
+        end
       elsif fm_tag_name == :items      # special handling for RDF items tag
         self[:'rdf:li_array'].method(raw_name).call(*args)
       elsif fm_tag_name == :'rdf:li'   # special handling for RDF li tag
         uri = self[:'rdf:resource']
         fm_parent.fm_parent.item_array.each do |item|
-          if item[:'rdf:about'] == uri
-            return item.call_virtual_method(name, args, history)
-          end
+          break item.call_virtual_method(name, args, history) if item[:'rdf:about'] == uri
         end
-      else
-        raise NameError.new("No such method #{name}", name)
       end
+      
+      raise NameError.new("No such method #{name}", name)
+      
+      result
+    end
+    
+    private 
+    
+    def transform(trans_array, key, args, history)
+      value = call_virtual_method(key, args, history)
+      trans_array.each do |t|
+        parts = t.to_s.split('_')
+        t_name = parts[0].to_sym
+        trans = fm_builder.transformation_fns[t_name] or
+          raise NameError.new("No such transformation #{t_name}", t_name)
+        if value.is_a? Array
+          value = value.collect {|x| trans.call(x, *parts[1..-1]) }
+        else  
+          value = trans.call(value, *parts[1..-1])
+        end
+      end
+      value
     end
   end
 
@@ -408,6 +509,13 @@ module FeedMe
   	    @fm_parsed << key
 
   		  element_array.each do |elt|
+  		    attrs = elt[0]
+  		    rels = fm_builder.rels[key] if fm_builder.responds_to?(rels)
+  		    
+  		    # if a list of accepted rels is specified, only parse this tag
+  		    # if its rel attribute is inlcuded in the list
+  		    next unless rels.nil? || elt[0].nil || !elt[0].rel? || rels.include?(elt[0].rel)
+  		    
   		    if !sub_tags.nil? && sub_tags.key?(key)
   		      if fm_builder.ghost_tags.include? key
   		        new_parent = parent
