@@ -1,3 +1,11 @@
+=== 0.2 / 2009-09-12
+
+* Change bang mods to more flexible transformations framework. 
+* Add additional transformation functions. 
+* Add methods for RSS/Atom emulation that automatically add appropriate aliases. 
+* Add empty_string_for_nil and error_on_missing_key options. 
+* Add support for parsing only certain rels in the strict parser. 
+
 === 0.1 / 2009-09-03
 
 * Everything is new. First release.
