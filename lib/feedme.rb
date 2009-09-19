@@ -510,7 +510,7 @@ module FeedMe
 
   		  element_array.each do |elt|
   		    attrs = elt[0]
-  		    rels = fm_builder.rels[key] if fm_builder.respond_to?(rels)
+  		    rels = fm_builder.rels[key] if fm_builder.respond_to?(:rels)
   		    
   		    # if a list of accepted rels is specified, only parse this tag
   		    # if its rel attribute is inlcuded in the list
