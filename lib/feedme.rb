@@ -108,7 +108,7 @@ module FeedMe
     	  },
     	  :cleanHtml => proc {|str|     # clean HTML content using FeedNormalizer's HtmlCleaner class 
     	    begin
-    	      require 'FeedNormalizer'
+    	      require 'feed-normalizer'
     	      FeedNormalizer::HtmlCleaner.clean(str)
     	    rescue
     	      str
