@@ -342,8 +342,8 @@ module FeedMe
       # make sure we don't get stuck in an infinite loop
       history.each do |call|
         if call[0] == fm_tag_name and call[1] == name
-          puts name
-          puts self.inspect
+          #puts name
+          #puts self.inspect
           raise FeedMe::InfiniteCallLoopError.new(name, history) 
         end
       end
@@ -406,8 +406,8 @@ module FeedMe
           break item.call_virtual_method(name, args, history) if item[:'rdf:about'] == uri
         end
       end
-      
-      raise NameError.new("No such method #{name}", name)
+
+      raise NameError.new("No such method #{name}", name) if result.nil?
       
       result
     end

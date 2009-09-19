@@ -24,13 +24,13 @@ end
 # create a new ParserBuilder
 builder = FeedMe::ParserBuilder.new
 # add a bang mod to wrap content to 50 columns
-builder.bang_mods << :wrap_80
+builder.default_transformation << :wrap_80
 
 # parse the rss feed
 rss = builder.parse(content)
 
 # equivalent to rss.channel.title 
-puts "#{rss.type} Feed: #{rss.title}"
+puts "#{rss.class} Feed: #{rss.title}"
 
 # use a virtual method...this one a shortcut to rss.items.size
 puts "#{rss.item_count} items"
