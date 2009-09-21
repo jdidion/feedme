@@ -1,3 +1,11 @@
+=== 0.4 / 2009-09-20
+
+* Expose call_virtual_method as public
+* Change 'name' argument of call_virtual_method to 'sym'
+* Add default value for call_virtual_method 'args' argument
+* Add :'media:content' and :'content:encoded' as ext tags
+* fix use of FeedNormalizer in :cleanHtml transformation
+
 === 0.3 / 2009-09-18
 
 * Update example code

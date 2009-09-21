@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.3"
+  VERSION = "0.4"
 
   # constants for the feed type
   RSS  = :RSS
@@ -251,7 +251,8 @@ module FeedMe
         :'dc:date', :'dc:subject', :'dc:creator', 
         :'dc:title', :'dc:rights', :'dc:publisher', 
         :'trackback:ping', :'trackback:about',
-        :'feedburner:origLink'
+        :'feedburner:origLink', :'media:content',
+        :'content:encoded'
       ]
     end
     
@@ -308,17 +309,6 @@ module FeedMe
       result
     end
     
-    protected 
-  
-    def clean_tag(tag)
-    	tag.to_s.gsub(':','_').intern
-  	end
-  
-    # generate a name for the array variable corresponding to a single-value variable
-    def arrayize(key)
-      return key + '_array'
-    end
-    
     # There are several virtual methods for each attribute/tag.
     # 1. Tag/attribute name: since tags/attributes are stored as arrays,
     # the instance variable name is the tag/attribute name followed by
@@ -338,19 +328,18 @@ module FeedMe
     # array.size.
     # 7. If the tag name is of the form "tag+rel", the tag having the 
     # specified rel value is returned
-    def call_virtual_method(name, args, history=[])
+    def call_virtual_method(sym, args=[], history=[])
       # make sure we don't get stuck in an infinite loop
       history.each do |call|
-        if call[0] == fm_tag_name and call[1] == name
-          #puts name
+        if call[0] == fm_tag_name and call[1] == sym
+          #puts sym
           #puts self.inspect
-          raise FeedMe::InfiniteCallLoopError.new(name, history) 
+          raise FeedMe::InfiniteCallLoopError.new(sym, history) 
         end
       end
-      history << [ fm_tag_name, name ]
+      history << [ fm_tag_name, sym ]
               
-      raw_name = name
-      name = clean_tag(name)
+      name = clean_tag(sym)
       name_str = name.to_s
       array_key = clean_tag(arrayize(name.to_s))
       
@@ -399,7 +388,7 @@ module FeedMe
           break (method(name).call(*args) rescue call_virtual_method(name, args, history)) rescue next
         end
       elsif fm_tag_name == :items      # special handling for RDF items tag
-        self[:'rdf:li_array'].method(raw_name).call(*args)
+        self[:'rdf:li_array'].method(sym).call(*args)
       elsif fm_tag_name == :'rdf:li'   # special handling for RDF li tag
         uri = self[:'rdf:resource']
         fm_parent.fm_parent.item_array.each do |item|
@@ -410,6 +399,17 @@ module FeedMe
       raise NameError.new("No such method #{name}", name) if result.nil?
       
       result
+    end
+    
+    protected 
+  
+    def clean_tag(tag)
+    	tag.to_s.gsub(':','_').intern
+  	end
+  
+    # generate a name for the array variable corresponding to a single-value variable
+    def arrayize(key)
+      return key + '_array'
     end
     
     private 
