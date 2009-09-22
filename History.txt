@@ -1,3 +1,9 @@
+=== 0.5.1
+
+* Update example code
+* Bug fix: call_virtual_method has invalid return if neither a key nor any of its aliases has a value
+* Subsequent releases will follow standard versioning model of "major.minor.bugfix"
+
 === 0.5
 
 * Special handling for atom id tag

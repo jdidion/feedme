@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.5"
+  VERSION = "0.5.1"
 
   # constants for the feed type
   RSS  = :RSS
@@ -371,14 +371,15 @@ module FeedMe
       elsif name_str[-1,1] == '!'
         transform(fm_builder.default_transformation, name_str[0..-2], args, history)
       elsif name_str =~ /(.+)_value/
-        value = call_virtual_method($1, args, history)
-        if value.is_a?(FeedData)
+        obj = call_virtual_method($1, args, history)
+        value = obj
+        if obj.is_a?(FeedData)
           fm_builder.value_tags.each do |tag|
-            break value.call_virtual_method(tag, args, history) rescue next
+            value = obj.call_virtual_method(tag, args, history) rescue next
+            break unless value.nil?
           end
-        else 
-          value
         end
+        value
       elsif name_str =~ /(.+)_count/
         call_virtual_method(clean_tag(arrayize($1)), args, history).size
       elsif name_str =~ /(.+)_(.+)/ && fm_builder.transformations.key?($2)
@@ -396,27 +397,37 @@ module FeedMe
       elsif name_str.include?('+')
   		  name_data = name_str.split('+')
   		  rel = name_data[1]
+  		  value = nil
   		  call_virtual_method(clean_tag(arrayize(name_data[0])), args, history).each do |elt|
   		    next unless elt.is_a?(FeedData) and elt.rel?
-  		    break elt if elt.rel.casecmp(rel) == 0
+  		    value = elt if elt.rel.casecmp(rel) == 0
+  		    break unless value.nil?
 		    end
+		    value
 		  elsif fm_builder.aliases.key? name
         names = fm_builder.aliases[name]
         names = [names] unless names.is_a? Array
+        value = nil
         names.each do |name|
-          break (method(name).call(*args) rescue call_virtual_method(name, args, history)) rescue next
+          value = (method(name).call(*args) rescue call_virtual_method(name, args, history)) rescue next
+          break unless value.nil?
         end
+        value
       elsif fm_tag_name == :items      # special handling for RDF items tag
         self[:'rdf:li_array'].method(sym).call(*args)
       elsif fm_tag_name == :'rdf:li'   # special handling for RDF li tag
         uri = self[:'rdf:resource']
+        value = nil
         fm_parent.fm_parent.item_array.each do |item|
-          break item.call_virtual_method(name, args, history) if item[:'rdf:about'] == uri
+          value = item.call_virtual_method(name, args, history) if item[:'rdf:about'] == uri
+          break unless value.nil?
         end
+      else
+        nil
       end
 
       raise NameError.new("No such method #{name}", name) if result.nil?
-      
+
       result
     end
     

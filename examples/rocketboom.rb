@@ -49,8 +49,3 @@ rss.items.each do |item|
   # we can access attribute values just as easily as tag content
   puts "Enclosure: #{item.enclosure.url}" if item.enclosure?
 end
-
-content = fetch('http://achewood.com/rss.php')
-rss = builder.parse(content)
-
-puts rss.items.first.call_virtual_method(:enclosure_value)
