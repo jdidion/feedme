@@ -386,8 +386,6 @@ module FeedMe
       # make sure we don't get stuck in an infinite loop
       history.each do |call|
         if call[0] == fm_tag_name and call[1] == sym
-          #puts sym
-          #puts self.inspect
           raise FeedMe::InfiniteCallLoopError.new(sym, history) 
         end
       end
