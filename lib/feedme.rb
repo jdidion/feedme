@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.5.1"
+  VERSION = "0.5.2"
 
   # constants for the feed type
   RSS  = :RSS
@@ -42,6 +42,36 @@ module FeedMe
 
   def FeedMe.parse_strict(source, options={})
     StrictParserBuilder.new(options).parse(source)
+  end
+  
+  def FeedMe.pretty_to_s(obj, indent_step=2, indent=0, code=nil)
+    new_indent = indent + indent_step
+    space = ' ' * indent
+    new_space = ' ' * new_indent
+    str = ''
+    if (obj.is_a?(FeedData) || obj.is_a?(Hash))
+      str << "{"
+      obj.each_with_index do |item, index|
+        key, value = code.call(*item) if code
+        str << "\n#{new_space}"
+        str << FeedMe.pretty_to_s(key, indent_step, new_indent, code)
+        str << " => " 
+        str << FeedMe.pretty_to_s(value, indent_step, new_indent, code)
+        str << ',' unless index == obj.size-1
+      end
+      str << "\n#{space}}"
+    elsif obj.is_a?(Array)
+      str << "[" 
+      obj.each_with_index do |value, index|
+        str << "\n#{new_space}"
+        str << FeedMe.pretty_to_s(value, indent_step, new_indent, code)
+        str << ',' unless index == obj.size-1
+      end
+      str << "\n#{space}]"
+    else
+      str << obj.to_s.strip.inspect
+    end
+    return str
   end
   
   class ParserBuilder
@@ -287,6 +317,18 @@ module FeedMe
       @data.keys
     end
     
+    def each
+      @data.each {|key, value| yield(key, value) }
+    end
+    
+    def each_with_index
+      @data.each_with_index {|key, value, index| yield(key, value, index) }
+    end
+    
+    def size
+      @data.size
+    end
+    
     def [](key)
       @data[key]
     end
@@ -302,20 +344,13 @@ module FeedMe
     end
     
     def to_s
-      to_indented_str
+      to_indented_s
     end
     
-    def to_indented_str(indent_step=2, indent=0)
-      space = ' ' * indent
-      str = ''
-      @data.each do |key,value|
-        str << if value.is_a?(FeedData)
-          key + " =>\n" + value.to_indented_str(indent_step, indent+indent_step)
-        else
-          "#{space}#{key} => #{value}\n"
-        end
-      end
-      return str
+    def to_indented_s(indent_step=2)
+      FeedMe.pretty_to_s(self, indent_step, 0, Proc.new do |key, value| 
+        (value.is_a?(Array) && value.size == 1) ? [unarrayize(key), value.first] : [key, value]
+      end)
     end
     
     def method_missing(name, *args)
@@ -360,7 +395,7 @@ module FeedMe
               
       name = clean_tag(sym)
       name_str = name.to_s
-      array_key = clean_tag(arrayize(name.to_s))
+      array_key = arrayize(name.to_s)
       
       result = if key? name
         self[name]
@@ -381,7 +416,7 @@ module FeedMe
         end
         value
       elsif name_str =~ /(.+)_count/
-        call_virtual_method(clean_tag(arrayize($1)), args, history).size
+        call_virtual_method(arrayize($1), args, history).size
       elsif name_str =~ /(.+)_(.+)/ && fm_builder.transformations.key?($2)
         transform(fm_builder.transformations[$2], $1, args, history)
       elsif name_str.include?('/')    # this is only intended to be used internally 
@@ -398,7 +433,7 @@ module FeedMe
   		  name_data = name_str.split('+')
   		  rel = name_data[1]
   		  value = nil
-  		  call_virtual_method(clean_tag(arrayize(name_data[0])), args, history).each do |elt|
+  		  call_virtual_method(arrayize(name_data[0]), args, history).each do |elt|
   		    next unless elt.is_a?(FeedData) and elt.rel?
   		    value = elt if elt.rel.casecmp(rel) == 0
   		    break unless value.nil?
@@ -439,7 +474,11 @@ module FeedMe
   
     # generate a name for the array variable corresponding to a single-value variable
     def arrayize(key)
-      return key + '_array'
+      clean_tag(key.to_s + '_array')
+    end
+    
+    def unarrayize(key)
+      clean_tag(key.to_s.gsub('_array', ''))
     end
     
     private 
@@ -567,7 +606,7 @@ module FeedMe
   	end
 
     def add_tag(hash, key, value)
-      array_var = clean_tag(arrayize(key.to_s))
+      array_var = arrayize(key.to_s)
       if hash.key? array_var
         hash[array_var] << value
       else

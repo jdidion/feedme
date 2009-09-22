@@ -1,3 +1,7 @@
+=== 0.5.2
+
+* Improve to_s method for prettier array display.
+
 === 0.5.1
 
 * Update example code
