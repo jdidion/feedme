@@ -1,3 +1,9 @@
+=== 0.5
+
+* Special handling for atom id tag
+* to_indented_str method, which creates a pretty output for a FeedData
+* Improved to_s method that delegates to to_indented_str
+
 === 0.4 / 2009-09-20
 
 * Expose call_virtual_method as public

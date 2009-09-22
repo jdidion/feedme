@@ -1,5 +1,5 @@
 ####################################################################################
-# FeedMe v0.1
+# FeedMe v0.4
 # 
 # FeedMe is an easy to use parser for RSS and Atom files. It is based on SimpleRSS,
 # but has some improvements that make it worth considering:
@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.4"
+  VERSION = "0.5"
 
   # constants for the feed type
   RSS  = :RSS
@@ -148,7 +148,7 @@ module FeedMe
     # using the names of their RSS counterparts.
     def emulate_rss!
       aliases.merge!({
-        :guid           => :id,
+        :guid           => :id,       # this alias never actually gets used; see FeedData#id
         :copyright      => :rights,
         :pubDate        => [ :published, :updated ],
         :lastBuildDate  => [ :updated, :published ],
@@ -295,8 +295,27 @@ module FeedMe
       @data[key] = value
     end
     
+    # special handling for atom id tags, due to conflict with
+    # ruby's Object#id method
+    def id
+      key?(:id) ? self[:id] : call_virtual_method(:id)
+    end
+    
     def to_s
-      @data.to_s
+      to_indented_str
+    end
+    
+    def to_indented_str(indent_step=2, indent=0)
+      space = ' ' * indent
+      str = ''
+      @data.each do |key,value|
+        str << if value.is_a?(FeedData)
+          key + " =>\n" + value.to_indented_str(indent_step, indent+indent_step)
+        else
+          "#{space}#{key} => #{value}\n"
+        end
+      end
+      return str
     end
     
     def method_missing(name, *args)
