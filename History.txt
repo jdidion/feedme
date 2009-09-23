@@ -1,3 +1,11 @@
+=== 0.5.4 / 2009-09-22
+
+* Minor improvements to to_indented_s
+* Fix tag names: change all tags with namespaces to the cleaned version (unquote, ':' replaced with '_')
+* Design decision: all attribute names will have their namespaces stripped; namespaces are generally
+  treated as optional (even if they aren't technically so) and it's annoying to have to check both forms;
+  this decision may be reversed if there are found to be conflicts
+
 === 0.5.3 / 2009-09-22
 
 * Roll version to test GitHub wierdness.

@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.5.3"
+  VERSION = "0.5.4"
 
   # constants for the feed type
   RSS  = :RSS
@@ -50,6 +50,7 @@ module FeedMe
     new_space = ' ' * new_indent
     str = ''
     if (obj.is_a?(FeedData) || obj.is_a?(Hash))
+      str << "#{obj.fm_tag_name} " if obj.is_a?(FeedData)
       str << "{"
       obj.each_with_index do |item, index|
         key, value = code.call(*item) if code
@@ -90,7 +91,7 @@ module FeedMe
           :textInput => nil,
           :skipHours => nil,
           :skipDays  => nil,
-          :items     => [{ :'rdf:Seq' => nil }],
+          :items     => [{ :rdf_Seq => nil }],
          #:item      => @rss_item_tags
     		}
     	]
@@ -112,13 +113,13 @@ module FeedMe
       ]
     
       # tags whose value is a date
-      @date_tags = [ :pubDate, :lastBuildDate, :published, :updated, :'dc:date', :expirationDate ]
+      @date_tags = [ :pubDate, :lastBuildDate, :published, :updated, :dc_date, :expirationDate ]
   
       # tags that can be used as the default value for a tag with attributes
       @value_tags = [ CONTENT_KEY, :href, :url ]
   
       # tags that don't become part of the parsed object tree
-      @ghost_tags = [ :'rdf:Seq' ]
+      @ghost_tags = [ :rdf_Seq ]
     
       # tag/attribute aliases
     	@aliases = {
@@ -226,9 +227,9 @@ module FeedMe
           :skipDays  => [ :day ],
           :items     => [ 
             {
-              :'rdf:Seq' => [ :'rdf:li' ]
+              :rdf_Seq => [ :rdf_li ]
             },
-            :'rdf:Seq' 
+            :rdf_Seq 
           ],
          #:item      => @item_tags
     		},
@@ -274,15 +275,15 @@ module FeedMe
   
       # extensions
       @feed_ext_tags = [ 
-        :'dc:date', :'feedburner:browserFriendly', 
-        :'itunes:author', :'itunes:category'
+        :dc_date, :feedburner_browserFriendly, 
+        :itunes_author, :itunes_category
       ]
       @item_ext_tags = [ 
-        :'dc:date', :'dc:subject', :'dc:creator', 
-        :'dc:title', :'dc:rights', :'dc:publisher', 
-        :'trackback:ping', :'trackback:about',
-        :'feedburner:origLink', :'media:content',
-        :'content:encoded'
+        :dc_date, :dc_subject, :dc_creator, 
+        :dc_title, :dc_rights, :dc_publisher, 
+        :trackback_ping, :trackback_about,
+        :feedburner_origLink, :media_content,
+        :content_encoded
       ]
     end
     
@@ -446,15 +447,16 @@ module FeedMe
           break unless value.nil?
         end
         value
-      elsif fm_tag_name == :items      # special handling for RDF items tag
-        self[:'rdf:li_array'].method(sym).call(*args)
-      elsif fm_tag_name == :'rdf:li'   # special handling for RDF li tag
-        uri = self[:'rdf:resource']
+      elsif fm_tag_name == :items && self.rdf_li_array  # special handling for RDF items tag
+        self.rdf_li_array.method(sym).call(*args)
+      elsif fm_tag_name == :rdf_li && self.resource?    # special handling for RDF li tag
+        uri = self.resource
         value = nil
         fm_parent.fm_parent.item_array.each do |item|
-          value = item.call_virtual_method(name, args, history) if item[:'rdf:about'] == uri
+          value = item.call_virtual_method(name, args, history) if item.about? and item.about.eql?(uri)
           break unless value.nil?
         end
+        value
       else
         nil
       end
