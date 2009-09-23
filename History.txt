@@ -1,3 +1,7 @@
+=== 0.6.1 / 2009-09-23
+
+* Improve handling of rdf:items. From now on, .items will forward to .item_array. The rdf items can still be accessed by [:items_array] or .items_array.
+
 === 0.6 / 2009-09-23
 
 * Fix handling of the items element (mostly affects RSS 1.0 documents)

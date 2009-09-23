@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.6"
+  VERSION = "0.6.1"
 
   # constants for the feed type
   RSS  = :RSS
@@ -397,13 +397,9 @@ module FeedMe
       array_key = arrayize(name.to_s)
 
       result = if key? name
-        self[name] # special handling for RDF items tag
+        self[name]
       elsif key? array_key
-        value = self[array_key].first
-        if array_key == :items_array    # special handling for RDF items tag
-          value = value[:rdf_li_array]
-        end
-        value
+        (array_key == :items_array) ? self[:item_array] : self[array_key].first
       elsif name_str[-1,1] == '?'
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
@@ -448,14 +444,6 @@ module FeedMe
         value = nil
         names.each do |name|
           value = (method(name).call(*args) rescue call_virtual_method(name, args, history)) rescue next
-          break unless value.nil?
-        end
-        value
-      elsif fm_tag_name == :rdf_li && self.resource?    # special handling for RDF li tag
-        uri = self[:resource]
-        value = nil
-        fm_parent.fm_parent.item_array.each do |item|
-          value = item.call_virtual_method(name, args, history) if item.about? and item[:about].eql?(uri)
           break unless value.nil?
         end
         value
