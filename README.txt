@@ -29,13 +29,13 @@ The API is similar to SimpleRSS:
     rss.channel.link # => "http://slashdot.org/"
     rss.items.first.link # => "http://books.slashdot.org/article.pl?sid=05/08/29/1319236&from=rss"
 
-But since the parser can read Atom feeds as easily as RSS feeds, there are optional aliases that allow more atom like reading:
+But since the parser can read Atom feeds as easily as RSS feeds, there are aliases that allow more atom like reading:
 
     rss.feed.title # => "Slashdot"
     rss.feed.link # => "http://slashdot.org/"
     rss.entries.first.link # => "http://books.slashdot.org/article.pl?sid=05/08/29/1319236&from=rss"
     
-Under the covers, all content is stored in arrays. This means that you can access all content for a tag that appears multiple times (i.e. category):
+Under the covers, all element values are stored in arrays. This means that you can access all content for an element that appears multiple times (i.e. category):
     
     rss.items.first.category_array  # => ["News for Nerds", "Technology"]
     rss.items.first.category # => "News for Nerds"
@@ -68,8 +68,9 @@ The strict parser can be extended by adding new tags to parse:
     builder = FeedMe::StrictParserBuilder.new
     builder.rss_tags << :some_new_tag
     builder.rss_item_tags << :'item+myrel' # parse an item that has a custom rel type
-    builder.item_ext_tags << :'feedburner:origLink' # parse an extension tag - one that has a specific 
-                                                    # namespace
+    builder.item_ext_tags << :feedburner_origLink # parse an extension tag - one that has a specific 
+                                                  # namespace (use '_', not ':', to separate namespace 
+                                                  # from attribute name)
     
 Either parser can be extended by adding aliases to existing tags:
 
@@ -97,7 +98,7 @@ Custom transformations are defined by mapping one or more transformation functio
     rss.entry.content           # => <div>This is a bunch of text</div><p></p></html>
     rss.entry.content_clean     # => <div>This is a bunch of text</div>
 
-You can create your own transformation function. The following is an example of a bang mod that takes an argument. Note that bang mod names may only contain alphanumeric characters. Argument values are specified at the end separated by underscores.
+You can create your own transformation function. The following is an example of a transformation function that takes an argument. Note that transformation function names may only contain alphanumeric characters. Argument values are specified at the end separated by underscores.
     
     builder.transformation_fns[:wrap] => proc {|str, col| 
         str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
@@ -111,8 +112,8 @@ You can create your own transformation function. The following is an example of 
 
 The transformation functions available by default are:
 
-1. :stripHtml (described above)
-2. :cleanHtml: requires FeedNormalizer (which in turn requires hypricot)
+1. :stripHtml - described above
+2. :cleanHtml - requires FeedNormalizer (which in turn requires hypricot)
 
     rss.entry_array[0].content  # => 1 > 2
     rss.entry_array[0].content! # => 1 &gt; 2
@@ -120,12 +121,22 @@ The transformation functions available by default are:
     rss.entry_array[1].content  # => <div>Some great stuff</div><p></p></html>
     rss.entry_array[1].content! # => <div>Some great stuff</div> 
 
-3. :wrap: takes number of columns as a parameter. Respects word boundaries. Example of :wrap_10:
+3. :wrap - takes number of columns as a parameter. Respects word boundaries. Example of :wrap_10:
 
     rss.entry.content  # => This is a bunch of text
     rss.entry.content! # => This is a
                             bunch of 
                             text
+
+4. :trunc - truncates text to a certain length. Example of :trunc_10:
+
+    rss.entries.first.content  # => This is a long long long sentence
+    rss.entries.first.content! # => This is a 
+
+5. :truncHtml - truncates the content inside the first set of HTML tags, but preserves the tags. Example of :truncHtml_10:
+
+    rss.entries.first.content  # => <div>This is a long long long sentence</div></html>
+    rss.entries.first.content! # => <div>This is a </div></html>     
 
 In order to prevent clashes between tag/attribute names and the parser class' instance variables, all instance variables are prefixed with 'fm_'. They are:
     
