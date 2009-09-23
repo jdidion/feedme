@@ -1,3 +1,10 @@
+=== 0.6 / 2009-09-23
+
+* Fix handling of the items element (mostly affects RSS 1.0 documents)
+* Make attribute naming consistent
+* Design decision: attributes can only ever have a single value, so they will always be stored as scalars
+  rather than arrays. This will also nicely resolve any possible collisions between attribute and tag names.
+
 === 0.5.4 / 2009-09-22
 
 * Minor improvements to to_indented_s

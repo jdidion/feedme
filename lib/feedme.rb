@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.5.4"
+  VERSION = "0.6"
 
   # constants for the feed type
   RSS  = :RSS
@@ -303,11 +303,11 @@ module FeedMe
   class FeedData
     attr_reader :fm_tag_name, :fm_parent, :fm_builder
     
-    def initialize(tag_name, parent, builder, attrs = {})
+    def initialize(tag_name, parent, builder)
       @fm_tag_name = tag_name
       @fm_parent = parent
       @fm_builder = builder
-      @data = attrs.dup
+      @data = {}
     end
     
     def key?(key)
@@ -395,11 +395,15 @@ module FeedMe
       name = clean_tag(sym)
       name_str = name.to_s
       array_key = arrayize(name.to_s)
-      
+
       result = if key? name
-        self[name]
+        self[name] # special handling for RDF items tag
       elsif key? array_key
-        self[array_key].first
+        value = self[array_key].first
+        if array_key == :items_array    # special handling for RDF items tag
+          value = value[:rdf_li_array]
+        end
+        value
       elsif name_str[-1,1] == '?'
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
@@ -447,13 +451,11 @@ module FeedMe
           break unless value.nil?
         end
         value
-      elsif fm_tag_name == :items && self.rdf_li_array  # special handling for RDF items tag
-        self.rdf_li_array.method(sym).call(*args)
       elsif fm_tag_name == :rdf_li && self.resource?    # special handling for RDF li tag
-        uri = self.resource
+        uri = self[:resource]
         value = nil
         fm_parent.fm_parent.item_array.each do |item|
-          value = item.call_virtual_method(name, args, history) if item.about? and item.about.eql?(uri)
+          value = item.call_virtual_method(name, args, history) if item.about? and item[:about].eql?(uri)
           break unless value.nil?
         end
         value
@@ -541,8 +543,8 @@ module FeedMe
 
   	def parse_content(parent, attrs, content, tags)
   	  # add attributes to parent
-  	  attrs.each_pair {|key, value| add_tag(parent, key, unescape(value)) }
-  
+  	  attrs.each_pair {|key, value| parent[key] = unescape(value) }
+
   	  # the first item in a tag array may be a hash that defines tags that have subtags
   	  first_tag = 0
   	  if !tags.nil? && tags[0].is_a?(Hash)
@@ -628,7 +630,8 @@ module FeedMe
   		end
   
       unless attrs.empty?
-        hash = FeedData.new(tag, parent, fm_builder, attrs)
+        hash = FeedData.new(tag, parent, fm_builder)
+        attrs.each_pair {|key, value| hash[key] = unescape(value) }
         if !content.empty?
           hash[FeedMe::CONTENT_KEY] = content
         end
