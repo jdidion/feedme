@@ -1,3 +1,8 @@
+=== 0.6.2 / 2009-09-23
+
+* Fix content-parsing regular expression to correctly handle closed elements
+* Reverse earlier design decision: keep namespaces for attributes.
+
 === 0.6.1 / 2009-09-23
 
 * Improve handling of rdf:items. From now on, .items will forward to .item_array. The rdf items can still be accessed by [:items_array] or .items_array.

@@ -27,10 +27,11 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.6.1"
+  VERSION = "0.6.2"
 
   # constants for the feed type
   RSS  = :RSS
+  RDF  = :RDF
   ATOM = :ATOM
 
   # the key used to access the content element of a mixed tag
@@ -311,7 +312,7 @@ module FeedMe
     end
     
     def key?(key)
-      @data.key?(key)
+      @data.key?(clean_tag(key))
     end
     
     def keys
@@ -331,11 +332,11 @@ module FeedMe
     end
     
     def [](key)
-      @data[key]
+      @data[clean_tag(key)]
     end
     
     def []=(key, value)
-      @data[key] = value
+      @data[clean_tag(key)] = value
     end
     
     # special handling for atom id tags, due to conflict with
@@ -506,19 +507,23 @@ module FeedMe
     alias :feed :channel
   
     def fm_tag_name
-      @fm_type == FeedMe::RSS ? 'channel' : 'feed'
+      @fm_type == FeedMe::ATOM ? 'feed' : 'channel'
+    end
+  
+    def fm_prefix
+      fm_type.to_s.downcase
     end
   
     private
   
     def parse
       # RSS = everything between channel tags + everthing between </channel> and </rdf> if this is an RDF document
-      if @fm_source =~ %r{<(?:.*?:)?(?:rss|rdf)(.*?)>.*?<(?:.*?:)?channel(.*?)>(.+)</(?:.*?:)?channel>(.*)</(?:.*?:)?(?:rss|rdf)>}mi
-        @fm_type = FeedMe::RSS
+      if @fm_source =~ %r{<(?:.*?:)?(rss|rdf)(.*?)>.*?<(?:.*?:)?channel(.*?)>(.+)</(?:.*?:)?channel>(.*)</(?:.*?:)?(?:rss|rdf)>}mi
+        @fm_type = $2.upcase.to_s
         @fm_tags = fm_builder.all_rss_tags
-        attrs = parse_attributes($1, $2)
+        attrs = parse_attributes($1, $3)
         attrs[:version] ||= '1.0';
-        parse_content(self, attrs, $3 + nil_safe_to_s($4), @fm_tags)
+        parse_content(self, attrs, $4 + nil_safe_to_s($4), @fm_tags)
       # Atom = everthing between feed tags
       elsif @fm_source =~ %r{<(?:.*?:)?feed(.*?)>(.+)</(?:.*?:)?feed>}mi
         @fm_type = FeedMe::ATOM
@@ -543,7 +548,7 @@ module FeedMe
   	  # split the content into elements
   	  elements = {}
   	  # TODO: this will break if a namespace is used that is not rss: or atom: 	  
-  	  content.scan( %r{(<(?:rss:|atom:)?([^ >]+)([^>]*)(?:/>|>(.*?)</(?:rss:|atom:)?\2>))}mi ) do |match|
+  	  content.scan( %r{(<([\w:]+)(.*?)(?:/>|>(.*?)</\2>))}mi ) do |match|
   	    # \1 = full content (from start to end tag), \2 = tag name
   	    # \3 = attributes, and \4 = content between tags
   	    key = clean_tag(match[1])
@@ -634,7 +639,7 @@ module FeedMe
       attrs.each do |a|
         next if a.nil?
         # pull key/value pairs out of attr string
-        array = a.scan(/(\w+)=['"]?([^'"]+)/)
+        array = a.scan(/([\w:]+)=['"]?([^'"]+)/)
         # unescape values
         array = array.collect {|key, value| [clean_tag(format_tag(key)), unescape(value)]}
         hash.merge! Hash[*array.flatten]
