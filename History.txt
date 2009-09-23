@@ -1,3 +1,7 @@
+=== 0.6.3 / 2009-09-23
+
+* Fix truncHtml: use code by Henrik Nyh, which in turn uses Hypricot
+
 === 0.6.2 / 2009-09-23
 
 * Fix content-parsing regular expression to correctly handle closed elements

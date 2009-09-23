@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
-#require 'feedme'
-require '../lib/feedme'
+require 'rubygems'
+require 'feedme'
 require 'net/http'
 
 def fetch(url)  
@@ -48,4 +48,10 @@ rss.items.each do |item|
   puts "Description:\n#{item.description!}" if item.description?
   # we can access attribute values just as easily as tag content
   puts "Enclosure: #{item.enclosure.url}" if item.enclosure?
+end
+
+builder.transformations['trunc'] = [ :cleanHtml, :truncHtml_50 ]
+ch = builder.parse(fetch('http://feeds.feedburner.com/codinghorror'))
+ch.items.each do |item|
+  puts item.description_trunc
 end

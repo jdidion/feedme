@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.6.2"
+  VERSION = "0.6.3"
 
   # constants for the feed type
   RSS  = :RSS
@@ -140,6 +140,7 @@ module FeedMe
     	  },
     	  :cleanHtml => proc {|str|     # clean HTML content using FeedNormalizer's HtmlCleaner class 
     	    begin
+    	      require 'rubygems'
     	      require 'feed-normalizer'
     	      FeedNormalizer::HtmlCleaner.clean(str)
     	    rescue
@@ -150,13 +151,14 @@ module FeedMe
     	    str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
     	  },
     	  :trunc => proc {|str, wordcount|  # truncate text, respecting word boundaries
-    	    str.trunc(wordcount)
+    	    str.trunc(wordcount.to_i)
         },
         :truncHtml => proc {|str, wordcount| # truncate text but leave enclosing HTML tags
-          if str =~ /(<.+?>)(.+?)(<.*)/
-            $1 + $2.trunc(wordcount) + $3
-          else
-            str.trunc(wordcount)
+          begin
+            require 'text-helper'
+            TextHelper::truncate_html(str, wordcount.to_i)
+          rescue
+            str
           end
         }
     	}
@@ -593,7 +595,7 @@ module FeedMe
   		    end
   		  end
   		end
-  		
+
   		@fm_unparsed += elements.keys
   		
   		@fm_parsed.uniq!
@@ -618,8 +620,8 @@ module FeedMe
   		content = content.to_s
   		if fm_builder.date_tags.include? tag
   			content = Time.parse(content) rescue unescape(content)
-  		else 
-  			content = unescape(content)
+  		else
+  		  content = unescape(content)
   		end
   
       unless attrs.empty?
@@ -630,7 +632,7 @@ module FeedMe
         end
         return hash
       end
-  
+
       return content
   	end
 
