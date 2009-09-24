@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.7"
+  VERSION = "0.7.1"
 
   # constants for the feed type
   RSS  = :RSS
@@ -683,7 +683,7 @@ module FeedMe
     end
     
     def nil_or_empty?(obj)
-      obj.nil? || obj.empty?
+      obj.nil? || obj.empty? || (obj.is_a?(String) && obj.strip.empty?)
     end
   end
 		
