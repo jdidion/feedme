@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.}
   s.email = ["github@didion.net"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
-  s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "lib/feedme.rb", "examples/rocketboom.rb", "examples/rocketboom.rss", "test/test_helper.rb"]
+  s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", "lib/feedme.rb", "lib/text-helper.rb", "examples/rocketboom.rb", "examples/rocketboom.rss", "test/test_helper.rb"]
   s.homepage = %q{http://wiki.github.com/jdidion/feedme}
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
