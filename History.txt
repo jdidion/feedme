@@ -1,3 +1,11 @@
+=== 0.7 / 2009-09-24
+
+* Design decision: all element and attribute names will be stored as lower-case. They may still
+  be accessed using upper case, since keys will be normalized by all accessors.
+* Design decision: RDF will be dealt with at parse time: elements with rdf:resource attributes will be
+  replaced by the actual, referenced elements. Ordering of the referring elements will be preserved.
+* Removed the concept of ghost tags. 
+
 === 0.6.5 / 2009-09-24
 
 * Fix :truncHtml completely by requiring active_support.

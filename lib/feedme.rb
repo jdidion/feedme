@@ -1,5 +1,5 @@
 ####################################################################################
-# FeedMe v0.6.4
+# FeedMe v0.7
 # 
 # FeedMe is an easy to use parser for RSS and Atom files. It is based on SimpleRSS,
 # but has some improvements that make it worth considering:
@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.6.5"
+  VERSION = "0.7"
 
   # constants for the feed type
   RSS  = :RSS
@@ -79,7 +79,7 @@ module FeedMe
   class ParserBuilder
     attr_accessor :options, 
                   :rss_tags, :rss_item_tags, :atom_tags, :atom_entry_tags,
-                  :date_tags, :value_tags, :ghost_tags, :aliases, 
+                  :date_tags, :value_tags, :aliases, 
                   :default_transformation, :transformations, :transformation_fns
 
     def initialize(options={})
@@ -89,10 +89,10 @@ module FeedMe
     	@rss_tags = [
     	  {
     		  :image     => nil,
-          :textInput => nil,
-          :skipHours => nil,
-          :skipDays  => nil,
-          :items     => [{ :rdf_Seq => nil }],
+          :textinput => nil,
+          :skiphours => nil,
+          :skipdays  => nil,
+          :items     => [{ :rdf_seq => nil }],
          #:item      => @rss_item_tags
     		}
     	]
@@ -114,14 +114,11 @@ module FeedMe
       ]
     
       # tags whose value is a date
-      @date_tags = [ :pubDate, :lastBuildDate, :published, :updated, :dc_date, :expirationDate ]
+      @date_tags = [ :pubdate, :lastbuilddate, :published, :updated, :dc_date, :expirationdate ]
   
       # tags that can be used as the default value for a tag with attributes
       @value_tags = [ CONTENT_KEY, :href, :url ]
   
-      # tags that don't become part of the parsed object tree
-      @ghost_tags = [ :rdf_Seq ]
-    
       # tag/attribute aliases
     	@aliases = {
     	  :items        => :item_array,
@@ -184,11 +181,11 @@ module FeedMe
       aliases.merge!({
         :guid           => :id,       # this alias never actually gets used; see FeedData#id
         :copyright      => :rights,
-        :pubDate        => [ :published, :updated ],
-        :lastBuildDate  => [ :updated, :published ],
+        :pubdate        => [ :published, :updated ],
+        :lastbuilddate  => [ :updated, :published ],
         :description    => [ :content, :summary ],
-        :managingEditor => [ :'author/name', :'contributor/name' ],
-        :webMaster      => [ :'author/name', :'contributor/name' ],
+        :managingeditor => [ :'author/name', :'contributor/name' ],
+        :webmaster      => [ :'author/name', :'contributor/name' ],
         :image          => [ :icon, :logo ]
       })
     end
@@ -201,9 +198,9 @@ module FeedMe
         :content      => :description,
         :contributor  => :author,
         :id           => [ :guid_value, :link ],
-        :author       => [ :managingEditor, :webMaster ],
-        :updated      => [ :lastBuildDate, :pubDate ],
-        :published    => [ :pubDate, :lastBuildDate ],
+        :author       => [ :managingeditor, :webmaster ],
+        :updated      => [ :lastbuilddate, :pubdate ],
+        :published    => [ :pubDate, :lastbuilddate ],
         :icon         => :'image/url',
         :logo         => :'image/url',
         :summary      => :'description_trunc'
@@ -225,29 +222,29 @@ module FeedMe
     	@rss_tags = [
     	  {
     		  :image     => [ :url, :title, :link, :width, :height, :description ],
-          :textInput => [ :title, :description, :name, :link ],
-          :skipHours => [ :hour ],
-          :skipDays  => [ :day ],
+          :textinput => [ :title, :description, :name, :link ],
+          :skiphours => [ :hour ],
+          :skipdays  => [ :day ],
           :items     => [ 
             {
-              :rdf_Seq => [ :rdf_li ]
+              :rdf_seq => [ :rdf_li ]
             },
-            :rdf_Seq 
+            :rdf_seq 
           ],
          #:item      => @item_tags
     		},
     		:title, :link, :description,                          # required
-    		:language, :copyright, :managingEditor, :webMaster,   # optional
-    		:pubDate, :lastBuildDate, :category, :generator,
+    		:language, :copyright, :managingeditor, :webmaster,   # optional
+    		:pubdate, :lastbuilddate, :category, :generator,
     		:docs, :cloud, :ttl, :rating,
-    		:image, :textInput, :skipHours, :skipDays, :item,     # have subtags
+    		:image, :textinput, :skiphours, :skipdays, :item,     # have subtags
     		:items
     	]
       @rss_item_tags = [
         {},
         :title, :description,                                 # required
         :link, :author, :category, :comments, :enclosure,     # optional
-        :guid, :pubDate, :source, :expirationDate
+        :guid, :pubdate, :source, :expirationdate
     	]
 
       #atom tags
@@ -278,14 +275,14 @@ module FeedMe
   
       # extensions
       @feed_ext_tags = [ 
-        :dc_date, :feedburner_browserFriendly, 
+        :dc_date, :feedburner_browserfriendly, 
         :itunes_author, :itunes_category
       ]
       @item_ext_tags = [ 
         :dc_date, :dc_subject, :dc_creator, 
         :dc_title, :dc_rights, :dc_publisher, 
         :trackback_ping, :trackback_about,
-        :feedburner_origLink, :media_content,
+        :feedburner_origlink, :media_content,
         :content_encoded
       ]
     end
@@ -319,6 +316,10 @@ module FeedMe
     
     def keys
       @data.keys
+    end
+    
+    def delete(key)
+      @data.delete(clean_tag(key))
     end
     
     def each
@@ -402,7 +403,7 @@ module FeedMe
       result = if key? name
         self[name]
       elsif key? array_key
-        (array_key == :items_array) ? self[:item_array] : self[array_key].first
+        self[array_key].first
       elsif name_str[-1,1] == '?'
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
@@ -462,7 +463,7 @@ module FeedMe
     protected 
   
     def clean_tag(tag)
-    	tag.to_s.gsub(':','_').intern
+    	tag.to_s.downcase.gsub(':','_').intern
   	end
   
     # generate a name for the array variable corresponding to a single-value variable
@@ -471,7 +472,7 @@ module FeedMe
     end
     
     def unarrayize(key)
-      clean_tag(key.to_s.gsub('_array', ''))
+      clean_tag(key.to_s.gsub(/_array$/, ''))
     end
     
     private 
@@ -525,7 +526,15 @@ module FeedMe
         @fm_tags = fm_builder.all_rss_tags
         attrs = parse_attributes($1, $3)
         attrs[:version] ||= '1.0';
-        parse_content(self, attrs, $4 + nil_safe_to_s($4), @fm_tags)
+        parse_content(self, attrs, $4, @fm_tags)
+
+        # for RDF documents, replace references with actual items
+        unless nil_or_empty?($5)
+          refs = FeedData.new(nil, nil, fm_builder)
+          parse_content(refs, {}, $5, @fm_tags)
+          dereference_rdf_tags(:items_array, :item_array, refs) {|a| a.first[:rdf_seq_array].first[:rdf_li_array] }
+          [:image_array, :textinput_array].each {|tag| dereference_rdf_tags(tag, tag, refs) }
+        end
       # Atom = everthing between feed tags
       elsif @fm_source =~ %r{<(?:.*?:)?feed(.*?)>(.+)</(?:.*?:)?feed>}mi
         @fm_type = FeedMe::ATOM
@@ -536,20 +545,36 @@ module FeedMe
       end
   	end
 
+    # References within the <channel> element are replaced by the actual 
+    def dereference_rdf_tags(rdf_tag, rss_tag, refs)
+      if self.key?(rdf_tag)
+        src_items = self.delete(rdf_tag)
+        src_items = yield(src_items) if block_given?
+        ref_items = refs[rss_tag]
+        unless src_items.empty? || ref_items.empty?
+          self[rss_tag] = src_items.collect do |src_item|
+            next unless src_item.key?(:rdf_resource)
+            uri = src_item[:rdf_resource]
+            ref_items.each do |ref_item|
+              next unless ref_item.key?(:rdf_about)
+              if (ref_item[:rdf_about].eql?(uri))
+                ref_item[:rdf_resource] = uri
+                break ref_item
+              end
+            end
+          end
+        end
+      end
+    end
+    
   	def parse_content(parent, attrs, content, tags)
   	  # add attributes to parent
   	  attrs.each_pair {|key, value| parent[key] = unescape(value) }
+      return if content.nil?
 
-  	  # the first item in a tag array may be a hash that defines tags that have subtags
-  	  first_tag = 0
-  	  if !tags.nil? && tags[0].is_a?(Hash)
-  	    sub_tags = tags[0]
-  	    first_tag = 1
-      end
-  
   	  # split the content into elements
   	  elements = {}
-  	  # TODO: this will break if a namespace is used that is not rss: or atom: 	  
+ 	    # TODO: this will break if a namespace is used that is not rss: or atom: 	  
   	  content.scan( %r{(<([\w:]+)(.*?)(?:/>|>(.*?)</\2>))}mi ) do |match|
   	    # \1 = full content (from start to end tag), \2 = tag name
   	    # \3 = attributes, and \4 = content between tags
@@ -562,12 +587,12 @@ module FeedMe
   	    end
   	  end
       
-      # check if this is a promiscuous parser
-      if tags.nil? || tags.empty? || (tags.size == 1 && first_tag == 1)
-        tags = elements.keys
-        first_tag = 0
-      end
-      
+      # the first item in a tag array may be a hash that defines tags that have subtags
+  	  sub_tags = tags[0] if !nil_or_empty?(tags) && tags[0].is_a?(Hash)
+  	  first_tag = sub_tags.nil? || tags.size == 1 ? 0 : 1
+  	  # if this is a promiscuous parser, tag names will depend on the elements found in the feed
+  	  tags = elements.keys if (sub_tags.nil? ? nil_or_empty?(tags) : first_tag == 0)
+  	  
   	  # iterate over all tags (some or all of which may not be present)
   	  tags[first_tag..-1].each do |tag|
   	    key = clean_tag(tag)
@@ -583,12 +608,8 @@ module FeedMe
   		    next unless rels.nil? || elt[0].nil || !elt[0].rel? || rels.include?(elt[0].rel)
   		    
   		    if !sub_tags.nil? && sub_tags.key?(key)
-  		      if fm_builder.ghost_tags.include? key
-  		        new_parent = parent
-  		      else
-  		        new_parent = FeedData.new(key, parent, fm_builder)
-  		        add_tag(parent, key, new_parent)
-  		      end
+  		      new_parent = FeedData.new(key, parent, fm_builder)
+  		      add_tag(parent, key, new_parent)
   		      parse_content(new_parent, elt[0], elt[1], sub_tags[key])
   		    else
   		      add_tag(parent, key, clean_content(key, elt[0], elt[1], parent))
@@ -603,7 +624,7 @@ module FeedMe
   	end
 
     def add_tag(hash, key, value)
-      array_var = arrayize(key.to_s)
+      array_var = arrayize(key)
       if hash.key? array_var
         hash[array_var] << value
       else
@@ -643,7 +664,7 @@ module FeedMe
         # pull key/value pairs out of attr string
         array = a.scan(/([\w:]+)=['"]?([^'"]+)/)
         # unescape values
-        array = array.collect {|key, value| [clean_tag(format_tag(key)), unescape(value)]}
+        array = array.collect {|key, value| [clean_tag(key), unescape(value)]}
         hash.merge! Hash[*array.flatten]
       end
       return hash
@@ -659,32 +680,10 @@ module FeedMe
       content = cdata[1] if cdata
       
       return content
-  
-    	#if content =~ /([^-_.!~*'()a-zA-Z\d;\/?:@&=+$,\[\]]%)/n then
-    	# CGI.unescapeHTML(content).gsub(/(<!\[CDATA\[|\]\]>)/,'').strip
-    	#else
-    	#	content.gsub(/(<!\[CDATA\[|\]\]>)/,'').strip
-    	#end
-    end
-
-    def underscore(camel_cased_word)
-      camel_cased_word.to_s.gsub(/::/, '/').
-        gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-        gsub(/([a-z\d])([A-Z])/,'\1_\2').
-        tr("-", "_").
-        downcase
-    end
-
-    def camelize(lower_case_and_underscored_word, first_letter_in_uppercase = true)
-      if first_letter_in_uppercase
-        lower_case_and_underscored_word.to_s.gsub(/\/(.?)/) { "::#{$1.upcase}" }.gsub(/(?:^|_)(.)/) { $1.upcase }
-      else
-        lower_case_and_underscored_word[0,1].downcase + camelize(lower_case_and_underscored_word)[1..-1]
-      end
     end
     
-    def nil_safe_to_s(obj)
-      obj.nil? ? '' : obj.to_s
+    def nil_or_empty?(obj)
+      obj.nil? || obj.empty?
     end
   end
 		
