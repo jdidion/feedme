@@ -1,41 +1,53 @@
 # By Henrik Nyh <http://henrik.nyh.se> 2008-01-30.
 # Free to modify and redistribute with credit.
+# Word truncation and fixes by Les Hill <http://blog.leshill.org> 2009-06-02
 
-require "rubygems"
-require "hpricot"
+require 'rubygems'
+require 'hpricot'
+require 'active_support'
 
-# TODO: all uses of String#size should be replaced with String#chars#length
 module TextHelper
   # Like the Rails _truncate_ helper but doesn't break HTML tags or entities.
   def TextHelper.truncate_html(text, max_length = 30, ellipsis = "...")
-    text.size > max_length ? Hpricot(text).truncate(max_length).inner_html + ellipsis : text
+    return if text.nil?
+    doc = Hpricot(text.to_s)
+    doc.inner_text.mb_chars.length > max_length ? doc.truncate(max_length, ellipsis).inner_html : text.to_s
+  end
+
+  def self.truncate_at_space(text, max_length, ellipsis = '...')
+    l = [max_length - ellipsis.length, 0].max
+    stop = text.rindex(' ', l) || 0
+    (text.length > max_length ? text[0...stop] + ellipsis : text).to_s
   end
 end
 
 module HpricotTruncator
   module NodeWithChildren
-    def truncate(max_length)
-      return self if inner_text.size <= max_length
-      truncated_node = self.dup
+    def truncate(max_length, ellipsis)
+      return self if inner_text.mb_chars.length <= max_length
+      truncated_node = dup
+      truncated_node.name = name
+      truncated_node.raw_attributes = raw_attributes
       truncated_node.children = []
       each_child do |node|
-        remaining_length = max_length - truncated_node.inner_text.size
-        break if remaining_length == 0
-        truncated_node.children << node.truncate(remaining_length)
+        break if max_length <= 0
+        node_length = node.inner_text.mb_chars.length
+        truncated_node.children << node.truncate(max_length, ellipsis)
+        max_length = max_length - node_length
       end
       truncated_node
     end
   end
 
   module TextNode
-    def truncate(max_length)
-      # We're using String#scan because Hpricot doesn't distinguish entities.
-      Hpricot::Text.new(content.scan(/&#?[^\W_]+;|./).first(max_length).join)
+    def truncate(max_length, ellipsis)
+      self.content = TextHelper.truncate_at_space(content, max_length, ellipsis)
+      self
     end
   end
 
   module IgnoredTag
-    def truncate(max_length)
+    def truncate(max_length, ellipsis)
       self
     end
   end

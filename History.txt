@@ -1,3 +1,7 @@
+=== 0.6.5 / 2009-09-24
+
+* Fix :truncHtml completely by requiring active_support.
+
 === 0.6.4 / 2009-09-23
 
 * Roll version to make github happy.

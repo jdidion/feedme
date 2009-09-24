@@ -113,7 +113,7 @@ You can create your own transformation function. The following is an example of 
 The transformation functions available by default are:
 
 1. :stripHtml - described above
-2. :cleanHtml - requires FeedNormalizer (which in turn requires hypricot)
+2. :cleanHtml - ** Requires FeedNormalizer (which in turn requires Hypricot) **
 
     rss.entry_array[0].content  # => 1 > 2
     rss.entry_array[0].content! # => 1 &gt; 2
@@ -133,7 +133,7 @@ The transformation functions available by default are:
     rss.entries.first.content  # => This is a long long long sentence
     rss.entries.first.content! # => This is a 
 
-5. :truncHtml - truncates the content inside the first set of HTML tags, but preserves the tags. Example of :truncHtml_10:
+5. :truncHtml - truncates the content inside the first set of HTML tags, but preserves the tags. ** Requires ActiveSupport and Hpricot ** Example of :truncHtml_10:
 
     rss.entries.first.content  # => <div>This is a long long long sentence</div></html>
     rss.entries.first.content! # => <div>This is a </div></html>     
@@ -167,6 +167,17 @@ Due to various incompatibilities between different RSS versions, it is strongly 
 
 * gem install jdidion-feedme (Add GitHub as a gem source: gem sources -a http://gems.github.com)
 * http://github.com/jdidion/feedme/downloads
+
+To use certain features of FeedMe, some dependencies are required:
+* To use the :truncHtml transformation for truncating HTML content, ActiveSupport and Hpricot are required
+
+    sudo gem install activesupport
+    sudo gem install hpricot
+    
+* To use the :cleanHtml for sanitizing HTML, FeedNormalizer and Hpricot are required
+
+    sudo gem install feed-normalizer
+    sudo gem install hpricot
 
 == LICENSE:
 
