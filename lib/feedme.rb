@@ -27,7 +27,7 @@ class String
 end
 
 module FeedMe
-  VERSION = "0.6.3"
+  VERSION = "0.6.4"
 
   # constants for the feed type
   RSS  = :RSS
