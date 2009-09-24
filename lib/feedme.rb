@@ -1,5 +1,5 @@
 ####################################################################################
-# FeedMe v0.4
+# FeedMe v0.6.4
 # 
 # FeedMe is an easy to use parser for RSS and Atom files. It is based on SimpleRSS,
 # but has some improvements that make it worth considering:

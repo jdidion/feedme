@@ -49,9 +49,3 @@ rss.items.each do |item|
   # we can access attribute values just as easily as tag content
   puts "Enclosure: #{item.enclosure.url}" if item.enclosure?
 end
-
-builder.transformations['trunc'] = [ :cleanHtml, :truncHtml_50 ]
-ch = builder.parse(fetch('http://feeds.feedburner.com/codinghorror'))
-ch.items.each do |item|
-  puts item.description_trunc
-end
