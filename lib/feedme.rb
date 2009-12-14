@@ -1,87 +1,65 @@
-####################################################################################
-# FeedMe v0.7
-# 
-# FeedMe is an easy to use parser for RSS and Atom files. It is based on SimpleRSS,
-# but has some improvements that make it worth considering:
-# 1. Support for attributes
-# 2. Support for nested elements
-# 3. Support for elements that appear multiple times
-# 4. Syntactic sugar that makes it easier to get at the information you want
-#
-# The parse methods (as well as the constructors) support a few options:
-# :empty_string_for_nil => false # return the empty string instead of a nil value
-# :error_on_missing_key => false # raise an error if a specified key or virtual
-# method does not exist (otherwise nil is returned)
-####################################################################################
-
 require 'cgi'
 require 'time'
-
-class String
-  def trunc(wordcount, tail='...')
-    words = self.split
-    truncated = words[0..(wordcount-1)].join(' ')
-    truncated += tail if words.size > wordcount
-    truncated
-  end
-end
+include 'util'
 
 module FeedMe
-  VERSION = "0.7.1"
+  # The current version of FeedMe.
+  VERSION = "0.7.2"
 
-  # constants for the feed type
+  # The value of Parser#fm_type for RSS feeds.
   RSS  = :RSS
+  # The value of Parser#fm_type for RDF (RSS 1.0) feeds.
   RDF  = :RDF
+  # The value of Parser#fm_type for Atom feeds.
   ATOM = :ATOM
 
-  # the key used to access the content element of a mixed tag
+  # The key used to access the content element of a mixed tag.
   CONTENT_KEY = :content
 
+  # Parse a feed using the promiscuous parser.
   def FeedMe.parse(source, options={})
     ParserBuilder.new(options).parse(source)
   end
 
+  # Parse a feed using the strict parser.
   def FeedMe.parse_strict(source, options={})
     StrictParserBuilder.new(options).parse(source)
   end
   
-  def FeedMe.pretty_to_s(obj, indent_step=2, indent=0, code=nil)
-    new_indent = indent + indent_step
-    space = ' ' * indent
-    new_space = ' ' * new_indent
-    str = ''
-    if (obj.is_a?(FeedData) || obj.is_a?(Hash))
-      str << "#{obj.fm_tag_name} " if obj.is_a?(FeedData)
-      str << "{"
-      obj.each_with_index do |item, index|
-        key, value = code.call(*item) if code
-        str << "\n#{new_space}"
-        str << FeedMe.pretty_to_s(key, indent_step, new_indent, code)
-        str << " => " 
-        str << FeedMe.pretty_to_s(value, indent_step, new_indent, code)
-        str << ',' unless index == obj.size-1
-      end
-      str << "\n#{space}}"
-    elsif obj.is_a?(Array)
-      str << "[" 
-      obj.each_with_index do |value, index|
-        str << "\n#{new_space}"
-        str << FeedMe.pretty_to_s(value, indent_step, new_indent, code)
-        str << ',' unless index == obj.size-1
-      end
-      str << "\n#{space}]"
-    else
-      str << obj.to_s.strip.inspect
-    end
-    return str
-  end
-  
+  # This class is used to create promiscuous parsers.
   class ParserBuilder
-    attr_accessor :options, 
-                  :rss_tags, :rss_item_tags, :atom_tags, :atom_entry_tags,
-                  :date_tags, :value_tags, :aliases, 
-                  :default_transformation, :transformations, :transformation_fns
+    # The options passed to this ParserBuilder's constructor.
+    attr_reader :options 
+    # The tags that are parsed for RSS feeds.
+    attr_accessor :rss_tags
+    # The subtags of item elements that are parsed for RSS feeds.
+    attr_accessor :rss_item_tags
+    # The tags that are parsed for Atom feeds.
+    attr_accessor :atom_tags
+    # The subtags of entry elements that are parsed for Atom feeds.
+    attr_accessor :atom_entry_tags
+    # The names of tags that should be parsed as date values.
+    attr_accessor :date_tags
+    # An array of names of attributes/subtags whose values can be
+    # used as the default value of a mixed element.
+    attr_accessor :value_tags
+    # A hash of attribute/tag name aliases.
+    attr_accessor :aliases
+    # An array of the transformation functions applied when the !
+    # suffix is added to the attribute/tag name.
+    attr_accessor :default_transformation
+    # Mapping of transformation names to functions. Each key is a
+    # suffix that can be appended to an attribute/tag name, and
+    # the value is an array of transformation function names that
+    # are applied when that transformation is used.
+    attr_accessor :transformations
+    # Mapping of transformation function names to Procs.
+    attr_accessor :transformation_fns
 
+    # Create a new ParserBuilder. Allowed options are:
+    # * :empty_string_for_nil => false # return the empty string instead of a nil value
+    # * :error_on_missing_key => false # raise an error if a specified key or virtual
+    #   method does not exist (otherwise nil is returned)
     def initialize(options={})
       @options = options
       
@@ -116,7 +94,7 @@ module FeedMe
       # tags whose value is a date
       @date_tags = [ :pubdate, :lastbuilddate, :published, :updated, :dc_date, :expirationdate ]
   
-      # tags that can be used as the default value for a tag with attributes
+      # tags that can be used as the default value for a mixed element
       @value_tags = [ CONTENT_KEY, :href, :url ]
   
       # tag/attribute aliases
@@ -128,36 +106,31 @@ module FeedMe
     	  :link         => :'link+self'
     	}
 	
-    	# bang mods
+    	# transformations
     	@default_transformation = [ :stripHtml ]
     	@transformations = {}
     	@transformation_fns = {
-    	  :stripHtml => proc {|str|     # remove all HTML tags
-    	    str.gsub(/<\/?[^>]*>/, "").strip 
-    	  },
-    	  :cleanHtml => proc {|str|     # clean HTML content using FeedNormalizer's HtmlCleaner class 
-    	    begin
-    	      require 'rubygems'
-    	      require 'feed-normalizer'
-    	      FeedNormalizer::HtmlCleaner.clean(str)
-    	    rescue
-    	      str
-    	    end  
-    	  }, 
-    	  :wrap => proc {|str, col|     # wrap text at a certain number of characters (respecting word boundaries)
-    	    str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
-    	  },
-    	  :trunc => proc {|str, wordcount|  # truncate text, respecting word boundaries
-    	    str.trunc(wordcount.to_i)
-        },
-        :truncHtml => proc {|str, wordcount| # truncate text but leave enclosing HTML tags
-          begin
-            require 'text-helper'
-            TextHelper::truncate_html(str, wordcount.to_i)
-          rescue
-            str
-          end
-        }
+    	  # remove all HTML tags
+    	  :stripHtml => proc {|str| str.gsub(/<\/?[^>]*>/, "").strip },
+    	  
+    	  # clean HTML content using FeedNormalizer's HtmlCleaner class
+    	  :cleanHtml => proc do |str|      
+    	    require 'rubygems'
+    	    require 'feed-normalizer'
+    	    FeedNormalizer::HtmlCleaner.clean(str)  
+    	  end, 
+    	  
+    	  # wrap text at a certain number of characters (respecting word boundaries)
+    	  :wrap => proc {|str, col| str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip },
+    	  
+    	  # truncate text, respecting word boundaries
+    	  :trunc => proc {|str, wordcount| str.trunc(wordcount.to_i) },
+        
+        # truncate text but leave enclosing HTML tags
+        :truncHtml => proc do |str, wordcount| 
+          require 'truncator'
+          FeedMe.truncate_html(str, wordcount.to_i)
+        end
     	}
     end
     
@@ -207,11 +180,13 @@ module FeedMe
       })
     end
     
+    # Parse +source+ using a +Parser+ created from this +ParserBuilder+.
     def parse(source)
 		  Parser.new(self, source, options)
 	  end
   end
 
+  # 
   class StrictParserBuilder < ParserBuilder
     attr_accessor :feed_ext_tags, :item_ext_tags, :rels 
     
@@ -408,16 +383,12 @@ module FeedMe
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
         transform(fm_builder.default_transformation, name_str[0..-2], args, history)
-      elsif name_str =~ /(.+)_value/
-        obj = call_virtual_method($1, args, history)
-        value = obj
-        if obj.is_a?(FeedData)
-          fm_builder.value_tags.each do |tag|
-            value = obj.call_virtual_method(tag, args, history) rescue next
-            break unless value.nil?
-          end
+      elsif name_str =~ /(.+)_values/
+        call_virtual_method(arrayize($1), args, history).collect do |value|
+          resolve_value value
         end
-        value
+      elsif name_str =~ /(.+)_value/
+        resolve_value call_virtual_method($1, args, history)        
       elsif name_str =~ /(.+)_count/
         call_virtual_method(arrayize($1), args, history).size
       elsif name_str =~ /(.+)_(.+)/ && fm_builder.transformations.key?($2)
@@ -488,6 +459,17 @@ module FeedMe
           value = value.collect {|x| trans.call(x, *parts[1..-1]) }
         else  
           value = trans.call(value, *parts[1..-1])
+        end
+      end
+      value
+    end
+    
+    def resolve_value(obj)
+      value = obj
+      if obj.is_a?(FeedData)
+        fm_builder.value_tags.each do |tag|
+          value = obj.call_virtual_method(tag, args, history) rescue next
+          break unless value.nil?
         end
       end
       value
