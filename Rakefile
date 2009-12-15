@@ -15,7 +15,7 @@ tasks = Jeweler::Tasks.new do |s|
   s.summary = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby}
   s.test_files = ["test/test_helper.rb"]
 end
-tasks.jeweler.repo.remote('master')
+tasks.jeweler.remote = 'github'
 Jeweler::GemcutterTasks.new
 
 
