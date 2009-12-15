@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'jeweler'
 
-Jeweler::Tasks.new do |s|
+tasks = Jeweler::Tasks.new do |s|
   s.name = "feedme"
   s.authors = ["John Didion"]
   s.description = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.}
@@ -15,6 +15,7 @@ Jeweler::Tasks.new do |s|
   s.summary = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby}
   s.test_files = ["test/test_helper.rb"]
 end
+tasks.jeweler.repo.remote('master')
 Jeweler::GemcutterTasks.new
 
 
