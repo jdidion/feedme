@@ -3,6 +3,7 @@ Manifest.txt
 README.txt
 Rakefile
 lib/feedme.rb
-lib/text-helper.rb
+lib/truncator.rb
+lib/util.rb
 examples/rocketboom.rb
 examples/rocketboom.rss
