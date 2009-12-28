@@ -1,0 +1,39 @@
+<p>
+The Gamasutra article <a href="http://www.gamasutra.com/view/feature/4111/dirty_coding_tricks.php">Dirty Coding Tricks</a> is a fantastic read. One part of it in particular rang true for me.
+<p>
+<blockquote>
+Consider the load of pain I found myself in when working on a conversion of a 3D third person shooter from the PC to the original PlayStation.
+<p>
+Now, the PS1 has no support for floating point numbers, so we were doing the conversion by basically recompiling the PC code and overloading all floats with fixed point. That actually worked fairly well, but were it fell apart was in collision detection.
+<p>
+The level geometry that was supplied to us worked reasonably well in the PC version of the game, but when converted to fixed point, all kinds of seams, T-Junctions and other problems were nudged into existence by the microscopic differences in values between fixed and floats. This problem would manifest itself by the main character (called "Damp") simply falling through those tiny holes, into the abyss below the level.
+<p>
+We patched the holes we found, tweaking the geometry until Damp no longer fell through. But then the game went into test at the publisher, and suddenly a flood of "falling off the world" bugs were delivered to us. Every day a fresh batch of locations were found with these little holes that Damp could slip through. We would fix that bit of geometry, then the next day they would send us ten more. This went on for several days. The publisher's test department employed one guy whose only job was to jump around the world for ten hours a day, looking for places he could fall through.
+<p>
+<b>The problem here was that the geometry was bad.</b> It was not tight and seamless geometry. It worked on the PC, but not on the PS1, where the fixed point math vastly magnified the problems. The ideal solution was to fix the geometry to make it seamless.
+<p>
+However, this was a vast task, impossible to do in the time available with our limited resources, so we were relying on the test department to find the problem areas for us.
+</blockquote>
+<p>
+There's never time to do it right, but there's always time to do it over. If this sounds familiar, you're not alone. I have at times found myself slipping into this pattern, continually patching the same code over and over. It's the kind of code that, when submitted for code review, you're tempted to self-deprecatingly introduce as <b>have you met my dog, patches?</b>
+<p>
+<img alt="our dog, patches" src="http://www.codinghorror.com/blog/images/our-dog-patches.jpg" width="510" height="488" class="mt-image-none" style="" />
+<p>
+While "patchiness" isn't always a bad thing -- the venerable Apache HTTP Server is testament to that -- it's <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server#History_and_name">probably an exception</a>.
+<p>
+<blockquote>
+the original FAQ on the Apache Server project's website, from 1996 to 2001, claimed that "The result after combining [the NCSA httpd patches] was a patchy server."
+</blockquote>
+<p>
+Reading the Gamasutra article shamed me into to attacking a section of extra-patchy Stack Overflow code. Code which I constantly had to tweak in various ongoing ways to get it to work right. But first, I had to <a href="http://www.codinghorror.com/blog/archives/000123.html">get over my fear</a>. Fear. That's what led to all the patching in the first place. It was obvious this was <a href="http://www.codinghorror.com/blog/archives/001230.html">working code which had become crufty over time</a>, but it <i>was working</i>. And it's one of the core bits of functionality in the site. In those circumstances, it's easy to mentally justify "just this small change, just this once" rather than the fundamental rewrite you really need.
+<p>
+When you finally realize you've spent the last six months telling yourself the same "just this small change, just this once" lie, then <b>you've met your dog patches, too</b>. 
+<p>
+Now what are you going to do about that rascally scamp?
+<p>
+<table>
+<tr><td class="welovecodinghorror">
+[advertisement] Interested in <a href="http://www.atlassian.com/agile" rel="nofollow">agile</a>? See how a world-leading software vendor is practicing <a href="http://www.atlassian.com/agile" rel="nofollow">agile</a>.
+</td></tr>
+</table>
+<p>
