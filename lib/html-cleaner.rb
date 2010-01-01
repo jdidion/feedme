@@ -59,17 +59,17 @@ module FeedMe
       # Extra (i.e. unmatched) ending tags and comments are removed.
       def clean(str)
         str = unescapeHTML(str)
-
         doc = Hpricot(str, :fixup_tags => true)
         doc = subtree(doc, :body)
-
+        
         # get all the tags in the document
         # Somewhere near hpricot 0.4.92 "*" starting to return all elements,
         # including text nodes instead of just tagged elements.
         tags = (doc/"*").inject([]) { |m,e| m << e.name if(e.respond_to?(:name) && e.name =~ /^\w+$/) ; m }.uniq
 
         # Remove tags that aren't whitelisted.
-        remove_tags!(doc, tags - HTML_ELEMENTS)
+        diff = tags - HTML_ELEMENTS
+        remove_tags!(doc, diff)
         remaining_tags = tags & HTML_ELEMENTS
 
         # Remove attributes that aren't on the whitelist, or are suspicious URLs.
@@ -80,9 +80,9 @@ module FeedMe
           end
           element.raw_attributes = element.raw_attributes.build_hash {|a,v| [a, add_entities(v)]}
         end unless remaining_tags.empty?
-
+        
         doc.traverse_text {|t| t.set(add_entities(t.to_html))}
-
+        
         # Return the tree, without comments. Ugly way of removing comments,
         # but can't see a way to do this in Hpricot yet.
         doc.to_s.gsub(/<\!--.*?-->/mi, '')

@@ -153,6 +153,10 @@ module FeedMe
           match = Regexp.new(regexp).match(str)
           match.nil? ? nil : match[1]
         end,
+        
+        # this shouldn't be necessary since all text is automatically
+        # unescaped, but some feeds double-escape HTML
+        :esc => proc {|str| CGI.unescapeHTML(str) }
     	}
     end
     
@@ -528,7 +532,7 @@ module FeedMe
   end
 
   class Parser < FeedData
-    attr_reader :fm_source, :fm_options, :fm_type, :fm_tags, :fm_unparsed
+    attr_reader :fm_source, :fm_options, :fm_type, :fm_tags, :fm_parsed, :fm_unparsed
   
     def initialize(builder, source, options={})
       super(nil, nil, builder)
@@ -672,13 +676,13 @@ module FeedMe
     end
 
   	def clean_content(tag, attrs, content, parent)
-  		content = content.to_s
-  		if fm_builder.date_tags.include? tag
+  	  content = content.to_s
+  	  if fm_builder.date_tags.include? tag
   			content = Time.parse(content) rescue unescape(content)
   		else
   		  content = unescape(content)
   		end
-  
+      
       unless attrs.empty?
         hash = FeedData.new(tag, parent, fm_builder)
         attrs.each_pair {|key, value| hash[key] = unescape(value) }
@@ -706,7 +710,7 @@ module FeedMe
   
     def unescape(content)
       content = CGI.unescapeHTML(content)
-
+      
       query = content.match(/^(http:.*\?)(.*)$/)
       content = query[1] + CGI.unescape(query[2]) if query
       
