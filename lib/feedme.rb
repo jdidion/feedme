@@ -3,9 +3,6 @@ require 'time'
 require 'util.rb'
 
 module FeedMe
-  # The current version of FeedMe.
-  VERSION = "0.7.2"
-
   # The value of Parser#fm_type for RSS feeds.
   RSS  = :RSS
   # The value of Parser#fm_type for RDF (RSS 1.0) feeds.
@@ -559,9 +556,9 @@ module FeedMe
     def parse
       # RSS = everything between channel tags + everthing between </channel> and </rdf> if this is an RDF document
       if @fm_source =~ %r{<(?:.*?:)?(rss|rdf)(.*?)>.*?<(?:.*?:)?channel(.*?)>(.+)</(?:.*?:)?channel>(.*)</(?:.*?:)?(?:rss|rdf)>}mi
-        @fm_type = $2.upcase.to_s
+        @fm_type = $1.upcase.to_s
         @fm_tags = fm_builder.all_rss_tags
-        attrs = parse_attributes($1, $3)
+        attrs = parse_attributes($1, $2 + $3)
         attrs[:version] ||= '1.0';
         parse_content(self, attrs, $4, @fm_tags)
 

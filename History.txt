@@ -1,3 +1,12 @@
+=== 0.8.2
+
+* Remove VERSION variable from feedme.rb
+
+=== 0.8.1 / 2010-01-02
+
+* Add new transformation :esc
+* Expose parsed tags as attribute :fm_parsed
+
 === 0.8 / 2009-12-14
 
 * Add new virtual method _values: returns all values for a given tag.

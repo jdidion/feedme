@@ -21,6 +21,20 @@
 	<integer>260</integer>
 	<key>metaData</key>
 	<dict>
+		<key>README.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>57</integer>
+				<key>line</key>
+				<integer>102</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>143</integer>
+		</dict>
 		<key>Rakefile</key>
 		<dict>
 			<key>caret</key>
@@ -56,12 +70,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>143</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>102</integer>
+			<integer>304</integer>
 		</dict>
 		<key>lib/hpricot-util.rb</key>
 		<dict>
@@ -110,13 +124,11 @@
 	<array>
 		<string>Rakefile</string>
 		<string>lib/feedme.rb</string>
-		<string>lib/nokogiri-util.rb</string>
-		<string>lib/hpricot-util.rb</string>
-		<string>lib/util.rb</string>
+		<string>README.txt</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{166, -347}, {898, 878}}</string>
+	<string>{{44, -84}, {898, 878}}</string>
 </dict>
 </plist>
