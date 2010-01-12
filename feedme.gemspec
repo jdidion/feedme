@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["John Didion"]
-  s.date = %q{2010-01-08}
+  s.date = %q{2010-01-12}
   s.description = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.}
   s.email = ["code@didion.net"]
   s.extra_rdoc_files = [
@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://wiki.github.com/jdidion/feedme}
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{feedme}
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby}
   s.test_files = [
