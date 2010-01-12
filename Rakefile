@@ -14,7 +14,6 @@ tasks = Jeweler::Tasks.new do |s|
   s.homepage = %q{http://wiki.github.com/jdidion/feedme}
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{feedme}
   s.summary = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby}
   s.test_files = ["test/test_helper.rb"]
 end

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>lib/feedme.rb</string>
+	<string>lib/util.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -75,7 +75,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>304</integer>
+			<integer>0</integer>
 		</dict>
 		<key>lib/hpricot-util.rb</key>
 		<dict>
@@ -85,6 +85,20 @@
 				<integer>22</integer>
 				<key>line</key>
 				<integer>25</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lib/html-cleaner.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>88</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -124,11 +138,15 @@
 	<array>
 		<string>Rakefile</string>
 		<string>lib/feedme.rb</string>
+		<string>lib/hpricot-util.rb</string>
+		<string>lib/html-cleaner.rb</string>
+		<string>lib/nokogiri-util.rb</string>
+		<string>lib/util.rb</string>
 		<string>README.txt</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{44, -84}, {898, 878}}</string>
+	<string>{{44, 0}, {898, 878}}</string>
 </dict>
 </plist>
