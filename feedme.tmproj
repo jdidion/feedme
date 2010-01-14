@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>VERSION</string>
+	<string>Rakefile</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -160,6 +160,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{102, -89}, {646, 878}}</string>
+	<string>{{113, -308}, {646, 878}}</string>
 </dict>
 </plist>
