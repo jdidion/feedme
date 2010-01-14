@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{feedme}
-  s.version = "0.8.1"
+  s.version = "0.8.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["John Didion"]
-  s.date = %q{2010-01-13}
+  s.date = %q{2010-01-14}
   s.description = %q{A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.}
   s.email = ["code@didion.net"]
   s.extra_rdoc_files = [
