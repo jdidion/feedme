@@ -9,7 +9,7 @@ tasks = Jeweler::Tasks.new do |s|
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
   s.files = ["History.txt", "Manifest.txt", "README.txt", "Rakefile", 
     "lib/feedme.rb", "lib/hpricot-util.rb", "lib/nokogiri-util.rb", 
-    "lib/html-cleaner.rb", "lib/util.rb", "examples/rocketboom.rb", 
+    "lib/html-cleaner.rb", "lib/feedme-util.rb", "examples/rocketboom.rb", 
     "examples/rocketboom.rss", "test/test_helper.rb"]
   s.homepage = %q{http://wiki.github.com/jdidion/feedme}
   s.rdoc_options = ["--main", "README.txt"]

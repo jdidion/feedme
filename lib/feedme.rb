@@ -1,6 +1,6 @@
 require 'cgi'
 require 'time'
-require 'util.rb'
+require 'feedme-util'
 
 module FeedMe
   # The value of Parser#fm_type for RSS feeds.
@@ -486,6 +486,8 @@ module FeedMe
     
     def _transform(trans_array, value)
       trans_array.each do |t|
+        return nil if value.nil?
+        
         if t.is_a? String
           value = _transform(fm_builder.transformations[t], value)
         else
@@ -500,8 +502,8 @@ module FeedMe
           end
           
           trans = fm_builder.transformation_fns[t_name] or
-            raise NameError.new("No such transformation #{t_name}", t_name)
-          
+            raise NoMethodError.new("No such transformation #{t_name}", t_name)
+
           if value.is_a? Array
             value = value.collect {|x| trans.call(x, *args) }
           else  
@@ -706,13 +708,17 @@ module FeedMe
     end
   
     def unescape(content)
-      content = CGI.unescapeHTML(content)
-      
-      query = content.match(/^(http:.*\?)(.*)$/)
-      content = query[1] + CGI.unescape(query[2]) if query
-      
       cdata = content.match(%r{<!\[CDATA\[(.*)\]\]>}mi)
-      content = cdata[1] if cdata
+      if cdata
+        # CDATA-escaped content is not encoded
+        content = cdata[1]
+      else
+        # unescape
+        content = CGI.unescapeHTML(content)
+        # further unescape any URL query strings
+        query = content.match(/^(http:.*\?)(.*)$/)
+        content = query[1] + CGI.unescape(query[2]) if query
+      end
       
       return content
     end

@@ -1,6 +1,7 @@
 === 0.8.2
 
 * Remove VERSION variable from feedme.rb
+* Don't double-escape CDATA-escaped content
 
 === 0.8.1 / 2010-01-02
 
