@@ -14,13 +14,14 @@ def fetch(url)
 end
 
 # read from a file
-content = ""
-File.open('rocketboom.rss', "r") do |file|
-  content = file.read
-end
+#content = ""
+#File.open('bad.rss', "r") do |file|
+#  content = file.read
+#end
 
 # read from a url
 #content = fetch('http://www.rocketboom.com/rss/hd.xml')
+content = fetch('http://failbooking.com/feed/')
 
 # create a new ParserBuilder
 builder = FeedMe::ParserBuilder.new
@@ -45,7 +46,10 @@ rss.items.each do |item|
   puts "Categories: #{item.category_array.join(', ')}" if item.category_array?
   # ! causes value to be modified according to prior specifications
   # ? checks for the presense of a tag/attribute
-  puts "Description:\n#{item.description!}" if item.description?
+  puts "Description:\n#{item.description}" if item.description?
   # we can access attribute values just as easily as tag content
   puts "Enclosure: #{item.enclosure.url}" if item.enclosure?
+  loc = 'media:content'
+  mc = item.call_virtual_method("#{loc}_values".to_sym)
+  puts mc.join(',')
 end

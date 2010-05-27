@@ -17,6 +17,9 @@ module FeedMe
   NOKOGIRI_HELPER = 'nokogiri-util.rb'
   HPRICOT_HELPER = 'hpricot-util.rb'
 
+  # default rels to accept, in order of preference
+  DEFAULT_RELS = [ 'self', 'alternate', 'enclosure', 'related', 'edit', 'replies', 'via' ]
+
   # Parse a feed using the promiscuous parser.
   def FeedMe.parse(source, options={})
     ParserBuilder.new(options).parse(source)
@@ -46,6 +49,9 @@ module FeedMe
     attr_accessor :value_tags
     # Tags to use for element value when specific tag isn't specified
     attr_accessor :default_value_tags
+    # A hash of functions for selecting the correct value to return when a tags 
+    # has multiple values and the singluar accessor is called
+    attr_accessor :value_selectors
     # A hash of attribute/tag name aliases.
     attr_accessor :aliases
     # An array of the transformation functions applied when the !
@@ -105,6 +111,19 @@ module FeedMe
         :media_content => :url
       }
       @default_value_tags = [ CONTENT_KEY, :href, :url ]
+  
+      # methods for selecting the element to return when the singular accessor
+      # is called on a tag with multiple values
+      @value_selectors = {
+        :link => proc do |links|
+          links = links.sort do |a,b|
+            i1 = DEFAULT_RELS.index(a.rel)
+            i2 = DEFAULT_RELS.index(b.rel)
+            i1.nil? ? (i2.nil? ? 0 : 1) : (i2.nil? ? -1 : i1 <=> i2)
+          end
+          links.first
+        end
+      }
   
       # tag/attribute aliases
     	@aliases = {
@@ -209,7 +228,7 @@ module FeedMe
 	  end
   end
 
-  # 
+  # This class is used to create strict parsers
   class StrictParserBuilder < ParserBuilder
     attr_accessor :feed_ext_tags, :item_ext_tags, :rels 
     
@@ -268,7 +287,7 @@ module FeedMe
       ]
   
       @rels = {
-        :link => [ 'self', 'alternate', 'edit', 'replies', 'related', 'enclosure', 'via' ]
+        :link => DEFAULT_RELS
       }
   
       # extensions
@@ -370,7 +389,9 @@ module FeedMe
     # 1. Tag/attribute name: since tags/attributes are stored as arrays,
     # the instance variable name is the tag/attribute name followed by
     # '_array'. The tag/attribute name is actually a virtual method that
-    # returns the first element in the array.
+    # returns the first element in the array. If a Proc is passed as the first
+    # argument and the array has more than one element, the Proc is used to sort
+    # the array before returning the first element.
     # 2. Aliases: for tags/attributes with aliases, the alias is a virtual
     # method that simply forwards to the aliased method.
     # 3. Any name that ends with a '?' returns true if the name without 
@@ -401,7 +422,15 @@ module FeedMe
       result = if key? name
         self[name]
       elsif key? array_key
-        self[array_key].first
+        array = self[array_key]
+        elt = if array.size > 1
+          if (!args.empty? && args.first.is_a?(Proc))
+            args.first.call(array)
+          elsif (fm_builder.value_sorters.key?(name))
+            value_selectors[name].call(array)
+          end
+        end
+        elt || array.first
       elsif name_str[-1,1] == '?'
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
@@ -503,9 +532,11 @@ module FeedMe
           
           trans = fm_builder.transformation_fns[t_name] or
             raise NoMethodError.new("No such transformation #{t_name}", t_name)
-
+          
           if value.is_a? Array
-            value = value.collect {|x| trans.call(x, *args) }
+            value = value.collect do |x| 
+              x.nil? ? nil : trans.call(x, *args)
+            end.compact
           else  
             value = trans.call(value, *args)
           end
@@ -556,8 +587,11 @@ module FeedMe
     private
   
     def parse
-      # RSS = everything between channel tags + everthing between </channel> and </rdf> if this is an RDF document
-      if @fm_source =~ %r{<(?:.*?:)?(rss|rdf)(.*?)>.*?<(?:.*?:)?channel(.*?)>(.+)</(?:.*?:)?channel>(.*)</(?:.*?:)?(?:rss|rdf)>}mi
+      # RSS = everything between channel tags + everthing between </channel> and 
+      # </rdf> if this is an RDF document. Do a simpler match to begin with
+      # since the more complex regexp will hang on a large and invalid document.
+      if @fm_source =~ %r{<(?:.*?:)?channel.+</(?:.*?:)?channel}mi && 
+         @fm_source =~ %r{<(?:.*?:)?(rss|rdf)(.*?)>.*?<(?:.*?:)?channel(.*?)>(.+)</(?:.*?:)?channel>(.*)</(?:.*?:)?(?:rss|rdf)>}mi
         @fm_type = $1.upcase.to_s
         @fm_tags = fm_builder.all_rss_tags
         attrs = parse_attributes($1, $2 + $3)
@@ -655,7 +689,6 @@ module FeedMe
   		end
 
   		@fm_unparsed += elements.keys
-  		
   		@fm_parsed.uniq!
   		@fm_unparsed.uniq!
   	end

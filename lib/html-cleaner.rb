@@ -58,6 +58,7 @@ module FeedMe
       #
       # Extra (i.e. unmatched) ending tags and comments are removed.
       def clean(str)
+        return nil if str.nil?
         str = unescapeHTML(str)
         doc = Hpricot(str, :fixup_tags => true)
         doc = subtree(doc, :body)
@@ -137,7 +138,8 @@ module FeedMe
       end
 
       # unescapes HTML. If xml is true, also converts XML-only named entities to HTML.
-      def unescapeHTML(str, xml = true)
+      def unescapeHTML(str, xml=true)
+        return nil if str.nil?
         CGI.unescapeHTML(xml ? str.gsub("&apos;", "&#39;") : str)
       end
 

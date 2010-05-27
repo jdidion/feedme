@@ -30,6 +30,7 @@ module FeedMe
     # sanitize HTML
     # todo: dup code to fix bugs
     def clean_html(html)
+      return nil if html.nil?
       FeedMe::HtmlCleaner.clean(html)
     end
   end

@@ -1,4 +1,13 @@
-=== 0.8.2
+=== 0.8.3 / 2010-05-27
+
+* Attempt to recognize incomplete RSS documents with a simpler regular 
+  expression, since the full one causes FeedMe to hang on large documents.
+* Fix NPE in html-cleaner.
+* Add concept of value selectors: when calling the singular accessor for a tag
+that has multiple instance, a value selector chooses which to return. Provide a
+default value selector for link tags.
+
+=== 0.8.2 / 2010-01-14
 
 * Remove VERSION variable from feedme.rb
 * Don't double-escape CDATA-escaped content

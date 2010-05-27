@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"	
+	xmlns:media="http://search.yahoo.com/mrss/"
+	xmlns:boxee="http://boxee.tv/spec/rss/" 
+	>
+
+<channel>
+	<title>Rocketboom (HD)</title>
+	<atom:link href="http://www.rocketboom.com/index.php?feed=podcast&#038;format=hd" rel="self" type="application/rss+xml" />
+	<link>http://www.rocketboom.com</link>
+	<description>Daily Internet Culture</description>
+	<pubDate>Tue, 02 Mar 2010 02:12:54 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6.1-alpha</generator>
+	<language>en</language>
+	<itunes:summary>Rocketboom is a three minute daily videoblog based in New York City. We cover and create a wide range of information and commentary from top news stories to quirky internet culture.</itunes:summary>
+	<itunes:subtitle>Daily Internet Culture</itunes:subtitle>
+	<itunes:author>Rocketboom</itunes:author>
+	<itunes:image href="http://www.rocketboom.com/images/rocketboom_itunes_20100301.jpg" />
+	<itunes:category text="News &amp; Politics" />
+	<itunes:category text="Technology" />
+	<itunes:category text="Comedy" />
+	<itunes:keywords>rocketboom, daily, news, internet, culture, art, science, technology, tech, space, comedy, video, podcast</itunes:keywords>
+	<itunes:explicit>no</itunes:explicit>
+	<itunes:owner>
+		<itunes:name>Rocketboom</itunes:name>
+		<itunes:email>hi@rocketboom.com</itunes:email>
+	</itunes:owner>
+	<boxee:display>
+		<boxee:view default="3">
+			<boxee:view-option id="1" view-type="line"/>
+			<boxee:view-option id="2" view-type="thumb"/>
+			<boxee:view-option id="3" view-type="thumb-with-preview"/>
+			<boxee:view-option id="4" view-type="detailed-list"/>
+		</boxee:view>
+		<boxee:sort default="1" folder-position="start">
+			<boxee:sort-option id="1" sort-by="date" sort-order="ascending" sort-type-name="date"/>
+			<boxee:sort-option id="2" sort-by="label" sort-order="descending" sort-type-name="title"/>
+		</boxee:sort>
+	</boxee:display>
+	<atom:link rel="hub" href="http://pubsubhubbub.appspot.com"/><atom:link rel="hub" href="http://superfeedr.com/hubbub"/><cloud domain='www.rocketboom.com' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+		<item>
+		<title>Happy Birthday Justin Bieber</title>
+		<link>http://www.rocketboom.com/happy-birthday-justin-bieber/</link>
+		<comments>http://www.rocketboom.com/happy-birthday-justin-bieber/#comments</comments>
+		<pubDate>Mon, 01 Mar 2010 23:14:24 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[asteroid]]></category>
+
+		<category><![CDATA[GM]]></category>
+
+		<category><![CDATA[happy birthday]]></category>
+
+		<category><![CDATA[hummer]]></category>
+
+		<category><![CDATA[justin bieber]]></category>
+
+		<category><![CDATA[moon]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4635</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/dvvgMlooOJo&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/dvvgMlooOJo&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly reports on Justin Bieber&#8217;s birthday, Conan on Twitter, nuclear waste on asteroids, Hummer going out of business, and more.  Story links: Tron Movie Poster, Speed Skater, smart internet, hummer, hummer 2, hummer 3, tengzhong site, barrels of oil, conan obrien twitter, article about conan picture, conan 1, conan 2, conan 3, space.com thread [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/dvvgMlooOJo&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/dvvgMlooOJo&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span><a href="http://twitter.com/mememolly" target="_blank">Molly</a> reports on Justin Bieber&#8217;s birthday, Conan on Twitter, nuclear waste on asteroids, Hummer going out of business, and more. </span> Story links: <a href="http://www.moviewallpapers.net/images/wallpapers/1982/tron/tron-1-1024.jpg&amp;imgrefurl=http://www.moviewallpapers.net/download/desktop/833/1024/Tron.html&amp;usg=__oGupX_u8y6snv_RWtV9wXwrdKVI=&amp;h=768&amp;w=1024&amp;sz=232&amp;hl=en&amp;start=59&amp;um=1&amp;itbs=1&amp;tbnid=0ZIjH6gQXWEG_M:&amp;tbnh=113&amp;tbnw=150&amp;prev=/images%3Fq%3Dtron%26start%3D42%26um%3D1%26hl%3Den%26client%3Dfirefox-a%26hs%3DMSm%26sa%3DN%26rls%3Dorg.mozilla:en-US:official%26ndsp%3D21%26tbs%3Disch:1">Tron Movie Poster</a>, <a href="http://starcasm.net/archives/36813">Speed Skater</a>, <a href="http://www.pewinternet.org/Reports/2010/Future-of-the-Internet-IV/Survey-method.aspx?r=1">smart internet</a>, <a href="://www.flickr.com/photos/44603071@N00/897275804/">hummer</a>, <a href="http://www.flickr.com/photos/cantoni/368303333/">hummer 2</a>, <a href="http://www.flickr.com/photos/blam4c/2672382482/">hummer 3</a>, <a href="http://www.sctengzhong.com:8080/tengzhong/weben/index.jsp">tengzhong site</a>, <a href="http://www.flickr.com/photos/sixteenmilesofstring/238640467/">barrels of oil</a>, <a href="http://twitter.com/conanobrien">conan obrien twitter</a>, <a href="http://www.thewrap.com/ind-column/conan-obrien-live-and-onstage-14420">article about conan picture</a>, <a href="http://www.dailystab.com/conan-obrien-heading-out-on-tour/">conan 1</a>, <a href="http://www.breakingtweets.com/entertainment/2010/02/23/conan-obrien-in-talks-to-go-on-tour/">conan 2</a>, <a href="http://www.avclub.com/articles/conan-obrien-mulls-tour,38404/">conan 3</a>, <a href="http://www.space.com/common/forums/viewtopic.php?f=15&amp;t=22834">space.com thread about waste</a>, <a href="http://www.youtube.com/watch?v=60WMb-IIUdo">asteroid going into the sun</a>. Assets: <a href="http://www.blogcdn.com/www.bloggingstocks.com/media/2008/09/gm_general_motors_logo.jpg">gm sign</a>, <a href="http://cocoposts.typepad.com/.a/6a00d8341cb7a353ef010536e714af970b-800wi">green hummer</a>, <a href="http://4.bp.blogspot.com/_gTJMEP-c2fo/SYyWfvSfzzI/AAAAAAAAKOU/IIc931guqPw/s400/hummer-h2-convertible_1.jpg">convertible hummer</a>, <a href="http://www.newcoolcars.com/hummer-h2.jpg">yellow hummer</a>, <a href="http://risselada.com/pictures/hummer1.jpg">guy on hummer</a>, <a href="http://blog.syracuse.com/news/2008/08/hummer.JPG">woman hummer</a>, <a href="http://www.voyagesphotosmanu.com/Complet/images/chinese_city.jpg">chinese city</a>, <a href="http://www.businessweek.com/the_thread/brandnewday/archives/hummer-h2-sut.jpg">hummer to be eaten</a>, <a href="http://spindiscz.files.wordpress.com/2009/01/372px-chinese_dragon233101641_std.png?w=372&amp;h=599">dragon</a>, <a href="http://www.snakeriveralliance.org/Portals/2/images/1969dumping.JPG">buried nuclear waste</a>, <a href="http://www.friendsofbruce.ca/images/h_nuclear_waste_03.jpg">stored waste</a>, <a href="http://upload.wikimedia.org/wikipedia/commons/4/4e/Nuclear_Power_Plant_Cattenom.jpg">nuclear plant</a>, <a href="http://www.abc.net.au/reslib/200806/r266078_1112613.jpg">stored red barrels</a>, <a href="http://spectrum.ieee.org/image/37182">recycling nuclear waste</a>, <a href="http://static.guim.co.uk/sys-images/Guardian/About/General/2009/10/19/1255947981833/nuclear-waste-001.jpg">buried waste</a>, <a href="http://www.wves.org/images/HLW_Canisters.gif">yellow room waste</a>, <a href="http://www.sliceofscifi.com/wp-content/uploads/2007/10/asteroid-itokawa-desk-1024.jpg">asteroid</a>, <a href="http://static.howstuffworks.com/gif/moon-landing-hoax-1.jpg">moon</a>, <a href="https://www.eniscuola.net/Foto/2004726103253.jpg">barrel dump moon</a>, <a href="http://wikimedia.com/">moon</a>, <a href="http://blog.masslive.com/entertainment/2009/06/large_TV%20O~Brien%20on%20Tonight_Kubo.jpg">conan on tv</a>, <a href="http://www.twitter.com/jayleno">lenos twitter</a>, <a href="http://www.chilloutpoint.com/images/2009/12/olimpic-torch-path/olimpic-torch-path-05.jpg">olympic flame out</a>, <a href="http://knowledge.coastalwatch.com/download/attachments/7342587/The-moguls-course-at-Vancouver%27s-Cypress-Mountain-.jpg">olympic track1</a>, <a href="http://www.olympics.com.au/images/dmNews/StandardImage/lachlan_hay1.jpg">lachlan hay</a>, <a href="http://www.digital-photo.com.au/gallery/d/18043-4/_MG_3831.jpg">lachlan hay 2</a>, <a href="http://www.digital-photo.com.au/gallery/d/24638-6/Lachlan-Hay_-Jeremy-Beck-and-Noah-Essaghir-racing-in-2009-Duke-Trophy-speed-skating-competition_MG_5087.jpg">lachlan hay 3</a>, <a href="http://www.moviewallpapers.net/images/wallpapers/1982/tron/tron-1-1024.jpg&amp;imgrefurl=http://www.moviewallpapers.net/download/desktop/833/1024/Tron.html&amp;usg=__oGupX_u8y6snv_RWtV9wXwrdKVI=&amp;h=768&amp;w=1024&amp;sz=232&amp;hl=en&amp;start=59&amp;um=1&amp;itbs=1&amp;tbnid=0ZIjH6gQXWEG_M:&amp;tbnh=113&amp;tbnw=150&amp;prev=/images%3Fq%3Dtron%26start%3D42%26um%3D1%26hl%3Den%26client%3Dfirefox-a%26hs%3DMSm%26sa%3DN%26rls%3Dorg.mozilla:en-US:official%26ndsp%3D21%26tbs%3Disch:1">Tron Movie Poster</a>, <a href="http://starcasm.net/archives/36813">Speed Skater</a>. Music by <a href="http://podingtonbear.com" target="_blank">Podington Bear</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/happy-birthday-justin-bieber/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/happy-birthday-justin-bieber_hd_720p.mov" length="164029796" type="video/quicktime" />
+	<itunes:summary>Molly reports on Justin Bieber&#8217;s birthday, Conan on Twitter, nuclear waste on asteroids, Hummer going out of business, and more.  Story links: Tron Movie Poster, Speed Skater, smart internet, hummer, hummer 2, hummer 3, tengzhong site, barrels of oil, conan obrien twitter, article about conan picture, conan 1, conan 2, conan 3, space.com thread about waste, asteroid going into the sun. Assets: gm sign, green hummer, convertible hummer, yellow hummer, guy on hummer, woman hummer, chinese city, hummer to be eaten, dragon, buried nuclear waste, stored waste, nuclear plant, stored red barrels, recycling nuclear waste, buried waste, yellow room waste, asteroid, moon, barrel dump moon, moon, conan on tv, lenos twitter, olympic flame out, olympic track1, lachlan hay, lachlan hay 2, lachlan hay 3, Tron Movie Poster, Speed Skater. Music by Podington Bear.
+
+http://www.rocketboom.com/happy-birthday-justin-bieber/</itunes:summary>
+<itunes:subtitle>Molly reports on Justin Bieber&#8217;s birthday, Conan on Twitter, nuclear waste on asteroids, Hummer going out of business, and more.  Story links: Tron Movie Poster, Speed Skater, smart internet, hummer, hummer 2, hummer 3, tengzhong site, [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/happy-birthday-justin-bieber_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Snowpocalypse Now</title>
+		<link>http://www.rocketboom.com/snowpocalypse/</link>
+		<comments>http://www.rocketboom.com/snowpocalypse/#comments</comments>
+		<pubDate>Fri, 26 Feb 2010 21:40:26 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Casual Fridays]]></category>
+
+		<category><![CDATA[bad weather]]></category>
+
+		<category><![CDATA[blizzard]]></category>
+
+		<category><![CDATA[east coast]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[molly]]></category>
+
+		<category><![CDATA[New York City]]></category>
+
+		<category><![CDATA[Rocketboom]]></category>
+
+		<category><![CDATA[snow]]></category>
+
+		<category><![CDATA[snow storm]]></category>
+
+		<category><![CDATA[snowmaggedon]]></category>
+
+		<category><![CDATA[snowpocalypse]]></category>
+
+		<category><![CDATA[weather]]></category>
+
+		<category><![CDATA[weather forecast]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4628</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/ovOtNVT-w5c&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/ovOtNVT-w5c&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>An emergency weather report from Molly, Molly, and Molly. Assets: Japanese Smiling Dog. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/ovOtNVT-w5c&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/ovOtNVT-w5c&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span>An emergency weather report from <a href="http://twitter.com/mememolly" target="_blank">Molly, Molly, and Molly</a>. Assets: <a href="http://www.youtube.com/watch?v=8T5-pm48ucY">Japanese Smiling Dog</a>. Follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a> for behind the scenes pics and videos!<br />
+<a title="http://facebook.com/rocketboom" dir="ltr" rel="nofollow" href="http://facebook.com/rocketboom" target="_blank"><br />
+</a></span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/snowpocalypse/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/snowpocalypse_hd_720p.mov" length="53532164" type="video/quicktime" />
+	<itunes:summary>An emergency weather report from Molly, Molly, and Molly. Assets: Japanese Smiling Dog. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+
+http://www.rocketboom.com/snowpocalypse/</itunes:summary>
+<itunes:subtitle>An emergency weather report from Molly, Molly, and Molly. Assets: Japanese Smiling Dog. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/snowpocalypse_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Mortified</title>
+		<link>http://www.rocketboom.com/mortified/</link>
+		<comments>http://www.rocketboom.com/mortified/#comments</comments>
+		<pubDate>Thu, 25 Feb 2010 14:44:42 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[Humanwire]]></category>
+
+		<category><![CDATA[Interviews]]></category>
+
+		<category><![CDATA[cast]]></category>
+
+		<category><![CDATA[Dave Nadelberg]]></category>
+
+		<category><![CDATA[get mortified]]></category>
+
+		<category><![CDATA[live]]></category>
+
+		<category><![CDATA[love is a battle field]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[Mortified]]></category>
+
+		<category><![CDATA[real pathetic]]></category>
+
+		<category><![CDATA[real people]]></category>
+
+		<category><![CDATA[real words]]></category>
+
+		<category><![CDATA[Rocketboom]]></category>
+
+		<category><![CDATA[series]]></category>
+
+		<category><![CDATA[shoe  box show]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4622</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/d8eNA6M7svw&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/d8eNA6M7svw&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly interviews Mortified creator and founder Dave Nadelberg. Assets: Home Video, Diary. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/d8eNA6M7svw&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/d8eNA6M7svw&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span><a href="http://twitter.com/mememolly" target="_blank">Molly</a> interviews <a href="http://www.getmortified.com/" target="_blank">Mortified</a> creator and founder <a href="http://www.imdb.com/name/nm1403021/" target="_blank">Dave Nadelberg</a>. Assets: <a href="http://www.youtube.com/watch?v=_1diyQcjS04">Home Video</a>, <a href="http://www.flickr.com/photos/bdorfman/15846725/sizes/l/">Diary</a>. Follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a> for behind the scenes pics and videos!</span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/mortified/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/mortified_hd.m4v" length="94582873" type="video/quicktime" />
+	<itunes:summary>Molly interviews Mortified creator and founder Dave Nadelberg. Assets: Home Video, Diary. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+http://www.rocketboom.com/mortified/</itunes:summary>
+<itunes:subtitle>Molly interviews Mortified creator and founder Dave Nadelberg. Assets: Home Video, Diary. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/mortified_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Community Channel - Natalie Tran</title>
+		<link>http://www.rocketboom.com/ella-community-chan/</link>
+		<comments>http://www.rocketboom.com/ella-community-chan/#comments</comments>
+		<pubDate>Wed, 24 Feb 2010 15:01:29 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[New York City]]></category>
+
+		<category><![CDATA[australia]]></category>
+
+		<category><![CDATA[Community Channel]]></category>
+
+		<category><![CDATA[ella morton]]></category>
+
+		<category><![CDATA[Natalie Tran]]></category>
+
+		<category><![CDATA[sydney]]></category>
+
+		<category><![CDATA[vlogger]]></category>
+
+		<category><![CDATA[YouTube]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4618</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/bzn1V5l74qU&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/bzn1V5l74qU&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Rocketboom&#8217;s Ella Morton interviews Natalie Tran also known as Community Channel on YouTube. Music by Podington Bear.
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/bzn1V5l74qU&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/bzn1V5l74qU&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Rocketboom&#8217;s <a href="http://twitter.com/ellamorton" target="_blank">Ella Morton</a> interviews <a href="http://en.wikipedia.org/wiki/Natalie_Tran" target="_blank">Natalie Tran</a> also known as <a href="http://youtube.com/communitychannel" target="_blank">Community Channel</a> on YouTube. Music by <a href="http://podingtonbear.com/" target="_blank">Podington Bear</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/ella-community-chan/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/ella-community-chan_hd.m4v" length="83632411" type="video/quicktime" />
+	<itunes:summary>Rocketboom&#8217;s Ella Morton interviews Natalie Tran also known as Community Channel on YouTube. Music by Podington Bear.
+
+http://www.rocketboom.com/ella-community-chan/</itunes:summary>
+<itunes:subtitle>Rocketboom&#8217;s Ella Morton interviews Natalie Tran also known as Community Channel on YouTube. Music by Podington Bear.
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/ella-community-chan_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Collecting Digital History</title>
+		<link>http://www.rocketboom.com/rb-tech-collector/</link>
+		<comments>http://www.rocketboom.com/rb-tech-collector/#comments</comments>
+		<pubDate>Tue, 23 Feb 2010 15:01:29 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Technology]]></category>
+
+		<category><![CDATA[collecting tech]]></category>
+
+		<category><![CDATA[ebay]]></category>
+
+		<category><![CDATA[ellie rountree]]></category>
+
+		<category><![CDATA[Intel]]></category>
+
+		<category><![CDATA[NES]]></category>
+
+		<category><![CDATA[nintendo]]></category>
+
+		<category><![CDATA[old technology]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4612</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/sX1Z2TE8qWg&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/sX1Z2TE8qWg&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Rocketboom Tech&#8217;s Ellie Rountree gives some advice on being a tech collector. Story Links: History of the Internet, e-waste, where old computers go to die, old tech on ebay, Old Nintendo system sells for $13,105, Rarity Guide, Brick Phone, Extra Thick Brick Phone, Collectible Mobile Phones, Derek Morris, The Most Collectible PCs of all timeAssets: [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/sX1Z2TE8qWg&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/sX1Z2TE8qWg&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Rocketboom Tech&#8217;s Ellie Rountree gives some advice on being a tech collector. Story Links: <a href="http://www.computerhistory.org/internet_history/">History of the Internet</a>, <a href="http://www.psfk.com/wp-content/uploads/2009/07/e-waste16.jpg">e-waste</a>, <a href="http://www.psfk.com/2009/07/pic-where-old-computers-go-to-die.html">where old computers go to die</a>, <a href="http://shop.ebay.com/?_from=R40&amp;_trksid=p3907.m38.l1313&amp;_nkw=computer+&amp;_sacat=See-All-Categories">old tech on ebay</a>, <a href="http://ow.ly/16X8h">Old Nintendo system sells for $13,105</a>, <a href="http://www.rarityguide.com">Rarity Guide</a>, <a href="http://cgi.ebay.com/NewVintage-Motorola-8000M-Thick-Brick-Cell-Mobile-Phone_W0QQitemZ370331900868QQcmdZViewItemQQptZCell_Phones?hash=item5639805bc4">Brick Phone</a>, <a href="http://cgi.ebay.com/NEW-IN-Box-Vintage-Motorola-EXTRA-Thick-Brick-Phone_W0QQitemZ160399533216QQcmdZViewItemQQptZCell_Phones?hash=item25588ea4a0">Extra Thick Brick Phone</a>, <a href="http://www.bidtrendz.com/collectible/2005/03/collectible-mobile-phones/">Collectible Mobile Phones</a>, <a href="http://www.youtube.com/watch?v=I5uPHr65QV0">Derek Morris</a>, <a href="http://www.pcworld.com/article/136242/the_most_collectible_pcs_of_all_time.html">The Most Collectible PCs of all time</a>Assets: <a href="http://earthboundcentral.com/2009/02/mint-unopened-earthbound/">Earthbound, SNES sealed (rare)Sealed games</a>, <a href="http://doublebarreled.files.wordpress.com/2009/08/sealed-ps1-004.jpg">Stadium Events Gameplay</a>, <a href="http://www.youtube.com/watch?v=1zvEEei7sIQ">Swordquest</a>, <a href="http://www.steverd.com/what26/what26.htm">waterworld</a>, <a href="http://www.nydailynews.com/tech_guide/2010/02/14/2010-02-14_classic_nintendo_nes_console_nabs_13g_on_ebay_for_rare_stadium_events_game.html">Stadium Events story</a>, <a href="http://www.pinkgorillagames.com/news/stadium-events-thumb.jpg">Stadium Events Unpacked</a>, <a href="http://4.bp.blogspot.com/_BDCqpuwRnf4/Ry8AaY3Vu2I/AAAAAAAACb0/yoRclyTmJ94/s400/Chrono%2BTrigger%2B1.JPG">Chrono Trigger Sealed</a>, <a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;item=370332875343">Rare old Brick Phone</a>, <a href="http://www.youtube.com/watch?v=I5uPHr65QV0">Saved By The Bell Cellphone</a>, <a href="http://www.indianahoosier.com/Atari2600">Swordquest w/box</a>, <a href="http://cgi.ebay.com/Near-Mint-Nintendo-Virtual-Boy-System-3-New-games-JPN_W0QQitemZ220543172486QQcmdZViewItemQQptZUS_Vintage_Video_Games?hash=item335965bf86">Virtual Boy</a>, <a href="http://cgi.ebay.com/PS2-REZ-TRANCE-VIBRATOR-Import-Japan-Limited_W0QQitemZ220508074514QQcmdZViewItemQQptZLH_DefaultDomain_0?hash=item33574e3212">Rez, w/Trance Vibrator</a>, <a href="http://www.bruceongames.com/wp-content/uploads/2008/04/nintendo-entertainment-system.jpg">NES</a>, <a href="http://museum.daviscsclub.com/images/2_1.gif">Computer Museum</a>, <a href="http://cgi.ebay.com/Vintage-IBM-5150-and-IBM-First-Color-Monitor-Model-5153_W0QQitemZ300397976476QQcmdZViewItemQQptZLH_DefaultDomain_0?hash=item45f11d5b9c#ht_3844wt_1167">Mid Condition</a>, <a href="http://cgi.ebay.com/Vintage-IBM-Heavy-duty-5150-keyboard_W0QQitemZ220557367858QQcmdZViewItemQQptZLH_DefaultDomain_0?hash=item335a3e5a32#ht_705wt_1167">Keyboard Mid Condition</a>, <a href="http://minnesotaindependent.com/wp-content/uploads/2008/10/mario_money_1122.jpg">Mario Coins</a>, <a href="http://myworld.ebay.com/lace_thongs35/">NES Seller</a>, <a href="http://img85.imageshack.us/img85/641/6000jc1.jpg">Nintendo World Champion grey</a>, <a href="http://www.rarityguide.com/forums/attachments/flea-market/35d1251166680-considering-selling-my-1990-nintendo-world-championship-grey-cartridge-dsc01660.jpg">Grey &amp; Gold World Champ</a>, <a href="http://blogs.laweekly.com/style_council/2009/07/07/Nintendo-World-Championship-Gold-Gray.jpg">World Championship</a>, <a href="http://dl.maximumpc.com/galleries/25oldpcs/Kenbak-1_01_full.jpg">kenback 1</a>, <a href="http://www.knowledgerush.com/wiki_image/1/19/Altair_8800.jpg">altair</a>, <a href="http://upload.wikimedia.org/wikipedia/commons/9/9d/Commodore64.jpg">commodore 64</a>, <a href="http://www.gimponthego.com/moma.jpg">MoMA</a>, <a href="http://www.flickr.com/photos/macensteph/490479212/">iPod at MoMA</a>, <a href="http://www.mrmartinweb.com/images/computer/trs80model1lg.jpg">TRS80</a>.</p>
+<p>This episode was created in collaboration with <a href="http://www.intel.com">Intel</a>! <a href="http://www.intel.com"><img src="http://www.rocketboom.net/images/logo_intel.gif" border="0" alt="" width="45" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/rb-tech-collector/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/rb-tech-collector_hd.m4v" length="121861535" type="video/quicktime" />
+	<itunes:summary>Rocketboom Tech&#8217;s Ellie Rountree gives some advice on being a tech collector. Story Links: History of the Internet, e-waste, where old computers go to die, old tech on ebay, Old Nintendo system sells for $13,105, Rarity Guide, Brick Phone, Extra Thick Brick Phone, Collectible Mobile Phones, Derek Morris, The Most Collectible PCs of all timeAssets: Earthbound, SNES sealed (rare)Sealed games, Stadium Events Gameplay, Swordquest, waterworld, Stadium Events story, Stadium Events Unpacked, Chrono Trigger Sealed, Rare old Brick Phone, Saved By The Bell Cellphone, Swordquest w/box, Virtual Boy, Rez, w/Trance Vibrator, NES, Computer Museum, Mid Condition, Keyboard Mid Condition, Mario Coins, NES Seller, Nintendo World Champion grey, Grey &#38; Gold World Champ, World Championship, kenback 1, altair, commodore 64, MoMA, iPod at MoMA, TRS80.
+This episode was created in collaboration with Intel! 
+
+http://www.rocketboom.com/rb-tech-collector/</itunes:summary>
+<itunes:subtitle>Rocketboom Tech&#8217;s Ellie Rountree gives some advice on being a tech collector. Story Links: History of the Internet, e-waste, where old computers go to die, old tech on ebay, Old Nintendo system sells for $13,105, Rarity Guide, Brick Phone, [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/rb-tech-collector_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>The Epic Beard Rocks</title>
+		<link>http://www.rocketboom.com/epic-beard-rocks/</link>
+		<comments>http://www.rocketboom.com/epic-beard-rocks/#comments</comments>
+		<pubDate>Mon, 22 Feb 2010 15:50:55 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[AC Transit]]></category>
+
+		<category><![CDATA[amber lamps]]></category>
+
+		<category><![CDATA[arsenio hall]]></category>
+
+		<category><![CDATA[bus fight]]></category>
+
+		<category><![CDATA[cleveland]]></category>
+
+		<category><![CDATA[cleveland browns]]></category>
+
+		<category><![CDATA[cleveland cavs]]></category>
+
+		<category><![CDATA[epic beard man]]></category>
+
+		<category><![CDATA[fists of fury]]></category>
+
+		<category><![CDATA[pickles]]></category>
+
+		<category><![CDATA[Texas]]></category>
+
+		<category><![CDATA[transit bus]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4609</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/VhEChVwZF8k&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/VhEChVwZF8k&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly reports on Epic Beard Man and more. Assets: Buy a Tech Firm, Get a Ping Pong Table, Equation, Epic Beard Man, Cleveland Skyline, Texas, Texas 2, Cleveland City Hall, Cleveland House, Bob&#8217;s Pickle Pops, Cow Madness, Cleveland Most Miserable City
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/VhEChVwZF8k&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/VhEChVwZF8k&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Molly reports on Epic Beard Man and more. Assets: <a href="http://www.timesunion.com/ASPStories/Story.asp?StoryID=902933&amp;LinkFrom=RSS">Buy a Tech Firm, Get a Ping Pong Table</a>, <a href="http://pixdaus.com/single.php?id=230603&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+PizdausPopularTodayPics+(Pizdaus:+Popular+Today+Pics)">Equation</a>, <a href="http://knowyourmeme.com/memes/epic-beard-man">Epic Beard Man</a>, <a href="http://upload.wikimedia.org/wikipedia/commons/d/df/Cleveland_Skyline_Aug_2006.JPG">Cleveland Skyline</a>, <a href="http://texas.campusrn.com/images/texas_homepage.gif">Texas</a>, <a href="http://www.guidetoliteraryagents.com/blog/content/binary/texas2.gif">Texas 2</a>, <a href="http://travel.webshots.com/photo/1477812839015286719cLdEcy">Cleveland City Hall</a>, <a href="http://scrapetv.com/News/News%20Pages/usa/images-3/Cleveland-house.jpg">Cleveland House</a>, <a href="http://www.bobspicklepops.com/">Bob&#8217;s Pickle Pops</a>, <a href="http://www.popaganda.com/blog1.php/2010/02/10/cow-madness-in-south-texas">Cow Madness</a>, <a href="http://www.reuters.com/article/idUSTRE61H5WN20100218">Cleveland Most Miserable City</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/epic-beard-rocks/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/epic-beard-rocks_hd.m4v" length="59865743" type="video/quicktime" />
+	<itunes:summary>Molly reports on Epic Beard Man and more. Assets: Buy a Tech Firm, Get a Ping Pong Table, Equation, Epic Beard Man, Cleveland Skyline, Texas, Texas 2, Cleveland City Hall, Cleveland House, Bob&#8217;s Pickle Pops, Cow Madness, Cleveland Most Miserable City
+
+http://www.rocketboom.com/epic-beard-rocks/</itunes:summary>
+<itunes:subtitle>Molly reports on Epic Beard Man and more. Assets: Buy a Tech Firm, Get a Ping Pong Table, Equation, Epic Beard Man, Cleveland Skyline, Texas, Texas 2, Cleveland City Hall, Cleveland House, Bob&#8217;s Pickle Pops, Cow Madness, Cleveland Most [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/epic-beard-rocks_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Wacky Laws</title>
+		<link>http://www.rocketboom.com/wacky-laws/</link>
+		<comments>http://www.rocketboom.com/wacky-laws/#comments</comments>
+		<pubDate>Sat, 20 Feb 2010 02:34:29 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Casual Fridays]]></category>
+
+		<category><![CDATA[leah demilio]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[New York City]]></category>
+
+		<category><![CDATA[strange laws]]></category>
+
+		<category><![CDATA[wackly laws]]></category>
+
+		<category><![CDATA[weird laws]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4607</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/pZvRj8YFsBQ&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/pZvRj8YFsBQ&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly talks Leah into trying to get arrested by breaking some wacky laws around New York City. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/pZvRj8YFsBQ&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/pZvRj8YFsBQ&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span><a href="http://twitter.com/mememolly" target="_blank">Molly</a> talks <a href="http://twitter.com/leahdemilio" target="_blank">Leah</a> into trying to get arrested by breaking some wacky laws around New York City. Follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a> for behind the scenes pics and videos!<br />
+<a title="http://facebook.com/rocketboom" dir="ltr" rel="nofollow" href="http://facebook.com/rocketboom" target="_blank"><br />
+</a></span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/wacky-laws/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/wacky-laws_hd.m4v" length="53476346" type="video/quicktime" />
+	<itunes:summary>Molly talks Leah into trying to get arrested by breaking some wacky laws around New York City. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+
+http://www.rocketboom.com/wacky-laws/</itunes:summary>
+<itunes:subtitle>Molly talks Leah into trying to get arrested by breaking some wacky laws around New York City. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/wacky-laws_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Toy Fair</title>
+		<link>http://www.rocketboom.com/toy-fair/</link>
+		<comments>http://www.rocketboom.com/toy-fair/#comments</comments>
+		<pubDate>Fri, 19 Feb 2010 14:32:20 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[Topical]]></category>
+
+		<category><![CDATA[BeanieBabies]]></category>
+
+		<category><![CDATA[BeanieBoos]]></category>
+
+		<category><![CDATA[BoxOMania]]></category>
+
+		<category><![CDATA[CardGames]]></category>
+
+		<category><![CDATA[Gibbons]]></category>
+
+		<category><![CDATA[GuyFalling]]></category>
+
+		<category><![CDATA[HelloKitty]]></category>
+
+		<category><![CDATA[HighLining]]></category>
+
+		<category><![CDATA[iPhonePets]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[NewYorkCity]]></category>
+
+		<category><![CDATA[nyc]]></category>
+
+		<category><![CDATA[Rocketboom]]></category>
+
+		<category><![CDATA[SetGame]]></category>
+
+		<category><![CDATA[SlackLining]]></category>
+
+		<category><![CDATA[TommyTheTomato]]></category>
+
+		<category><![CDATA[ToyFair2010]]></category>
+
+		<category><![CDATA[TY]]></category>
+
+		<category><![CDATA[XachiPets]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4605</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/_K7TgEy-fQY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/_K7TgEy-fQY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly visits Toy Fair 2010 in NYC to get a look at some of this year&#8217;s greatest toys.
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/_K7TgEy-fQY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/_K7TgEy-fQY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span><a href="http://twitter.com/mememolly" target="_blank">Molly</a> visits <a href="http://www.engageexpo.com/ny2010/toyfair/index.html" target="_blank">Toy Fair 2010</a> in NYC to get a look at some of this year&#8217;s greatest toys.</span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/toy-fair/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/toy-fair_hd.m4v" length="67091466" type="video/quicktime" />
+	<itunes:summary>Molly visits Toy Fair 2010 in NYC to get a look at some of this year&#8217;s greatest toys.
+
+http://www.rocketboom.com/toy-fair/</itunes:summary>
+<itunes:subtitle>Molly visits Toy Fair 2010 in NYC to get a look at some of this year&#8217;s greatest toys.
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/toy-fair_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Elvis in Jerusalem</title>
+		<link>http://www.rocketboom.com/elvis-in-israel/</link>
+		<comments>http://www.rocketboom.com/elvis-in-israel/#comments</comments>
+		<pubDate>Wed, 17 Feb 2010 14:43:41 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Humanwire]]></category>
+
+		<category><![CDATA[elvis]]></category>
+
+		<category><![CDATA[Elvis American Inn]]></category>
+
+		<category><![CDATA[Harvey Stein]]></category>
+
+		<category><![CDATA[israel]]></category>
+
+		<category><![CDATA[Jerusalem]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4602</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/SyS2lDjOHaY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/SyS2lDjOHaY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Rocketboom&#8217;s Humanwire correspondent Harvey Stein reports from Jerusalem, Israel about the celebration of Elvis&#8217; birthday at the Elvis American Inn.
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/SyS2lDjOHaY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/SyS2lDjOHaY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Rocketboom&#8217;s Humanwire correspondent <a href="http://heartoftheother.com/trailer" target="_blank">Harvey Stein</a> reports from Jerusalem, Israel about the celebration of Elvis&#8217; birthday at the <a href="http://www.2eat.co.il/elvis/" target="_blank">Elvis American Inn</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/elvis-in-israel/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/elvis-in-israel_hd.m4v" length="99508733" type="video/quicktime" />
+	<itunes:summary>Rocketboom&#8217;s Humanwire correspondent Harvey Stein reports from Jerusalem, Israel about the celebration of Elvis&#8217; birthday at the Elvis American Inn.
+
+http://www.rocketboom.com/elvis-in-israel/</itunes:summary>
+<itunes:subtitle>Rocketboom&#8217;s Humanwire correspondent Harvey Stein reports from Jerusalem, Israel about the celebration of Elvis&#8217; birthday at the Elvis American Inn.
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/elvis-in-israel_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Apple Zoom</title>
+		<link>http://www.rocketboom.com/apple-zoom/</link>
+		<comments>http://www.rocketboom.com/apple-zoom/#comments</comments>
+		<pubDate>Tue, 16 Feb 2010 09:08:36 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[california]]></category>
+
+		<category><![CDATA[coastline]]></category>
+
+		<category><![CDATA[ebeneezer place]]></category>
+
+		<category><![CDATA[ipad]]></category>
+
+		<category><![CDATA[iphone]]></category>
+
+		<category><![CDATA[ipod]]></category>
+
+		<category><![CDATA[large hadron collider]]></category>
+
+		<category><![CDATA[russian]]></category>
+
+		<category><![CDATA[steve ballmer]]></category>
+
+		<category><![CDATA[steve jobs]]></category>
+
+		<category><![CDATA[tv]]></category>
+
+		<category><![CDATA[veoh]]></category>
+
+		<category><![CDATA[wal-mart]]></category>
+
+		<category><![CDATA[xfactor]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4596</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/LGp1my-Zx-M&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/LGp1my-Zx-M&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly recites her A, B, C&#8217;s&#8230; Story links: Tribute to Steve Ballmer, California Coastline, California Coastline 2, Large Hadron Collider Delay, Shortest Street on Earth, Surprising Animal Facts, iBap Jeans for the iPad, Jelly Fish Challanger, Karaoke Rage, Super Mario 64, Canadian NATO Spy Station Up for Sale, Oranges Charge an iPhone, I&#8217;m Just a [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/LGp1my-Zx-M&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/LGp1my-Zx-M&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Molly recites her A, B, C&#8217;s&#8230; Story links: <a href="http://www.bestinclass.dk/index.php/2010/02/my-tribute-to-steve-ballmer/">Tribute to Steve Ballmer</a>, <a href="californiacoastline.org">California Coastline</a>, <a href="http://www.californiacoastline.org/cgi-bin/image.cgi?image=200802289&amp;mode=sequential&amp;flags=0&amp;year=2008">California Coastline 2</a>, <a href="http://www.sciencemag.org/cgi/content/full/327/5967/766?rss=1">Large Hadron Collider Delay</a>, <a href="http://www.uniquedaily.com/shortest-street-on-earth/">Shortest Street on Earth</a>, <a href="http://www.toptenz.net/top-10-surprising-animal-facts.php?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+toptenzlist+(Top+10+Lists+-+TopTenz.net)&amp;utm_content=Bloglines">Surprising Animal Facts</a>, <a href="http://blog.rocketboom.com/post/387931150/ibap-jeans-for-the-ipad">iBap Jeans for the iPad</a>, <a href="http://jellyfishchallanger.ytmnd.com/">Jelly Fish Challanger</a>, <a href="http://www.metafilter.com/88990/Karaoke-Rage">Karaoke Rage</a>, <a href="http://en.wikipedia.org/wiki/Super_Mario_64">Super Mario 64</a>, <a href="http://primarysources.newsvine.com/_news/2010/02/14/3893729-canadian-nato-spy-station-up-for-sale">Canadian NATO Spy Station Up for Sale</a>, <a href="http://www.engadget.com/2010/02/13/how-many-oranges-does-it-take-to-charge-an-apple-video/">Oranges Charge an iPhone</a>, <a href="http://i.imgur.com/I1UzU.png">I&#8217;m Just a Panda</a>, <a href="http://blog.rocketboom.com/post/361538361/via-redeyebase">This Door is Alarmed</a>, <a href="http://www.youtube.com/watch?v=o3nUao9FLVk">Rocketboom Subtitled in Russian</a>, <a href="http://www.popfi.com/2010/02/12/29-innocent-tvs-smashed-in-rampage-through-wal-mart/">Wal-Mart TV Smashing Rampage</a>, <a href="http://www.pcmag.com/article2/0,2817,2359105,00.asp">Veoh</a>, <a href="http://theawesomer.com/yankees-monument-park-brick/26905/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+TheAwesomer+(The+Awesomer)&amp;utm_content=Bloglines">Yankee Bricks</a>. Assets: <a href="http://img.youtube.com/vi/7GRv-kv5XEg/0.jpg">jobs ipod</a>, <a href="http://assets.nydailynews.com/img/2009/12/29/alg_islate.jpg">jobs iphone</a>, <a href="http://images.smh.com.au/2010/01/28/1072116/a5-600x400.jpg">jobs ipad</a>, <a href="http://i.telegraph.co.uk/telegraph/multimedia/archive/00801/large-hadron_801393i.jpg">large hadron collider</a>, <a href="http://www.stlouisselfdefense.com/images/ground_fighting.jpg">fighting</a>, <a href="http://www.space4peace.org/newsletter/gnnews20j.jpg">spy station</a>, <a href="http://selleckwaterfallsandwich.tumblr.com/">tom sellick/w/sandwich</a>, <a href="http://farm3.static.flickr.com/2453/3704889941_b8b3908e1a.jpg">ebeneezer place 2</a>, <a href="http://farm4.static.flickr.com/3042/3050712190_dcfe7283c4.jpg">blank tombstone</a>, <a href="http://www.djmick.co.uk/images/2009/09/x-factor-usa-465x479.jpg">xfactor usa</a>, <a href="http://www.otasoft.com/?paged=3">smashed flatscreen image</a>, <a href="http://www.youtube.com/watch?v=Ss68YWoihqs">Georgia TV smasher</a>, <a href="http://www.rl-p-cormack-fam.info/William.html">Wick Scotland</a>. Music by <a href="http://podingtonbear.com/" target="_blank">Podington Bear</a>. Follow us on <a href="http://twitter.com/rocketboom">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom">Facebook</a> for behind the scenes pics and videos!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/apple-zoom/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/apple-zoom_hd.m4v" length="41104102" type="video/quicktime" />
+	<itunes:summary>Molly recites her A, B, C&#8217;s&#8230; Story links: Tribute to Steve Ballmer, California Coastline, California Coastline 2, Large Hadron Collider Delay, Shortest Street on Earth, Surprising Animal Facts, iBap Jeans for the iPad, Jelly Fish Challanger, Karaoke Rage, Super Mario 64, Canadian NATO Spy Station Up for Sale, Oranges Charge an iPhone, I&#8217;m Just a Panda, This Door is Alarmed, Rocketboom Subtitled in Russian, Wal-Mart TV Smashing Rampage, Veoh, Yankee Bricks. Assets: jobs ipod, jobs iphone, jobs ipad, large hadron collider, fighting, spy station, tom sellick/w/sandwich, ebeneezer place 2, blank tombstone, xfactor usa, smashed flatscreen image, Georgia TV smasher, Wick Scotland. Music by Podington Bear. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pics and videos!
+
+http://www.rocketboom.com/apple-zoom/</itunes:summary>
+<itunes:subtitle>Molly recites her A, B, C&#8217;s&#8230; Story links: Tribute to Steve Ballmer, California Coastline, California Coastline 2, Large Hadron Collider Delay, Shortest Street on Earth, Surprising Animal Facts, iBap Jeans for the iPad, Jelly Fish [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/apple-zoom_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Olympic Land</title>
+		<link>http://www.rocketboom.com/olympic-land/</link>
+		<comments>http://www.rocketboom.com/olympic-land/#comments</comments>
+		<pubDate>Mon, 15 Feb 2010 14:45:45 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[2010]]></category>
+
+		<category><![CDATA[antarctica]]></category>
+
+		<category><![CDATA[bir tawil]]></category>
+
+		<category><![CDATA[crow bots]]></category>
+
+		<category><![CDATA[dubai]]></category>
+
+		<category><![CDATA[jennifer rodriquez]]></category>
+
+		<category><![CDATA[jeret peterson]]></category>
+
+		<category><![CDATA[katie uhlaender]]></category>
+
+		<category><![CDATA[laura spector]]></category>
+
+		<category><![CDATA[marie byrd]]></category>
+
+		<category><![CDATA[mirai nagasu]]></category>
+
+		<category><![CDATA[noelle pikus pace]]></category>
+
+		<category><![CDATA[ogori cafe]]></category>
+
+		<category><![CDATA[olympics]]></category>
+
+		<category><![CDATA[speedy]]></category>
+
+		<category><![CDATA[stephani victor]]></category>
+
+		<category><![CDATA[tony benshoof]]></category>
+
+		<category><![CDATA[Vancouver]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4592</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/NGEOW-qEKAc&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/NGEOW-qEKAc&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly talks about land opportunities, the Olympics, and more. Story links: Nodar Kumaritashvili [pic 1], Nodar Kumaritashvili [pic 2], Nodar Kumaritashvili [pic 3], Nodar Kumaritashvili [pic 4], Nodar Kumaritashvili [pic 5], Crow-Bot, Ogori Cafe, Ogori Chart, Luxury Float, Map of Bir Tawil, Map of Marie Byrd, Animals Migrating, world map, elephant, tucan, panda, kangaroo, buffalo, [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/NGEOW-qEKAc&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/NGEOW-qEKAc&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Molly talks about land opportunities, the Olympics, and more. Story links: <a href="http://www.dailymail.co.uk/sport/othersports/article-1250679/Nodar-Kumaritashvili-killed-crazy-luge-track-Canadians-training-clampdown.html">Nodar Kumaritashvili [pic 1]</a>, <a href="http://blog.seattlepi.com/hottopics/archives/194342.asp?source=mypi">Nodar Kumaritashvili [pic 2]</a>, <a href="http://www.latimes.com/sports/la-oly-olympics-kumaritashvili1-2010feb13,0,1330502.story">Nodar Kumaritashvili [pic 3]</a>, <a href="http://hotindienews.com/2010/02/12/1018878">Nodar Kumaritashvili [pic 4]</a>, <a href="http://news.xinhuanet.com/english2010/sports/2010-02/13/c_13174260.htm">Nodar Kumaritashvili [pic 5]</a>, <a href="http://www.botjunkie.com/2010/02/12/crowbot-talks-to-the-birds/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+Botjunkie+(BotJunkie)">Crow-Bot</a>, <a href="http://web.mac.com/eat_art/ogoricafe/ogori_cafe.html">Ogori Cafe</a>, <a href="http://www.kirainet.com/english/coffee-shop-where-you-pay-the-coffee-of-the-next-client/">Ogori Chart</a>, <a href="http://www.smh.com.au/photogallery/travel/aircruise-the-future-of-luxury-travel/20100204-nf7l.html">Luxury Float</a>, <a href="http://en.wikipedia.org/wiki/Bir_Tawil">Map of Bir Tawil</a>, <a href="http://en.wikipedia.org/wiki/Marie_Byrd_Land">Map of Marie Byrd</a>, <a href="http://www.onorbit.com/node/1948">Animals Migrating</a>, <a href="http://www.geography-exam.com/atlas/">world map</a>, <a href="http://www.freeclipartpictures.com/clipart/animals25.htm">elephant</a>, <a href="http://www.donnalisa.com/">tucan</a>, <a href="http://www.fotosearch.com/clip-art/panda.html">panda</a>, <a href="http://classroomclipart.com/cgi-bin/kids/imageFolio.cgi?action=view&amp;link=Clipart/Animals/Kangaroo_Clipart&amp;image=kangaroo_14.jpg&amp;img=6&amp;tt=">kangaroo</a>, <a href="http://www.sedubois.k12.in.us/~pineridge/ourhistory.htm">buffalo</a>, <a href="http://www.fotosearch.com/photos-images/rat.html">rat</a>, <a href="http://www.youtube.com/watch?v=5MkZDONi-eI">Olympic Torch Malfunction</a>, <a href="http://rawstory.com/2010/02/olympics-vancouver-civil-liberties/">Vancouver Civil Liberties</a>, <a href="http://www.rocketboom.com/olympics2010/">Rocketboom Olympics Interviews</a>, <a href="http://www.youtube.com/watch?v=PzdI55Wa8XA">Laura Spector Interview</a>, <a href="http://biathlon.teamusa.org/athletes/laura-spector">Laura Spector</a>, <a href="http://www.youtube.com/watch?v=fDZliGPWnbg">Tony Benshoof Interview</a>, <a href="http://luge.teamusa.org/athletes/tony-benshoof">Tony Benshoof</a>, <a href="http://www.youtube.com/watch?v=SRQAU1dy-S8">Jennifer Rodriguez Interview</a>, <a href="http://speedskating.teamusa.org/athletes/jennifer-rodriguez">Jennifer Rodriguez</a>, <a href="http://www.youtube.com/watch?v=uhtBh2zLiuY">Stephani Victor Interview</a>, <a href="http://usparalympics.org/athletes/stephani-victor">Stephani Victor</a>, <a href="http://www.youtube.com/watch?v=t0lzu1KWx4M">Mirai Nagasu Interview</a>, <a href="http://figureskating.teamusa.org/athletes/mirai-nagasu">Mirai Nagasu</a>, <a href="http://www.youtube.com/watch?v=hxfqK-MKx8Y">Katie Uhlaender Interview</a>, <a href="http://bobsled.teamusa.org/athletes/katie-uhlaender">Katie Uhlaender</a>, <a href="http://www.youtube.com/watch?v=3cvA8W0Enik">Noelle Pikus-Pace Interview</a>, <a href="http://bobsled.teamusa.org/athletes/noelle-pikus-pace">Noelle Pikus-Pace</a>, <a href="http://www.youtube.com/watch?v=AuqEH-zGNFM">Jeret &#8220;Speedy&#8221; Peterson Interview</a>, <a href="http://skiing.teamusa.org/athletes/jeret-peterson">Jeret &#8220;Speedy&#8221; Peterson</a>, <a href="http://www.youtube.com/watch?v=1tqxzWdKKu8">Dueling Banjos</a>. Music by <a href="http://podingtonbear.com/" target="_blank">Podington Bear</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/olympic-land/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/olympic-land_hd.m4v" length="83651505" type="video/quicktime" />
+	<itunes:summary>Molly talks about land opportunities, the Olympics, and more. Story links: Nodar Kumaritashvili [pic 1], Nodar Kumaritashvili [pic 2], Nodar Kumaritashvili [pic 3], Nodar Kumaritashvili [pic 4], Nodar Kumaritashvili [pic 5], Crow-Bot, Ogori Cafe, Ogori Chart, Luxury Float, Map of Bir Tawil, Map of Marie Byrd, Animals Migrating, world map, elephant, tucan, panda, kangaroo, buffalo, rat, Olympic Torch Malfunction, Vancouver Civil Liberties, Rocketboom Olympics Interviews, Laura Spector Interview, Laura Spector, Tony Benshoof Interview, Tony Benshoof, Jennifer Rodriguez Interview, Jennifer Rodriguez, Stephani Victor Interview, Stephani Victor, Mirai Nagasu Interview, Mirai Nagasu, Katie Uhlaender Interview, Katie Uhlaender, Noelle Pikus-Pace Interview, Noelle Pikus-Pace, Jeret &#8220;Speedy&#8221; Peterson Interview, Jeret &#8220;Speedy&#8221; Peterson, Dueling Banjos. Music by Podington Bear.
+
+http://www.rocketboom.com/olympic-land/</itunes:summary>
+<itunes:subtitle>Molly talks about land opportunities, the Olympics, and more. Story links: Nodar Kumaritashvili [pic 1], Nodar Kumaritashvili [pic 2], Nodar Kumaritashvili [pic 3], Nodar Kumaritashvili [pic 4], Nodar Kumaritashvili [pic 5], Crow-Bot, Ogori Cafe, [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/olympic-land_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Valentine&#8217;s Day</title>
+		<link>http://www.rocketboom.com/v-day-2010/</link>
+		<comments>http://www.rocketboom.com/v-day-2010/#comments</comments>
+		<pubDate>Fri, 12 Feb 2010 19:19:59 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Casual Fridays]]></category>
+
+		<category><![CDATA[central park]]></category>
+
+		<category><![CDATA[hearts]]></category>
+
+		<category><![CDATA[love]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[New York City]]></category>
+
+		<category><![CDATA[valentine cards]]></category>
+
+		<category><![CDATA[Valentine's Day]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4590</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/umBBf20b2XY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/umBBf20b2XY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly makes Valentine&#8217;s cards and spreads the love around Central Park in New York City. Leave your best Valentine&#8217;s Day story as a video response or in the comments below and you could win the last of Molly&#8217;s Valentine&#8217;s cards! Music by Gepel. For the latest updates, follow us on Twitter! For behind the scenes [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/umBBf20b2XY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/umBBf20b2XY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><a href="http://twitter.com/mememolly" target="_blank">Molly</a> makes Valentine&#8217;s cards and spreads the love around Central Park in New York City. Leave your best Valentine&#8217;s Day story as a video response or in the comments below and you could win the last of Molly&#8217;s Valentine&#8217;s cards! Music by <a href="http://freemusicarchive.org/music/Gepel/" target="_blank">Gepel</a>. For the latest updates, follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a>! For behind the scenes pictures and videos, join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a>!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/v-day-2010/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/v-day-2010_hd.m4v" length="57460559" type="video/quicktime" />
+	<itunes:summary>Molly makes Valentine&#8217;s cards and spreads the love around Central Park in New York City. Leave your best Valentine&#8217;s Day story as a video response or in the comments below and you could win the last of Molly&#8217;s Valentine&#8217;s cards! Music by Gepel. For the latest updates, follow us on Twitter! For behind the scenes pictures and videos, join us on Facebook!
+
+http://www.rocketboom.com/v-day-2010/</itunes:summary>
+<itunes:subtitle>Molly makes Valentine&#8217;s cards and spreads the love around Central Park in New York City. Leave your best Valentine&#8217;s Day story as a video response or in the comments below and you could win the last of Molly&#8217;s Valentine&#8217;s [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/v-day-2010_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>3D Technology in 2010</title>
+		<link>http://www.rocketboom.com/rbtech-3d/</link>
+		<comments>http://www.rocketboom.com/rbtech-3d/#comments</comments>
+		<pubDate>Fri, 12 Feb 2010 14:24:13 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Technology]]></category>
+
+		<category><![CDATA[3D]]></category>
+
+		<category><![CDATA[3d glasses]]></category>
+
+		<category><![CDATA[Autostereoscopic]]></category>
+
+		<category><![CDATA[avatar]]></category>
+
+		<category><![CDATA[DIAL M FOR MURDER]]></category>
+
+		<category><![CDATA[ellie rountree]]></category>
+
+		<category><![CDATA[Intel Corporation]]></category>
+
+		<category><![CDATA[Jimi Hendrix]]></category>
+
+		<category><![CDATA[sony bravia]]></category>
+
+		<category><![CDATA[Taylor Switft]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4583</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/O925L6nS5GI&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/O925L6nS5GI&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Rocketboom Tech&#8217;s Ellie Rountree explains 3D viewing technology. Story links: View Finder, 1954 DIAL M FOR MURDER, 3-D Film, Anaglyphic plastic 3D glasses, Polarization, Alternate frame sequencing, Autostereoscopic, 3D Film and Animation Getting it Right, Digital Light Processing, DLP Background, 3D Systems Installs Dual-Vat iPro(TM) 9000 SLA(R) System at American Precision Prototyping, Sky bringing 3D [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/O925L6nS5GI&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/O925L6nS5GI&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Rocketboom Tech&#8217;s <a href="http://twitter.com/elspethjane" target="_blank">Ellie Rountree</a> explains 3D viewing technology. Story links: <a href="http://www.bestweekever.tv/bwe/images/2009/07/View-Finder.jpg">View Finder</a>, <a href="http://www.youtube.com/watch?v=-e6Va-K4k7M">1954 DIAL M FOR MURDER</a>, <a href="http://en.wikipedia.org/wiki/3-D_film">3-D Film</a>, <a href="http://en.wikipedia.org/wiki/File:Plastic_3d_glasses.jpg">Anaglyphic plastic 3D glasses</a>, <a href="http://www.1compras.com/product_info.php?language=en&amp;currency=USD&amp;products_id=3574">Polarization</a>, <a href="http://en.wikipedia.org/wiki/File:CrystalEyes_shutter_glasses.jpg">Alternate frame sequencing</a>, <a href="http://www.engadget.com/2010/01/11/magnetic3d-glasses-free-3d-eyes-on/">Autostereoscopic</a>, <a href="http://www.siggraph.org/publications/newsletter/volume/stereoscopic-3d-film-and-animationgetting-it-right">3D Film and Animation Getting it Right</a>, <a href="http://en.wikipedia.org/wiki/Digital_Light_Processing">Digital Light Processing</a>, <a href="http://www.dlptvreview.com/dlptv/1background.html">DLP Background</a>, <a href="http://money.cnn.com/news/newsfeeds/articles/globenewswire/183776.htm">3D Systems Installs Dual-Vat iPro(TM) 9000 SLA(R) System at American Precision Prototyping</a>, <a href="http://news.cnet.com/8301-31021_3-10435242-260.html">Sky bringing 3D TV to homes in UK, Ireland</a>, <a href="http://ces.cnet.com/8301-31045_1-10427419-269.html?tag=mncol;txt">Jimi Hendrix, Taylor Switft, 3D Headline Sony&#8217;s news conference</a>, <a href="http://blogs.intel.com/research/2008/06/interactive_3d_streaming.php">Interactive 3D Streaming</a>, <a href="http://www.huffingtonpost.com/2010/02/08/burberry-to-screen-fashio_n_453343.html">Burberry to Screen Fashion Show Live in 3D</a>, <a href="http://www.sonystyle.com/webapp/wcs/stores/servlet/CategoryDisplay?catalogId=10551&amp;storeId=10151&amp;langId=-1&amp;categoryId=8198552921644539863">2010 Bravia HDTVs</a>. Assets: <a href="http://images.google.com/imgres?imgurl=http://static.shoulderhigh.com.s3.amazonaws.com/blog_entry_photos/LIVE%25203D%2520Sports.png&amp;imgrefurl=http://www.sustainabilitymedia.com/blog/02010/jan/11/3d-tv-about-make-its-debut/&amp;usg=__jBwlT1Gn6l9Y69ouBV8MEam3eus=&amp;h=338&amp;w=627&amp;sz=345&amp;hl=en&amp;start=5&amp;um=1&amp;itbs=1&amp;tbnid=PEOF8T98CaaOaM:&amp;tbnh=73&amp;tbnw=136&amp;prev=/images%3Fq%3D3D%2Bsports%2Bchannel%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26tbo%3D1%26um%3D1">3D sports</a>, <a href="http://images.google.com/imgres?imgurl=http://www.trendbird.co.kr/attach/1/1222939062.jpg&amp;imgrefurl=http://www.trendbird.co.kr/403&amp;usg=__RtFq-RQc3XgE_nTeVkrREVNnwJo=&amp;h=459&amp;w=550&amp;sz=103&amp;hl=en&amp;start=19&amp;um=1&amp;itbs=1&amp;tbnid=b0CTe3nfXcXZIM:&amp;tbnh=111&amp;tbnw=133&amp;prev=/images%3Fq%3D3D%2BTV%26imgsz%3Dm%26imgtbs%3Dz%26ndsp%3D20%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26tbo%3D1%26um%3D1">Philips 3D TV</a>, <a href="http://images.google.com/imgres?imgurl=http://tech2.in.com/media/images/2009/May/img_142422_sony-bravia-zx.jpg&amp;imgrefurl=http://rahulnargundkar.blogspot.com/2009_05_01_archive.html&amp;usg=__LMepkJJo--pCV6Trim_-hfR8CbI=&amp;h=768&amp;w=1024&amp;sz=61&amp;hl=en&amp;start=13&amp;um=1&amp;itbs=1&amp;tbnid=X8NRi5QPGhuBXM:&amp;tbnh=113&amp;tbnw=150&amp;prev=/images%3Fq%3Dsony%2Bbravia%2B3D%2Bglasses%26imgsz%3Dl%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26tbo%3D1%26um%3D1">Sony Picture</a>, <a href="http://images.google.com/imgres?imgurl=http://www.pinktentacle.com/images/ceatec_11_large.jpg&amp;imgrefurl=http://pinktentacle.com/tag/tokyo/&amp;usg=__7GB9nbwwy6CPNIdu3TYIS3_Vyf0=&amp;h=800&amp;w=1200&amp;sz=843&amp;hl=en&amp;start=13&amp;um=1&amp;itbs=1&amp;tbnid=bE8Z0dzQflLWHM:&amp;tbnh=100&amp;tbnw=150&amp;prev=/images%3Fq%3DPanasonic%2B3D%26imgsz%3Dl%26ndsp%3D18%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26hs%3Dguv%26sa%3DN%26tbo%3D1%26um%3D1">Panasonic Display</a>, <a href="http://trendsupdates.com/ces-2010-panasonic-3d-plasma-tv-bags-best-of-ces-award/">Panasonic TV #2</a>, <a href="http://images.google.com/imgres?imgurl=http://www.devicepedia.com/wp-content/uploads/2010/01/lx900.jpg&amp;imgrefurl=http://www.devicepedia.com/news/sony-3d-tv-line-up-unveiled-at-ces-2010.html&amp;usg=__pFEStIKVlz-0oPjQhuQPoSERRa4=&amp;h=348&amp;w=400&amp;sz=18&amp;hl=en&amp;start=29&amp;um=1&amp;itbs=1&amp;tbnid=rYEvfzEYm6EpRM:&amp;tbnh=108&amp;tbnw=124&amp;prev=/images%3Fq%3Dsony%2B3d%2Btv%26ndsp%3D20%26hl%3Den%26client%3Dsafari%26rls%3Den%26sa%3DN%26start%3D20%26um%3D1">Sony TV #2</a>, <a href="http://news.cnet.com/i/bto/20090904/IMG_5831_610x457.JPG">standing viewers</a>, <a href="http://www.blogcdn.com/hd.engadget.com/media/2009/11/60minutes3d.jpg">theater viewers from front</a>, <a href="http://www.itechnews.net/wp-content/uploads/2009/12/LG-to-launch-Full-HD-3D-LCD-Display.jpg">3d tv toucher</a>, <a href="http://files.posterous.com/mariaalessandria/phczxahEscaugltBecblHlfxFBosztxuwbzEbAFenoawwppFdrqckoFczxrk/media_httpstaticbusin_srntl.jpg.scaled500.jpg?AWSAccessKeyId=1C9REJR1EMRZ83Q7QRG2&amp;Expires=1265909597&amp;Signature=rbMAwqDnvXN%2Fjo1Lb%2Bcjv02r%2F8k%3D">kid dad 3d tv</a>, <a href="http://mannerofspeaking.files.wordpress.com/2009/10/3d-movie.jpg">3d audience from side</a>, <a href="http://davidbyrne.typepad.com/photos/uncategorized/07_04_06_b_flat_landscape.jpg">landscape photo</a>, <a href="http://upload.wikimedia.org/wikipedia/commons/d/d3/African_Elephant_Transparent.png"> elephant</a>, <a href="http://news.cnet.com/i/bto/20100105/3D_LCD_TV-LG_booth_610x457.JPG">home viewing</a>. Music by <a href="http://podingtonbear.com">Podington Bear</a>.</p>
+<p>This episode was created in collaboration with <a href="http://www.intel.com">Intel</a>! <a href="http://www.intel.com"><img src="http://www.rocketboom.net/images/logo_intel.gif" border="0" alt="" width="45" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/rbtech-3d/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/rbtech-3d_hd.m4v" length="137271427" type="video/quicktime" />
+	<itunes:summary>Rocketboom Tech&#8217;s Ellie Rountree explains 3D viewing technology. Story links: View Finder, 1954 DIAL M FOR MURDER, 3-D Film, Anaglyphic plastic 3D glasses, Polarization, Alternate frame sequencing, Autostereoscopic, 3D Film and Animation Getting it Right, Digital Light Processing, DLP Background, 3D Systems Installs Dual-Vat iPro(TM) 9000 SLA(R) System at American Precision Prototyping, Sky bringing 3D TV to homes in UK, Ireland, Jimi Hendrix, Taylor Switft, 3D Headline Sony&#8217;s news conference, Interactive 3D Streaming, Burberry to Screen Fashion Show Live in 3D, 2010 Bravia HDTVs. Assets: 3D sports, Philips 3D TV, Sony Picture, Panasonic Display, Panasonic TV #2, Sony TV #2, standing viewers, theater viewers from front, 3d tv toucher, kid dad 3d tv, 3d audience from side, landscape photo,  elephant, home viewing. Music by Podington Bear.
+This episode was created in collaboration with Intel! 
+
+http://www.rocketboom.com/rbtech-3d/</itunes:summary>
+<itunes:subtitle>Rocketboom Tech&#8217;s Ellie Rountree explains 3D viewing technology. Story links: View Finder, 1954 DIAL M FOR MURDER, 3-D Film, Anaglyphic plastic 3D glasses, Polarization, Alternate frame sequencing, Autostereoscopic, 3D Film and Animation [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/rbtech-3d_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Brangelina Split?</title>
+		<link>http://www.rocketboom.com/brangelina/</link>
+		<comments>http://www.rocketboom.com/brangelina/#comments</comments>
+		<pubDate>Thu, 11 Feb 2010 17:50:47 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[Topical]]></category>
+
+		<category><![CDATA[Angelina Jolie]]></category>
+
+		<category><![CDATA[Angelina Jolie Red Carpet Interview]]></category>
+
+		<category><![CDATA[Angelina Split]]></category>
+
+		<category><![CDATA[BAFTA]]></category>
+
+		<category><![CDATA[Ben Affleck]]></category>
+
+		<category><![CDATA[Benjamin Button]]></category>
+
+		<category><![CDATA[Beyonce]]></category>
+
+		<category><![CDATA[Bill Clinton]]></category>
+
+		<category><![CDATA[Billy Bob]]></category>
+
+		<category><![CDATA[Brad Morphing]]></category>
+
+		<category><![CDATA[Brad Pitt]]></category>
+
+		<category><![CDATA[Brangelina Split Rumors]]></category>
+
+		<category><![CDATA[Brangelina US Weekly]]></category>
+
+		<category><![CDATA[Britney Spears]]></category>
+
+		<category><![CDATA[Burn After Reading]]></category>
+
+		<category><![CDATA[Courtney Love]]></category>
+
+		<category><![CDATA[Dallas]]></category>
+
+		<category><![CDATA[Dani Behr]]></category>
+
+		<category><![CDATA[Drew Barrymore]]></category>
+
+		<category><![CDATA[Fight Club]]></category>
+
+		<category><![CDATA[Girl]]></category>
+
+		<category><![CDATA[Google]]></category>
+
+		<category><![CDATA[Google Inc.]]></category>
+
+		<category><![CDATA[Haiti]]></category>
+
+		<category><![CDATA[Heidi Klum]]></category>
+
+		<category><![CDATA[Hillary Clinton]]></category>
+
+		<category><![CDATA[Interrupted]]></category>
+
+		<category><![CDATA[J. Lo]]></category>
+
+		<category><![CDATA[Jackie O]]></category>
+
+		<category><![CDATA[Jay-Z]]></category>
+
+		<category><![CDATA[Jennifer Aniston]]></category>
+
+		<category><![CDATA[Joe Black]]></category>
+
+		<category><![CDATA[Johnny Lee Miller]]></category>
+
+		<category><![CDATA[Jolie-Pitt Family]]></category>
+
+		<category><![CDATA[Jolie-Pitt Foundation]]></category>
+
+		<category><![CDATA[Jolie-Pitt Twins]]></category>
+
+		<category><![CDATA[Justin Timberlake]]></category>
+
+		<category><![CDATA[Knox Jolie-Pitt Twins]]></category>
+
+		<category><![CDATA[Kurt Cobain]]></category>
+
+		<category><![CDATA[Lara Croft]]></category>
+
+		<category><![CDATA[Louise]]></category>
+
+		<category><![CDATA[Louisiana]]></category>
+
+		<category><![CDATA[Missouri]]></category>
+
+		<category><![CDATA[New Jersey]]></category>
+
+		<category><![CDATA[New Orleans]]></category>
+
+		<category><![CDATA[Oklahoma]]></category>
+
+		<category><![CDATA[Reading]]></category>
+
+		<category><![CDATA[Real Housewives]]></category>
+
+		<category><![CDATA[Robert Thompson  Assets]]></category>
+
+		<category><![CDATA[Seal Klum]]></category>
+
+		<category><![CDATA[Seven Years in Tibet]]></category>
+
+		<category><![CDATA[Shiloh]]></category>
+
+		<category><![CDATA[Smith]]></category>
+
+		<category><![CDATA[Texas]]></category>
+
+		<category><![CDATA[the Oscars]]></category>
+
+		<category><![CDATA[Thelma]]></category>
+
+		<category><![CDATA[tibet]]></category>
+
+		<category><![CDATA[Tom Green]]></category>
+
+		<category><![CDATA[Tomb Raider]]></category>
+
+		<category><![CDATA[United Nations High Commissioner for Refugees]]></category>
+
+		<category><![CDATA[united states]]></category>
+
+		<category><![CDATA[Vivienne Jolie-Pitt Twins]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4580</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/F0Mu2hr4bPM&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/F0Mu2hr4bPM&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly explains &#8220;power couples&#8221; and how Brangelina came to be. Story links: E! News, Meet the Smiths, Google search for Brand and Angelina Split, Brangelina US Weekly, Brangelina OK magazine, Brangelina Split Rumors, The Brangelina Fever, Robert Thompson Assets: Gone With the Wind, JFK and Jackie O., JFK and Jackie in Dallas, Casa Blanca, Marcheline [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/F0Mu2hr4bPM&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/F0Mu2hr4bPM&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><a href="http://twitter.com/mememolly" target="_blank">Molly</a> explains &#8220;power couples&#8221; and how Brangelina came to be. Story links: <a href="http://www.youtube.com/watch?v=ivcxzt3M61Q">E! News</a>, <a href="http://www.youtube.com/watch?v=dBJhU9uorTE">Meet the Smiths</a>, <a href="http://news.google.ca/news?gbv=2&amp;hl=en&amp;safe=off&amp;q=brad%20angelina%20split&amp;oq=&amp;um=1&amp;ie=UTF-8&amp;sa=N&amp;tab=wn">Google search for Brand and Angelina Split</a>, <a href="http://images.google.ca/images?gbv=2&amp;hl=en&amp;safe=off&amp;sa=1&amp;q=brangelina+us+weekly&amp;btnG=Search&amp;aq=f&amp;oq=&amp;start=0">Brangelina US Weekly</a>, <a href="http://images.google.ca/images?gbv=2&amp;hl=en&amp;safe=off&amp;sa=1&amp;q=brad+angelina+ok&amp;btnG=Search&amp;aq=f&amp;oq=&amp;start=0">Brangelina OK magazine</a>, <a href="http://latimesblogs.latimes.com/gossip/2010/01/brad-pitt-angelina-jolie-breakup-split-rumors.html">Brangelina Split Rumors</a>, <a href="http://www.theage.com.au/articles/2006/02/06/1139074140202.html">The Brangelina Fever</a>, <a href="http://newhouse.syr.edu/Faculty_Staff/Bio/index.cfm?id=136">Robert Thompson</a> Assets: <a href="http://rasmusson.files.wordpress.com/2008/03/gone-with-the-wind.jpg">Gone With the Wind</a>, <a href="http://extremecatholic.blogspot.com/images/mantilla/jfk-dating.jpg">JFK and Jackie O.</a>, <a href="http://eccentricmuse.files.wordpress.com/2008/11/jfk-and-jackie-in-dallas-nov.jpg">JFK and Jackie in Dallas</a>, <a href="http://lafilmforum.files.wordpress.com/2008/02/2-14-08-casablanca.jpg">Casa Blanca</a>, <a href="http://i102.photobucket.com/albums/m93/SamaOman/AngieMother-MarchelineBertrand-2001.jpg">Marcheline Bertrand</a>, <a href="http://www.celebitchy.com/wp-content/uploads/2009/03/70129y2_voight_j_c_b_gr_01.jpg">Voight and Bertrand</a>, <a href="http://ukcelebritynews.yuddy.com/wp-content/uploads/2008/09/jolie%20and%20miller.jpg">Johnny Lee Miller</a>, <a href="http://www.babble.com/CS/blogs/famecrawler/2009/01/angelina_billybobT450.jpg">Billy Bob</a>, <a href="http://4.bp.blogspot.com/_a51NfzEFgKc/SiuJe0MHLvI/AAAAAAAADEM/wfIU5uZsx0o/s400/maddox+jolie+pitt.jpg">Maddox</a>, <a href="http://www.youtube.com/watch?v=JT7ItsxgcMw">Girl, Interrupted</a>, <a href="http://www.youtube.com/watch?v=l1yu-HGSSLk">Tomb Raider</a>, <a href="http://infinitetattoos.files.wordpress.com/2008/07/angelina_tattoo.jpg">Tattoos</a>, <a href="http://tattoostars.files.wordpress.com/2009/01/tattoo_angelina-jolie_tattoos_18.jpg">Angelina&#8217;s Tattoos</a>, <a href="http://www.youtube.com/watch?v=Vni4zR52bSk">Angelina to Brad Morphing</a>, <a href="http://images.popsugar.com/uploads11/1jolie.jpg">Maddox</a>, <a href="http://orvillelloyddouglas.files.wordpress.com/2008/05/zahara.jpg">Zahara</a>, <a href="http://cdn.buzznet.com/media-cdn/jj1/headlines/2006/06/shiloh-nouvel-jolie-pitt-pictures.jpg">Shiloh</a>, <a href="http://celebritykids.today.com/files/2008/10/angelina-jolie-brad-pitt-twins-6.jpg">Jolie-Pitt Twins</a>, <a href="http://www.babble.com/CS/blogs/droolicious/2008/12/16-22/jolie-pitt-family.jpg">Jolie-Pitt Family</a>, <a href="http://www.soundoffcolumn.com/images/angelina-zahara-pax.jpg">Angelina with Zahara and Pax</a>, <a href="http://media.photobucket.com/image/fans%20twilight/The_Playlist/twilight_fans.jpg">Twilight Fans</a>, <a href="http://www2.pictures.gi.zimbio.com/Premiere+Summit+Entertainment+Twilight+Arrivals+ai0BqW6dvBxl.jpg">Twilight Arrivals</a>, <a href="http://www.mediabistro.com/agencyspy/original/desperate-housewives.jpg">Desperate Housewives</a>, <a href="http://thegirlfromtheghetto.files.wordpress.com/2009/07/real-housewives-new-jersey-season-1-reunion-01.jpg">Real Housewives of New Jersey</a>, <a href="http://www.delawareonline.com/blogs/secondhelpings/uploaded_images/realhousewives-749715.jpg">Real Housewives</a>, <a href="http://babble.com/CS/blogs/strollerderby/2008/12/01-07/bill-and-hillary-clinton1.jpg">Bill and Hillary Clinton</a>, <a href="http://goremasterfx.files.wordpress.com/2009/12/young-brad-pitt.jpg">Pitt Kid</a>, <a href="http://www.aolcdn.com/red_galleries/pitt-yearbook-400ds0626.jpg">Pitt&#8217;s Yearbook Pic</a>, <a href="http://www.miamakila.com/blogg/wp-content/young_brad_pitt.jpg">Young Brad Pitt</a>, <a href="http://s1.hubimg.com/u/77724_f520.jpg">Pitt Denim</a>, <a href="http://scrapetv.com/News/News%20Pages/Entertainment/images-4/brad-pitt-young.jpg">Pitt Young</a>, <a href="http://images.buddytv.com/battleImages/usr3385920/3385920_43d51cad-1758-42a9-8e9c-334835973929-j.d.---thelma---louise.jpg">Brad Pitt in Thelma and Louise</a>, <a href="http://www.scene-stealers.com/wp-content/uploads/2009/08/thelma-and-louise.jpg">Pitt in Thelma and Louise</a>, <a href="http://cache0.techcrunch.com/wp-content/uploads/2010/01/interview-with-the-vampire-157.jpeg">Interview with the Vampire</a>, <a href="http://www.emresururi.com/blogs/sururi/images/brad_pitt_12_monkeys.jpg">12 Monkeys</a>, <a href="http://poietes.files.wordpress.com/2009/05/brad-pitt-seven.jpg">Seven</a>, <a href="http://chattahbox.com/images/2009/07/brad_pitt_true_romance.jpg">True Romance</a>, <a href="http://www.builtfit.com/wp-content/uploads/2009/09/bradpitt-fightclub.jpg">Fight Club</a>, <a href="http://1979semifinalist.files.wordpress.com/2007/07/tn2_brad_pitt_3.jpg">Sleepers</a>, <a href="http://images.buddytv.com/battleimages/usr3385920/3385920_71a0a036-4034-40a9-b8af-d6262199336c-heinrich-harrer---seven-years-in-tibet.jpg">Seven Years in Tibet</a>, <a href="http://img5.allocine.fr/acmedia/medias/04/03/98/040398_ph2.jpg">Joe Black</a>, <a href="http://imgs.sfgate.com/c/pictures/2008/11/18/dd-ask30_ph_snat_421890404.jpg">Snatch</a>, <a href="http://www.ratewall.com/cpics/b0849b02-c760-4434-90d9-26de32814856_the_mexican_brad_pitt.jpg">The Mexican</a>, <a href="http://www.babble.com/CS/blogs/famecrawler/2007/12/01-07/george_clooney_brad_pitt_ocean%27s_eleven_gay-bathroom-julia-roberts-larry-craig.jpg">Ocean&#8217;s 11</a>, <a href="http://www.maximumeyewear.com/productfolder/celebrity-sunglasses/celebrity-sunglasses-men/brad-pitt-oceans-12-sunglasses/brad-pitt-oceans-12-sunglasses.jpg">Ocean&#8217;s 12</a>, <a href="http://z.about.com/d/movies/1/0/R/C/P/oceans13pic16.jpg">Ocean&#8217;s 13</a>, <a href="http://blog.newsok.com/staticblog/files/2008/09/burnafterreading.jpg">Burn After Reading</a>, <a href="http://celebrities.ninemsn.com.au/img/blog/blog251108_brad.jpg">Benjamin Button</a>, <a href="http://www.iwatchstuff.com/2008/12/12/inglourious-basterds-1.jpg">Inglourious Basterds</a>, <a href="http://i.dailymail.co.uk/i/pix/2008/06/12/article-1026020-006A707A00000258-300_468x488.jpg">Gwenyth Paltrow</a>, <a href="http://www.babble.com/CS/blogs/famecrawler/2009/02/1pitt%20aniston2.jpg">Jennifer Aniston</a>, <a href="http://www.celebamour.com/files/2008/09/brad-pitt-and-angelina-jolie-as-mr-and-mrs-smith-nc-thumb.jpg">Mr. and Mrs. Smith</a>, <a href="http://pop.wizbangblog.com/images/2006/02/angelina-jolie-young06a.jpg">Young Angelina Jolie</a>, <a href="http://www.yousaytoo.com/postonly_image/pic/918/medium/Young_Angelina_Jolie-2.jpg">Young Angelina Jolie 2</a>, <a href="http://iimiquizclub.files.wordpress.com/2009/11/17-nov.jpg">Looking to Get Out</a>, <a href="http://2.bp.blogspot.com/_vpMD7ow5cWQ/SlF1Et5IYSI/AAAAAAAAAqc/w6yGEwVlJVk/s400/3%2Blookin-to-get-out-www-hqparadise-hu.jpg">Looking to Get Out 2</a>, <a href="http://m.blog.hu/ce/celebvids/image/Angelina_Jolie-Gia-1.jpg">Gia</a>, <a href="http://screenrant.com/wp-content/uploads/girl-interrupted1.jpg">Girl, Interrupted</a>, <a href="http://www.comicbookhotties.com/images/angelina-jolie-lara-croft/large/angelina-jolie-pic-11.jpg">Lara Croft</a>, <a href="http://www.1800-sports.com/images/tom-cruise-katie-holmes.jpg">TomKat</a>, <a href="http://blstb.msn.com/i/9F/30E4A2A8A58EBD78AAE03343D1FB34.jpg">Tom Green and Drew Barrymore</a>, <a href="http://img2.timeinc.net/people/i/2007/news/070514/courtney_love.jpg">Courtney Love and Kurt Cobain</a>, <a href="http://www.flylip.com/news/images/20-1247278572-ben_affleck21.jpg">J. Lo and Ben Affleck</a>, <a href="http://www.rap-up.com/blog/wp-content/uploads/beyonce_jigga.jpg">Beyonce and Jay-Z</a>, <a href="http://cdn.buzznet.com/media-cdn/jj1/headlines/2009/02/jennifer-aniston-john-mayer-oscars-2009.jpg">Jennifer Aniston and John Mayer</a>, <a href="http://thisisdiversity.com/img/catfiles/177/i1/1091_info.gif">Seal and Heidi Klum</a>, <a href="http://www.virginmedia.com/images/2britneyspears-profile-05.jpg">Britney Spears and Justin Timberlake</a>, <a href="http://img2.timeinc.net/people/i/2007/archive/covers/95/1_30_95_300x400.jpg">ppl 95</a>, <a href="http://wwp.greenwichmeantime.com/images/usa/oklahoma.jpg">Oklahoma</a>, <a href="http://wwp.greenwichmeantime.com/images/usa/missouri.jpg">Missouri</a>, <a href="http://www.iwu.edu/aboutiwu/campus/residential/images/sigchi_map_04.jpg">Sigma Chi</a>, <a href="http://pics.blameitonthevoices.com/022009/25.brad_pitt.jpg">young Brad Pitt</a>, <a href="http://i3.iofferphoto.com/img/1123311600/_i/7753253/1.jpg">young Pitt 3</a>, <a href="http://s2.hubimg.com/u/77725_f520.jpg">young Pitt 4</a>, <a href="http://www.chinadaily.com.cn/entertainment/att/site1/20060620/xin_550603201428704241478.jpg">young Pitt 5</a>, <a href="http://img2.timeinc.net/people/i/2007/quiz/brad_pitt/brad_pitt5a.jpg">young Pitt 6</a>, <a href="http://images.teamsugar.com/files/upl1/4/49504/19_2008/1.preview.jpg">Pitt Paltrow 2</a>, <a href="http://www.youtube.com/watch?v=RoL_-3MJAqM">Thelma and Louise, scene with Pitt</a>, <a href="http://www.youtube.com/watch?v=l1yu-HGSSLk">Tomb Raider</a>, <a href="http://rethfuture.files.wordpress.com/2006/07/jolie-and-maddox.jpg">Jolie and Maddox</a>, <a href="http://www.nypost.com/r/nypost/blogs/popwrap/200805/Images/200805_Aniston_new_movie.jpg">Aniston Behind Pitt</a>, <a href="http://img2.timeinc.net/people/i/2005/gallery/brangelina/bradangelina12.jpg">Brangelina on the Beach</a>, <a href="http://news.restoringthepride.com/image/11-06-06/angelina_jolie1.jpg">Jolie Activism</a>, <a href="http://werichanel.files.wordpress.com/2008/09/angelina-jolie-unhcr.jpg">Jolie UNHCR</a>, <a href="http://filipspagnoli.files.wordpress.com/2008/06/angelina_jolie_unhcr.jpg">Jolie UNHCR 2</a>,<a href="http://www.dosomething.org/files/brad_pitt_2.jpg">Pitt activism</a>, <a href="http://archiculturefilm.com/director/wp-content/uploads/2009/05/071214_bradpitt_wide-horizontal.jpg">Pitt activism 2</a>, <a href="http://www.babble.com/CS/blogs/famecrawler/2007/12/01-07/new-orleans-brad-pitt-make-it-right.jpg">Pitt, New Orleans, Make it Right</a>, <a href="http://wwwimage.cbsnews.com/images/2009/06/18/image5095969.jpg">Brangelina</a>, <a href="http://www.globalhealthcommittee.org/images/news_mccc_2.jpg">Jolie-Pitt Foundation</a>, <a href="http://cm1.theinsider.com/media/0/98/51/chfpic1.0.0.0x0.600x400.jpeg">Jolie-Pitt Foundation 2</a>, <a href="http://alltheprettythingsuk.files.wordpress.com/2009/05/20908_bradangiemadza_122_177lo-1.jpg">Brad, Angelina, Maddoz, and Zahara</a>, <a href="http://i.dailymail.co.uk/i/pix/2009/11/11/article-1227077-03336339000005DC-209_468x429.jpg">Jolie-Pitt Family in airport</a>, <a href="http://images.popsugar.com/uploads9/capt.xbl10301140222.haiti_jolie_pitt_xbl103.jpg">Jolie-Pitt Family in Haiti</a>, <a href="http://images.popsugar.com/uploads9/capt.xbl10201140211.haiti_jolie_pitt_xbl102.jpg">Jolie-Pitt Family in Haiti 2</a>, <a href="http://joliepittfan.files.wordpress.com/2010/01/brad_angelina_haiti.jpg">Brangelina in Haiti</a>, <a href="http://www.sawf.org/Newsphotos/Hollywood/JolieZaharaMaddox19Aug2007.jpg">Zahara and Maddox</a>, <a href="http://www.delawareonline.com/blogs/uploaded_images/shiloh-jolie-pitt-pictures09-792222.jpg">Shiloh</a>, <a href="http://www.mcnblogs.com/jamibernard/ShilohSilicone.jpg">wax figure of Shiloh</a>, <a href="http://googlx.com/rickey-blog/images/2008/01/pax-jolie-pitt-2008-01-01.jpg">Pax Jolie-Pitt</a>, <a href="http://igossip.com/photos/bittenandbound_kodak_6618_Brad_Pitt_Angelina_Jolie_Knox_and_Vivienne_Jolie_Pitt_in_Amman_Jordan.jpg">Knox and Vivienne Jolie-Pitt Twins</a>, <a href="http://images.google.com/imgres?imgurl=http://4.bp.blogspot.com/_1JpLtAgt-KY/SqNrTFKOZkI/AAAAAAAABVQ/0LD-Qbn6gsk/s400/Dani-Behr-and-Brad-Pitt-college-days.jpg&amp;imgrefurl=http://celebrity-childhood.blogspot.com/2009/09/dani-behr-and-brad-pitt-college-days.html&amp;usg=__dlcscQJ5boP8XiUqk1MRl4BZDKY=&amp;h=400&amp;w=285&amp;sz=28&amp;hl=en&amp;start=9&amp;um=1&amp;itbs=1&amp;tbnid=wk3TifW1mEd9NM:&amp;tbnh=124&amp;tbnw=88&amp;prev=/images%3Fq%3Dbrad%2Bpitt%2Bin%2Bcollege%26hl%3Den%26sa%3DN%26um%3D1">Dani Behr and Brad Pitt college days</a>, <a href="http://i.telegraph.co.uk/telegraph/multimedia/archive/01010/brangelina_1010643c.jpg">Brangelina 1</a>, <a href="http://images.eonline.com/eol_images/Entire_Site/20080223/293.Jolie.Pitt.022308.jpg">Jolie-Pitt at Spirit Awards</a>, <a href="http://sgstb.msn.com/i/13/BE4F195E635C6D167FC76332FEA31.jpg">Brangelina at Inglourious Basterds premiere</a>, <a href="http://www.youtube.com/watch?v=u2E4sAWxl7Q">Angelina Jolie, Brad Pitt - red carpet interview at the Oscars in 2009</a>, <a href="http://www.youtube.com/watch?v=heKt62nq9-Q">BAFTA 2009 - Brad Pitt and Angelina Jolie Red Carpet Interview</a>, <a href="http://www.pingceleb.com/photos/angelina-jolie-and-brad-pitt-pictures-with-baby.jpg">Brangelina with baby pictures</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/brangelina/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/brangelina_hd.m4v" length="138308814" type="video/quicktime" />
+	<itunes:summary>Molly explains &#8220;power couples&#8221; and how Brangelina came to be. Story links: E! News, Meet the Smiths, Google search for Brand and Angelina Split, Brangelina US Weekly, Brangelina OK magazine, Brangelina Split Rumors, The Brangelina Fever, Robert Thompson Assets: Gone With the Wind, JFK and Jackie O., JFK and Jackie in Dallas, Casa Blanca, Marcheline Bertrand, Voight and Bertrand, Johnny Lee Miller, Billy Bob, Maddox, Girl, Interrupted, Tomb Raider, Tattoos, Angelina&#8217;s Tattoos, Angelina to Brad Morphing, Maddox, Zahara, Shiloh, Jolie-Pitt Twins, Jolie-Pitt Family, Angelina with Zahara and Pax, Twilight Fans, Twilight Arrivals, Desperate Housewives, Real Housewives of New Jersey, Real Housewives, Bill and Hillary Clinton, Pitt Kid, Pitt&#8217;s Yearbook Pic, Young Brad Pitt, Pitt Denim, Pitt Young, Brad Pitt in Thelma and Louise, Pitt in Thelma and Louise, Interview with the Vampire, 12 Monkeys, Seven, True Romance, Fight Club, Sleepers, Seven Years in Tibet, Joe Black, Snatch, The Mexican, Ocean&#8217;s 11, Ocean&#8217;s 12, Ocean&#8217;s 13, Burn After Reading, Benjamin Button, Inglourious Basterds, Gwenyth Paltrow, Jennifer Aniston, Mr. and Mrs. Smith, Young Angelina Jolie, Young Angelina Jolie 2, Looking to Get Out, Looking to Get Out 2, Gia, Girl, Interrupted, Lara Croft, TomKat, Tom Green and Drew Barrymore, Courtney Love and Kurt Cobain, J. Lo and Ben Affleck, Beyonce and Jay-Z, Jennifer Aniston and John Mayer, Seal and Heidi Klum, Britney Spears and Justin Timberlake, ppl 95, Oklahoma, Missouri, Sigma Chi, young Brad Pitt, young Pitt 3, young Pitt 4, young Pitt 5, young Pitt 6, Pitt Paltrow 2, Thelma and Louise, scene with Pitt, Tomb Raider, Jolie and Maddox, Aniston Behind Pitt, Brangelina on the Beach, Jolie Activism, Jolie UNHCR, Jolie UNHCR 2,Pitt activism, Pitt activism 2, Pitt, New Orleans, Make it Right, Brangelina, Jolie-Pitt Foundation, Jolie-Pitt Foundation 2, Brad, Angelina, Maddoz, and Zahara, Jolie-Pitt Family in airport, Jolie-Pitt Family in Haiti, Jolie-Pitt Family in Haiti 2, Brangelina in Haiti, Zahara and Maddox, Shiloh, wax figure of Shiloh, Pax Jolie-Pitt, Knox and Vivienne Jolie-Pitt Twins, Dani Behr and Brad Pitt college days, Brangelina 1, Jolie-Pitt at Spirit Awards, Brangelina at Inglourious Basterds premiere, Angelina Jolie, Brad Pitt - red carpet interview at the Oscars in 2009, BAFTA 2009 - Brad Pitt and Angelina Jolie Red Carpet Interview, Brangelina with baby pictures
+
+http://www.rocketboom.com/brangelina/</itunes:summary>
+<itunes:subtitle>Molly explains &#8220;power couples&#8221; and how Brangelina came to be. Story links: E! News, Meet the Smiths, Google search for Brand and Angelina Split, Brangelina US Weekly, Brangelina OK magazine, Brangelina Split Rumors, The Brangelina [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/brangelina_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>NASA Update</title>
+		<link>http://www.rocketboom.com/nasa-update/</link>
+		<comments>http://www.rocketboom.com/nasa-update/#comments</comments>
+		<pubDate>Wed, 10 Feb 2010 22:01:38 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Humanwire]]></category>
+
+		<category><![CDATA[Cape Canaveral]]></category>
+
+		<category><![CDATA[endeavor]]></category>
+
+		<category><![CDATA[exploration]]></category>
+
+		<category><![CDATA[Florida]]></category>
+
+		<category><![CDATA[Launch]]></category>
+
+		<category><![CDATA[Mary C. Matthews]]></category>
+
+		<category><![CDATA[moon]]></category>
+
+		<category><![CDATA[NASA]]></category>
+
+		<category><![CDATA[National Aeronautics and Space Administration]]></category>
+
+		<category><![CDATA[obama administration]]></category>
+
+		<category><![CDATA[space]]></category>
+
+		<category><![CDATA[Transport Workers Union]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4576</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/3Hfjn09ZJUs&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/3Hfjn09ZJUs&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>On today&#8217;s Humanwire episode, watch TWU Local 525 members discuss their worries about the future of their jobs, their industry and their communities, which rely on the current model of space exploration for their survival. Mary C. Matthews reports from Cape Canaveral, Florida. Story links: Union Voice, NASA, TWU - Transport Workers Union. Follow us [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/3Hfjn09ZJUs&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/3Hfjn09ZJUs&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>On today&#8217;s Humanwire episode, watch TWU Local 525 members discuss their worries about the future of their jobs, their industry and their communities, which rely on the current model of space exploration for their survival. Mary C. Matthews reports from Cape Canaveral, Florida. Story links: <a href="http://www.unionvoice.org/campaign/fund_nasa" target="_blank">Union Voice</a>, <a href="http://www.nasa.gov/" target="_blank">NASA</a>, <a href="http://www.twu.org/" target="_blank">TWU - Transport Workers Union.</a> Follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a> for behind the scenes pictures and videos!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/nasa-update/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/nasa-update_hd.m4v" length="160599262" type="video/quicktime" />
+	<itunes:summary>On today&#8217;s Humanwire episode, watch TWU Local 525 members discuss their worries about the future of their jobs, their industry and their communities, which rely on the current model of space exploration for their survival. Mary C. Matthews reports from Cape Canaveral, Florida. Story links: Union Voice, NASA, TWU - Transport Workers Union. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pictures and videos!
+
+http://www.rocketboom.com/nasa-update/</itunes:summary>
+<itunes:subtitle>On today&#8217;s Humanwire episode, watch TWU Local 525 members discuss their worries about the future of their jobs, their industry and their communities, which rely on the current model of space exploration for their survival. Mary C. Matthews [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/nasa-update_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Chatroulette</title>
+		<link>http://www.rocketboom.com/chatroulette/</link>
+		<comments>http://www.rocketboom.com/chatroulette/#comments</comments>
+		<pubDate>Tue, 09 Feb 2010 18:17:13 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[Topical]]></category>
+
+		<category><![CDATA[chat]]></category>
+
+		<category><![CDATA[chat sites]]></category>
+
+		<category><![CDATA[chatroulette]]></category>
+
+		<category><![CDATA[connecting]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[nsfw]]></category>
+
+		<category><![CDATA[people]]></category>
+
+		<category><![CDATA[Rocketboom]]></category>
+
+		<category><![CDATA[roulette]]></category>
+
+		<category><![CDATA[screenshots]]></category>
+
+		<category><![CDATA[strangers]]></category>
+
+		<category><![CDATA[wesbites]]></category>
+
+		<category><![CDATA[world]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4573</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/Iv2wFhTiBCs&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/Iv2wFhTiBCs&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly explores the website Chatroulette.com and chats with people from around the world. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pictures and videos!
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/Iv2wFhTiBCs&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/Iv2wFhTiBCs&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><a href="http://twitter.com/mememolly" target="_blank">Molly</a> explores the website <a href="http://chatroulette.com/" target="_blank">Chatroulette.com</a> and chats with people from around the world. Follow us on <a href="http://twitter.com/rocketboom" target="_blank">Twitter</a> for the latest updates! Join us on <a href="http://facebook.com/rocketboom" target="_blank">Facebook</a> for behind the scenes pictures and videos!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/chatroulette/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/chatroulette_hd.m4v" length="64916363" type="video/quicktime" />
+	<itunes:summary>Molly explores the website Chatroulette.com and chats with people from around the world. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pictures and videos!
+
+http://www.rocketboom.com/chatroulette/</itunes:summary>
+<itunes:subtitle>Molly explores the website Chatroulette.com and chats with people from around the world. Follow us on Twitter for the latest updates! Join us on Facebook for behind the scenes pictures and videos!
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/chatroulette_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Defense Bots</title>
+		<link>http://www.rocketboom.com/defense-bots/</link>
+		<comments>http://www.rocketboom.com/defense-bots/#comments</comments>
+		<pubDate>Mon, 08 Feb 2010 14:27:33 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Daily News]]></category>
+
+		<category><![CDATA[Capitol Building]]></category>
+
+		<category><![CDATA[Detroit]]></category>
+
+		<category><![CDATA[Elizabeth]]></category>
+
+		<category><![CDATA[Facebook Tea Party]]></category>
+
+		<category><![CDATA[Free Venezuela]]></category>
+
+		<category><![CDATA[Frozen-Explosion Power Plant]]></category>
+
+		<category><![CDATA[Hugo Chavez]]></category>
+
+		<category><![CDATA[Internet Cafe]]></category>
+
+		<category><![CDATA[Mexico]]></category>
+
+		<category><![CDATA[sarah palin]]></category>
+
+		<category><![CDATA[South Carolina]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4568</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/2m5CqiVxOx8&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/2m5CqiVxOx8&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly reports on defense bots and more. Story links:  Hydro Electric Power Plant Explosion, The Frozen Explosion Power Plant, Ice House Detroit, Coudal, full moon, Ice House Detroit Blog, Boston Dynamics Big Dog, DARPA asks Boston Dynamics for Bigger Big Dog, No joke: South Carolina now requires ’subversives’ to register, Yarisal Kublitz, Free VenezuelaAssets: [...]]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/2m5CqiVxOx8&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/2m5CqiVxOx8&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p>Molly reports on defense bots and more. Story links:  <a href="http://englishrussia.com/?p=4853">Hydro Electric Power Plant Explosion</a>, <a href="http://englishrussia.com/?p=9812">The Frozen Explosion Power Plant</a>, <a href="http://coudal.com/archives/2010/02/ice_house_detro.php">Ice House Detroit, Coudal</a>, <a href="http://1.bp.blogspot.com/_HcZvO9mp3Io/S2TbPzcjjkI/AAAAAAAAA3I/LlJV-KNt5FA/s1600-h/fullmoon.jpg">full moon</a>, <a href="http://icehousedetroit.blogspot.com/">Ice House Detroit Blog</a>, <a href="http://www.youtube.com/watch?v=W1czBcnX1Ww&amp;feature=player_embedded">Boston Dynamics Big Dog</a>, <a href="http://www.botjunkie.com/2010/02/01/darpa-asks-boston-dynamics-for-bigger-bigdog/">DARPA asks Boston Dynamics for Bigger Big Dog</a>, <a href="http://rawstory.com/2010/02/south-carolinas-subversive-activities-registration-act-force/">No joke: South Carolina now requires ’subversives’ to register</a>, <a href="http://www.yarisalkublitz.com/">Yarisal Kublitz</a>, <a href="http://trendistic.com/freevenezuela/_30-days">Free Venezuela</a>Assets: <a href="http://www.chinweroy.com/media/downloads/hrh_portrait_study_3.jpg">Queen Elizabeth (the 2nd)</a>, <a href="http://www.youtube.com/watch?v=G1icP03goqY">Ice House Detroit Update</a>, <a href="http://www.youtube.com/watch?v=mBCVprX0WnY&amp;feature=related">New Big Dog Robot Video</a><a href="http://images.google.com/imgres?imgurl=http://farm3.static.flickr.com/2354/1497230967_6c34db5af9_o_d.jpg&amp;imgrefurl=http://www.microbiologybytes.com/blog/tag/bacterium/&amp;usg=__wsXw7b8jCNldRjNE55Xi8wfb8lY=&amp;h=240&amp;w=240&amp;sz=18&amp;hl=en&amp;start=8&amp;um=1&amp;itbs=1&amp;tbnid=xchFktG94LWwUM:&amp;tbnh=110&amp;tbnw=110&amp;prev=/images%3Fq%3Dsynthetic%2Borganism%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26um%3D1">First Synthetic Organism</a>, <a href="http://images.google.com/imgres?imgurl=http://www.wired.com/images/article/full/2007/07/synthetic_bio_full.jpg&amp;imgrefurl=http://www.wired.com/science/discoveries/news/2007/07/synthetic_bio&amp;usg=__eJkH9h0AADUqNhgYRQ-eOPy5ClA=&amp;h=257&amp;w=300&amp;sz=40&amp;hl=en&amp;start=22&amp;um=1&amp;itbs=1&amp;tbnid=5vDHjT3-_O7hbM:&amp;tbnh=99&amp;tbnw=116&amp;prev=/images%3Fq%3Dsynthetic%2Borganism%26ndsp%3D21%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26start%3D21%26um%3D1">Synthetic Organism, New Rules</a>, <a href="http://images.google.com/imgres?imgurl=http://thevibe.socialvibe.com/wp-content/uploads/2009/08/chromosome.jpg&amp;imgrefurl=http://thevibe.socialvibe.com/index.php/2009/08/25/artificial-life-may-be-closer-than-we-think/&amp;usg=__GGuVcURb0SVyBJfqBbmJkvI9SLg=&amp;h=363&amp;w=400&amp;sz=27&amp;hl=en&amp;start=15&amp;um=1&amp;itbs=1&amp;tbnid=xMkl87lVq73y0M:&amp;tbnh=113&amp;tbnw=124&amp;prev=/images%3Fq%3Dsynthetic%2Borganism%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26um%3D1">Artificial Life May Be Closer Than We Think</a>, <a href="http://images.google.com/imgres?imgurl=http://www.south-carolina-map.org/south-carolina-map.jpg&amp;imgrefurl=http://www.south-carolina-map.org/detailed.htm&amp;usg=__Qvqj3C9xv-IoaTEOGtf5Hpp48hA=&amp;h=1578&amp;w=1995&amp;sz=569&amp;hl=en&amp;start=3&amp;um=1&amp;itbs=1&amp;tbnid=8ctoTpEpQL1JEM:&amp;tbnh=119&amp;tbnw=150&amp;prev=/images%3Fq%3Dsouth%2Bcarolina%2Bmap%26imgsz%3Dl%26imgtbs%3Dz%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26tbo%3D1%26um%3D1">South Carolina Map</a>, <a href="http://images.google.com/imgres?imgurl=http://www.cas.sc.edu/socy/south-carolina.jpg&amp;imgrefurl=http://www.cas.sc.edu/socy/southcarolina.html&amp;usg=__tSyABBT3ft3Zv9KJ4moGhTf2XCQ=&amp;h=845&amp;w=1127&amp;sz=161&amp;hl=en&amp;start=14&amp;um=1&amp;itbs=1&amp;tbnid=kKY2MFYmmdBoYM:&amp;tbnh=112&amp;tbnw=150&amp;prev=/images%3Fq%3Dsouth%2Bcarolina%2Bgovernment%26imgsz%3Dl%26imgtbs%3Dz%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26tbo%3D1%26um%3D1">Capitol Building of South Carolina</a>, <a href="http://urbanprankster.com/2010/02/anger-release-machine/">Anger Release Machine</a>, <a href="http://www.flickr.com/photos/zanini/3421230877/">Hugo Chavez</a>, <a href="http://en.wikipedia.org/wiki/Mexico">Mexico</a>, <a href="http://images.google.com/imgres?imgurl=http://www.schoolsandagents.com/schools/files/1227863109.jpg&amp;imgrefurl=http://www.schoolsandagents.com/directory_schools.php%3Fsearchcountry%3DMalta&amp;usg=__larF8LNDh1hihciyI8ngYB-0tVo=&amp;h=1163&amp;w=1748&amp;sz=298&amp;hl=en&amp;start=30&amp;um=1&amp;itbs=1&amp;tbnid=pBBv-4EW8pa5aM:&amp;tbnh=100&amp;tbnw=150&amp;prev=/images%3Fq%3Dmexico%2BInternet%2Bcafe%26imgsz%3Dl%26imgtbs%3Dz%26ndsp%3D18%26hl%3Den%26client%3Dfirefox-a%26rls%3Dorg.mozilla:en-US:official%26sa%3DN%26tbo%3D1%26start%3D18%26um%3D1">Mexican Internet Cafe</a>, <a href="http://www.nationalteapartyconvention.com/about-sarah.aspx">Sarah Palin</a>, <a href="http://www.facebook.com/teapartypatriots?ref=search&amp;sid=1165443834.3063403314..1">Facebook Tea Party</a>, <a href="http://www.facebook.com/pages/Tea-Party/61135246730?ref=search&amp;sid=1165443834.3063403314..1">Facebook Tea Party 2</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/defense-bots/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/defense-bots_hd.m4v" length="68498729" type="video/quicktime" />
+	<itunes:summary>Molly reports on defense bots and more. Story links:  Hydro Electric Power Plant Explosion, The Frozen Explosion Power Plant, Ice House Detroit, Coudal, full moon, Ice House Detroit Blog, Boston Dynamics Big Dog, DARPA asks Boston Dynamics for Bigger Big Dog, No joke: South Carolina now requires ’subversives’ to register, Yarisal Kublitz, Free VenezuelaAssets: Queen Elizabeth (the 2nd), Ice House Detroit Update, New Big Dog Robot VideoFirst Synthetic Organism, Synthetic Organism, New Rules, Artificial Life May Be Closer Than We Think, South Carolina Map, Capitol Building of South Carolina, Anger Release Machine, Hugo Chavez, Mexico, Mexican Internet Cafe, Sarah Palin, Facebook Tea Party, Facebook Tea Party 2
+
+http://www.rocketboom.com/defense-bots/</itunes:summary>
+<itunes:subtitle>Molly reports on defense bots and more. Story links:  Hydro Electric Power Plant Explosion, The Frozen Explosion Power Plant, Ice House Detroit, Coudal, full moon, Ice House Detroit Blog, Boston Dynamics Big Dog, DARPA asks Boston Dynamics for [...]</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/defense-bots_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>Super Bowl XLIV</title>
+		<link>http://www.rocketboom.com/super-bowl/</link>
+		<comments>http://www.rocketboom.com/super-bowl/#comments</comments>
+		<pubDate>Fri, 05 Feb 2010 21:20:14 +0000</pubDate>
+		<dc:creator>leah</dc:creator>
+		
+		<category><![CDATA[Casual Fridays]]></category>
+
+		<category><![CDATA[Andrea Vascellari]]></category>
+
+		<category><![CDATA[Brett Haley]]></category>
+
+		<category><![CDATA[colts]]></category>
+
+		<category><![CDATA[first Super Bowl party]]></category>
+
+		<category><![CDATA[Jenn Lyon]]></category>
+
+		<category><![CDATA[mememolly]]></category>
+
+		<category><![CDATA[Neal Bledsoe]]></category>
+
+		<category><![CDATA[poykpac]]></category>
+
+		<category><![CDATA[Ryan Hunter]]></category>
+
+		<category><![CDATA[saints]]></category>
+
+		<category><![CDATA[Super Bowl]]></category>
+
+		<category><![CDATA[XLIV]]></category>
+
+		<guid isPermaLink="false">http://www.rocketboom.com/?p=4562</guid>
+		<description><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/pHEqVFO-OwY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/pHEqVFO-OwY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object>Molly goes to her first Super Bowl party. This week&#8217;s Casual Friday was written, directed, and edited by Ryan Hunter. Starring: MemeMolly, Jenn Lyon, Taige Jensen, Neal Bledsoe, Brett Haley, and Andrea Vascellari. 
+]]></description>
+			<content:encoded><![CDATA[<object width="600" height="363"><param name="movie" value="http://www.youtube.com/v/pHEqVFO-OwY&hl=en&fs=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/pHEqVFO-OwY&hl=en&fs=1" type="application/x-shockwave-flash" wmode="transparent" width="600" height="363" flashvars="hl=en&fs=1"></embed></object><p><span>Molly goes to her first Super Bowl party. This week&#8217;s Casual Friday was written, directed, and edited by <a href="http://youtube.com/poykpac" target="_blank">Ryan Hunter</a>. Starring: <a href="http://twitter.com/mememolly" target="_blank">MemeMolly</a>, <a href="http://youtube.com/poykpac" target="_blank">Jenn Lyon</a>, T<a href="http://youtube.com/poykpac" target="_blank">aige Jensen</a>, <a href="http://www.imdb.com/name/nm2016364/" target="_blank">Neal Bledsoe</a>, <a href="http://www.imdb.com/name/nm1417640/" target="_blank">Brett Haley</a>, and <a href="http://andreavascellari.com" target="_blank">Andrea Vascellari. </a></span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.rocketboom.com/super-bowl/feed/</wfw:commentRss>
+<enclosure url="http://www.rocketboom.com/video/super-bowl_hd.m4v" length="68084447" type="video/quicktime" />
+	<itunes:summary>Molly goes to her first Super Bowl party. This week&#8217;s Casual Friday was written, directed, and edited by Ryan Hunter. Starring: MemeMolly, Jenn Lyon, Taige Jensen, Neal Bledsoe, Brett Haley, and Andrea Vascellari. 
+
+http://www.rocketboom.com/super-bowl/</itunes:summary>
+<itunes:subtitle>Molly goes to her first Super Bowl party. This week&#8217;s Casual Friday was written, directed, and edited by Ryan Hunter. Starring: MemeMolly, Jenn Lyon, Taige Jensen, Neal Bledsoe, Brett Haley, and Andrea Vascellari. 
+</itunes:subtitle>
+
+		<media:thumbnail url="http://www.rocketboom.net/images/super-bowl_square.jpg"></media:thumbnail>
+	</item>
+		<item>
+		<title>6 Applications You Should Try</title>
+		<link>http://www.rocketboom.com/rb-tech-feb-apps/</link>
+		<comments>http://www.rocketboom.com/rb-tech-feb-apps/#comments</comments>
+		<pubDate>Fri, 05 Feb 2010 00:21:09 +0000<
