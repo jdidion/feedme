@@ -172,7 +172,10 @@ module FeedMe
         
         # this shouldn't be necessary since all text is automatically
         # unescaped, but some feeds double-escape HTML
-        :esc => proc {|str| CGI.unescapeHTML(str) }
+        :esc => proc {|str| CGI.unescapeHTML(str) },
+        
+        # apply an arbitrary function
+        :apply => proc {|str, fn, *args| fn.call(str, *args) }
     	}
     end
     
@@ -435,7 +438,7 @@ module FeedMe
         !call_virtual_method(name_str[0..-2], args, history).nil? rescue false
       elsif name_str[-1,1] == '!'
         value = call_virtual_method(name_str[0..-2], args, history)
-        _transform(fm_builder.default_transformation, value)
+        transform_value(fm_builder.default_transformation, value)
       elsif name_str =~ /(.+)_values/
         call_virtual_method(arrayize($1), args, history).collect do |value|
           _resolve_value value
@@ -446,7 +449,7 @@ module FeedMe
         call_virtual_method(arrayize($1), args, history).size
       elsif name_str =~ /(.+)_(.+)/ && fm_builder.transformations.key?($2)
         value = call_virtual_method($1, args, history)
-        _transform(fm_builder.transformations[$2], value)
+        transform_value(fm_builder.transformations[$2], value)
       elsif name_str.include?('/')    # this is only intended to be used internally 
         value = self
         name_str.split('/').each do |p|
@@ -493,32 +496,15 @@ module FeedMe
       value = call_virtual_method(tag) or return nil
       transformations = trans.is_a?(String) ? 
         fm_builder.transformations[trans] : trans
-      _transform(transformations, value)
+      transform_value(transformations, value)
     end
     
-    protected 
-  
-    def clean_tag(tag)
-    	tag.to_s.downcase.gsub(':','_').intern
-  	end
-  
-    # generate a name for the array variable corresponding to a single-value variable
-    def arrayize(key)
-      clean_tag(key.to_s + '_array')
-    end
-    
-    def unarrayize(key)
-      clean_tag(key.to_s.gsub(/_array$/, ''))
-    end
-    
-    private 
-    
-    def _transform(trans_array, value)
+    def transform_value(trans_array, value)
       trans_array.each do |t|
         return nil if value.nil?
         
         if t.is_a? String
-          value = _transform(fm_builder.transformations[t], value)
+          value = transform_value(fm_builder.transformations[t], value)
         else
           if t.is_a? Symbol
             t_name = t
@@ -544,6 +530,23 @@ module FeedMe
       end
       value
     end
+    
+    protected 
+  
+    def clean_tag(tag)
+    	tag.to_s.downcase.gsub(':','_').intern
+  	end
+  
+    # generate a name for the array variable corresponding to a single-value variable
+    def arrayize(key)
+      clean_tag(key.to_s + '_array')
+    end
+    
+    def unarrayize(key)
+      clean_tag(key.to_s.gsub(/_array$/, ''))
+    end
+    
+    private 
     
     def _resolve_value(obj)
       value = obj

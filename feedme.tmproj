@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>/Library/Ruby/Gems/1.8/gems/feedme-0.8.2/lib/nokogiri-util.rb</string>
+	<string>lib/feedme.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -120,30 +120,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>59</integer>
+				<integer>40</integer>
 				<key>line</key>
-				<integer>618</integer>
+				<integer>167</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>287</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>19</integer>
-				<key>line</key>
-				<integer>618</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>59</integer>
-				<key>line</key>
-				<integer>618</integer>
-			</dict>
+			<integer>131</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -159,6 +143,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{142, -43}, {976, 878}}</string>
+	<string>{{142, 0}, {976, 878}}</string>
 </dict>
 </plist>
