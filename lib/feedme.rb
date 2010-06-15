@@ -52,6 +52,8 @@ module FeedMe
     # A hash of functions for selecting the correct value to return when a tags 
     # has multiple values and the singluar accessor is called
     attr_accessor :value_selectors
+    # Value selector to use if there is no value selector defined for a tag
+    attr_accessor :default_value_selector
     # A hash of attribute/tag name aliases.
     attr_accessor :aliases
     # An array of the transformation functions applied when the !
@@ -75,16 +77,16 @@ module FeedMe
       @options = options
       
       # rss tags
-    	@rss_tags = [
-    	  {
-    		  :image     => nil,
+      @rss_tags = [
+        {
+          :image     => nil,
           :textinput => nil,
           :skiphours => nil,
           :skipdays  => nil,
           :items     => [{ :rdf_seq => nil }],
          #:item      => @rss_item_tags
-    		}
-    	]
+        }
+      ]
       @rss_item_tags = [ {} ]
 
       #atom tags
@@ -124,45 +126,51 @@ module FeedMe
           links.first
         end
       }
+      @default_value_selector = proc do |x|
+        x = x.sort do |a,b|
+          a.is_a?(String) ? -1 : (b.is_a?(String) ? 1 : 0)
+        end
+        x.first
+      end
   
       # tag/attribute aliases
-    	@aliases = {
-    	  :items        => :item_array,
-    	  :item_array   => :entry_array,
-    	  :entries      => :entry_array,
-    	  :entry_array  => :item_array,
-    	  :link         => :'link+self'
-    	}
-	
-    	# transformations
-    	@html_helper_lib = HPRICOT_HELPER
-    	@default_transformation = [ :cleanHtml ]
-    	@transformations = {}
-    	@transformation_fns = {
-    	  # remove all HTML tags
-    	  :stripHtml => proc do |str| 
-    	    require @html_helper_lib
-    	    FeedMe.html_helper.strip_html(str)
-    	  end,
-    	  
-    	  # clean HTML content using FeedNormalizer's HtmlCleaner class
-    	  :cleanHtml => proc do |str| 
-    	    require @html_helper_lib
-    	    FeedMe.html_helper.clean_html(str)
-    	  end, 
-    	  
-    	  # wrap text at a certain number of characters (respecting word boundaries)
-    	  :wrap => proc do |str, col| 
-    	    str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
-    	  end,
-    	  
-    	  # truncate text, respecting word boundaries
-    	  :trunc => proc {|str, wordcount| str.trunc(wordcount.to_i) },
+      @aliases = {
+        :items        => :item_array,
+        :item_array   => :entry_array,
+        :entries      => :entry_array,
+        :entry_array  => :item_array,
+        :link         => :'link+self'
+      }
+  
+      # transformations
+      @html_helper_lib = HPRICOT_HELPER
+      @default_transformation = [ :cleanHtml ]
+      @transformations = {}
+      @transformation_fns = {
+        # remove all HTML tags
+        :stripHtml => proc do |str| 
+          require @html_helper_lib
+          FeedMe.html_helper.strip_html(str)
+        end,
+        
+        # clean HTML content using FeedNormalizer's HtmlCleaner class
+        :cleanHtml => proc do |str| 
+          require @html_helper_lib
+          FeedMe.html_helper.clean_html(str)
+        end, 
+        
+        # wrap text at a certain number of characters (respecting word boundaries)
+        :wrap => proc do |str, col| 
+          str.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/, "\\1\\3\n").strip 
+        end,
+        
+        # truncate text, respecting word boundaries
+        :trunc => proc {|str, wordcount| str.trunc(wordcount.to_i) },
         
         # truncate HTML and leave enclosing HTML tags
         :truncHtml => proc do |str, wordcount| 
           require @html_helper_lib
-    	    FeedMe.html_helper.truncate_html(str, wordcount.to_i)
+          FeedMe.html_helper.truncate_html(str, wordcount.to_i)
         end,
         
         :regexp => proc do |str, regexp|
@@ -176,7 +184,7 @@ module FeedMe
         
         # apply an arbitrary function
         :apply => proc {|str, fn, *args| fn.call(str, *args) }
-    	}
+      }
     end
     
     # Prepare tag list for an RSS feed.
@@ -227,8 +235,8 @@ module FeedMe
     
     # Parse +source+ using a +Parser+ created from this +ParserBuilder+.
     def parse(source)
-		  Parser.new(self, source, options)
-	  end
+      Parser.new(self, source, options)
+    end
   end
 
   # This class is used to create strict parsers
@@ -239,9 +247,9 @@ module FeedMe
       super(options)
       
       # rss tags
-    	@rss_tags = [
-    	  {
-    		  :image     => [ :url, :title, :link, :width, :height, :description ],
+      @rss_tags = [
+        {
+          :image     => [ :url, :title, :link, :width, :height, :description ],
           :textinput => [ :title, :description, :name, :link ],
           :skiphours => [ :hour ],
           :skipdays  => [ :day ],
@@ -252,20 +260,20 @@ module FeedMe
             :rdf_seq 
           ],
          #:item      => @item_tags
-    		},
-    		:title, :link, :description,                          # required
-    		:language, :copyright, :managingeditor, :webmaster,   # optional
-    		:pubdate, :lastbuilddate, :category, :generator,
-    		:docs, :cloud, :ttl, :rating,
-    		:image, :textinput, :skiphours, :skipdays, :item,     # have subtags
-    		:items
-    	]
+        },
+        :title, :link, :description,                          # required
+        :language, :copyright, :managingeditor, :webmaster,   # optional
+        :pubdate, :lastbuilddate, :category, :generator,
+        :docs, :cloud, :ttl, :rating,
+        :image, :textinput, :skiphours, :skipdays, :item,     # have subtags
+        :items
+      ]
       @rss_item_tags = [
         {},
         :title, :description,                                 # required
         :link, :author, :category, :comments, :enclosure,     # optional
         :guid, :pubdate, :source, :expirationdate
-    	]
+      ]
 
       #atom tags
       person_tags = [ :name, :uri, :email ]
@@ -318,7 +326,7 @@ module FeedMe
       all_tags[0][:entry] = atom_entry_tags + (item_ext_tags or [])
       return all_tags
     end
-	end
+  end
   
   class FeedData
     attr_reader :fm_tag_name, :fm_parent, :fm_builder
@@ -429,8 +437,10 @@ module FeedMe
         elt = if array.size > 1
           if (!args.empty? && args.first.is_a?(Proc))
             args.first.call(array)
-          elsif (fm_builder.value_sorters.key?(name))
-            value_selectors[name].call(array)
+          elsif (fm_builder.value_selectors.key?(name))
+            fm_builder.value_selectors[name].call(array)
+          elsif !fm_builder.default_value_selector.nil?
+            fm_builder.default_value_selector.call(array)
           end
         end
         elt || array.first
@@ -462,16 +472,16 @@ module FeedMe
         end
         value
       elsif name_str.include?('+')
-  		  name_data = name_str.split('+')
-  		  rel = name_data[1]
-  		  value = nil
-  		  call_virtual_method(arrayize(name_data[0]), args, history).each do |elt|
-  		    next unless elt.is_a?(FeedData) and elt.rel?
-  		    value = elt if elt.rel.casecmp(rel) == 0
-  		    break unless value.nil?
-		    end
-		    value
-		  elsif fm_builder.aliases.key? name
+        name_data = name_str.split('+')
+        rel = name_data[1]
+        value = nil
+        call_virtual_method(arrayize(name_data[0]), args, history).each do |elt|
+          next unless elt.is_a?(FeedData) and elt.rel?
+          value = elt if elt.rel.casecmp(rel) == 0
+          break unless value.nil?
+        end
+        value
+      elsif fm_builder.aliases.key? name
         names = fm_builder.aliases[name]
         names = [names] unless names.is_a? Array
         value = nil
@@ -534,8 +544,8 @@ module FeedMe
     protected 
   
     def clean_tag(tag)
-    	tag.to_s.downcase.gsub(':','_').intern
-  	end
+      tag.to_s.downcase.gsub(':','_').intern
+    end
   
     # generate a name for the array variable corresponding to a single-value variable
     def arrayize(key)
@@ -569,12 +579,12 @@ module FeedMe
   
     def initialize(builder, source, options={})
       super(nil, nil, builder)
-  		@fm_source = source.respond_to?(:read) ? source.read : source.to_s
+      @fm_source = source.respond_to?(:read) ? source.read : source.to_s
       @fm_options = Hash.new.update(options)
       @fm_parsed = []
       @fm_unparsed = []
-  		parse
-  	end
+      parse
+    end
   
     def channel() self end
     alias :feed :channel
@@ -616,7 +626,7 @@ module FeedMe
       else
         raise FeedMeError, "Poorly formatted feed"
       end
-  	end
+    end
 
     # References within the <channel> element are replaced by the actual 
     def dereference_rdf_tags(rdf_tag, rss_tag, refs)
@@ -640,61 +650,61 @@ module FeedMe
       end
     end
     
-  	def parse_content(parent, attrs, content, tags)
-  	  # add attributes to parent
-  	  attrs.each_pair {|key, value| parent[key] = unescape(value) }
+    def parse_content(parent, attrs, content, tags)
+      # add attributes to parent
+      attrs.each_pair {|key, value| parent[key] = unescape(value) }
       return if content.nil?
 
-  	  # split the content into elements
-  	  elements = {}
- 	    # TODO: this will break if a namespace is used that is not rss: or atom: 	  
-  	  content.scan( %r{(<([\w:]+)(.*?)(?:/>|>(.*?)</\2>))}mi ) do |match|
-  	    # \1 = full content (from start to end tag), \2 = tag name
-  	    # \3 = attributes, and \4 = content between tags
-  	    key = clean_tag(match[1])
-  	    value = [parse_attributes(match[2]), match[3]]
-  	    if elements.key? key
-  	      elements[key] << value
-  	    else
-  	      elements[key] = [value]
-  	    end
-  	  end
+      # split the content into elements
+      elements = {}
+      # TODO: this will break if a namespace is used that is not rss: or atom:    
+      content.scan( %r{(<([\w:]+)(.*?)(?:/>|>(.*?)</\2>))}mi ) do |match|
+        # \1 = full content (from start to end tag), \2 = tag name
+        # \3 = attributes, and \4 = content between tags
+        key = clean_tag(match[1])
+        value = [parse_attributes(match[2]), match[3]]
+        if elements.key? key
+          elements[key] << value
+        else
+          elements[key] = [value]
+        end
+      end
       
       # the first item in a tag array may be a hash that defines tags that have subtags
-  	  sub_tags = tags[0] if !nil_or_empty?(tags) && tags[0].is_a?(Hash)
-  	  first_tag = sub_tags.nil? || tags.size == 1 ? 0 : 1
-  	  # if this is a promiscuous parser, tag names will depend on the elements found in the feed
-  	  tags = elements.keys if (sub_tags.nil? ? nil_or_empty?(tags) : first_tag == 0)
-  	  
-  	  # iterate over all tags (some or all of which may not be present)
-  	  tags[first_tag..-1].each do |tag|
-  	    key = clean_tag(tag)
-  		  element_array = elements.delete(tag) or next
-  	    @fm_parsed << key
+      sub_tags = tags[0] if !nil_or_empty?(tags) && tags[0].is_a?(Hash)
+      first_tag = sub_tags.nil? || tags.size == 1 ? 0 : 1
+      # if this is a promiscuous parser, tag names will depend on the elements found in the feed
+      tags = elements.keys if (sub_tags.nil? ? nil_or_empty?(tags) : first_tag == 0)
+      
+      # iterate over all tags (some or all of which may not be present)
+      tags[first_tag..-1].each do |tag|
+        key = clean_tag(tag)
+        element_array = elements.delete(tag) or next
+        @fm_parsed << key
 
-  		  element_array.each do |elt|
-  		    elt_attrs = elt[0]
-  		    elt_content = elt[1]
-  		    rels = fm_builder.rels[key] if fm_builder.respond_to?(:rels)
-  		    
-  		    # if a list of accepted rels is specified, only parse this tag
-  		    # if its rel attribute is inlcuded in the list
-  		    next unless rels.nil? || elt_attrs.nil? || !elt_attrs.rel? || rels.include?(elt_attrs.rel)
-  		    
-  		    if !sub_tags.nil? && sub_tags.key?(key)
-  		      new_parent = FeedData.new(key, parent, fm_builder)
-  		      add_tag(parent, key, new_parent)
-  		      parse_content(new_parent, elt_attrs, elt_content, sub_tags[key])
-  		    else
-  		      add_tag(parent, key, clean_content(key, elt_attrs, elt_content, parent))
-  		    end
-  		  end
-  		end
+        element_array.each do |elt|
+          elt_attrs = elt[0]
+          elt_content = elt[1]
+          rels = fm_builder.rels[key] if fm_builder.respond_to?(:rels)
+          
+          # if a list of accepted rels is specified, only parse this tag
+          # if its rel attribute is inlcuded in the list
+          next unless rels.nil? || elt_attrs.nil? || !elt_attrs.rel? || rels.include?(elt_attrs.rel)
+          
+          if !sub_tags.nil? && sub_tags.key?(key)
+            new_parent = FeedData.new(key, parent, fm_builder)
+            add_tag(parent, key, new_parent)
+            parse_content(new_parent, elt_attrs, elt_content, sub_tags[key])
+          else
+            add_tag(parent, key, clean_content(key, elt_attrs, elt_content, parent))
+          end
+        end
+      end
 
-  		@fm_unparsed += elements.keys
-  		@fm_parsed.uniq!
-  		@fm_unparsed.uniq!
-  	end
+      @fm_unparsed += elements.keys
+      @fm_parsed.uniq!
+      @fm_unparsed.uniq!
+    end
 
     def add_tag(hash, key, value)
       array_var = arrayize(key)
@@ -710,13 +720,13 @@ module FeedMe
       camelize(underscore(tag).downcase, false)
     end
 
-  	def clean_content(tag, attrs, content, parent)
-  	  content = content.to_s
-  	  if fm_builder.date_tags.include? tag
-  			content = Time.parse(content) rescue unescape(content)
-  		else
-  		  content = unescape(content)
-  		end
+    def clean_content(tag, attrs, content, parent)
+      content = content.to_s
+      if fm_builder.date_tags.include? tag
+        content = Time.parse(content) rescue unescape(content)
+      else
+        content = unescape(content)
+      end
       
       unless attrs.empty?
         hash = FeedData.new(tag, parent, fm_builder)
@@ -728,7 +738,7 @@ module FeedMe
       end
 
       return content
-  	end
+    end
 
     def parse_attributes(*attrs)
       hash = {}
@@ -763,7 +773,7 @@ module FeedMe
       obj.nil? || obj.empty? || (obj.is_a?(String) && obj.strip.empty?)
     end
   end
-		
+    
   class FeedMeError < StandardError
   end
   
