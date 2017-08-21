@@ -1,12 +1,12 @@
-= feedme
+# feedme
 
 * http://wiki.github.com/jdidion/feedme
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.
 
-== FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS:
 
 * Parse RSS 0.91, 0.92, 1.0, and 2.0
 * Parse Atom
@@ -15,7 +15,7 @@ A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the po
 * Access all values of tags that can appear multiple times
 * Delicious syntactic sugar that makes it simple to get the data you want
 
-=== SYNOPSIS:
+### SYNOPSIS:
 
 The API is similar to SimpleRSS:
 
@@ -162,7 +162,7 @@ Additionally, there are several variables that are available at every level of t
     fm_parent   # the container of the current level of the parse tree
     fm_tag_name # the name of the rss/atom tag whose content is contained in this level of the tree
 
-=== A word on RSS/Atom Versions
+### A word on RSS/Atom Versions
 
 RSS has undergone much revision since Netscape 0.90 was released in 1999. The current accepted specification is maintained by the RSS Advisory board (http://www.rssboard.org/rss-specification). The current version (as of this writing) is 2.0.11, although the actual schema has not changed since 2.0.1.
 
@@ -172,7 +172,7 @@ FeedMe does its best to support RSS and Atom versions currently in use. It speci
 
 Due to various incompatibilities between different RSS versions, it is strongly recommended that you examine the version attribute of the feed (as shown in the Usage section). Mark Pilgrim has an excellent article on RSS version incompatibility: http://diveintomark.org/archives/2004/02/04/incompatible-rss.
 
-== INSTALL:
+## INSTALL:
 
 * gem install jdidion-feedme (Add GitHub as a gem source: gem sources -a http://gems.github.com)
 * http://github.com/jdidion/feedme/downloads
@@ -188,6 +188,6 @@ To use certain features of FeedMe, some dependencies are required:
     sudo gem install feed-normalizer
     sudo gem install hpricot
 
-== LICENSE:
+## LICENSE:
 
 This work is licensed under the Creative Commons Attribution 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/us/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
