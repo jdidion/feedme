@@ -1,7 +1,3 @@
-# feedme
-
-* http://wiki.github.com/jdidion/feedme
-
 ## DESCRIPTION:
 
 A simple, flexible, and extensible RSS and Atom parser for Ruby. Based on the popular SimpleRSS library, but with many nice extra features.
